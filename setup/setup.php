@@ -11,7 +11,7 @@ if (!defined("CONSTANTS"))
     define('DB_TYPE', 'MySQLiO');
     $site_path = realpath(dirname(__FILE__)) . '/..';
 	define('HTDOCS', $site_path);
-    $docroot="C:/xampp/htdocs/vedis/";//"D:/SERVER/htdocs/vedis/";
+    $docroot="C:/xampp/htdocs/web/vedis/";//"D:/SERVER/htdocs/vedis/";
 	//dev  - will be removed after going live
  
     define("DIR_SEP","/" ); 
@@ -21,7 +21,7 @@ if (!defined("CONSTANTS"))
     //define ("COOKIE_DOMAIN", ".localhost"); // domain name here with dot before it
   
 	 //define ("SITE_ROOT","/web/vedis/");
-	define ("SITE_ROOT","/vedis/");
+	define ("SITE_ROOT","/web/vedis/");
     //define ("SITE_ROOT","/");      // site folder if site is in the root leave it /
     define ("DOC_ROOT",$docroot);  // feiNew
     

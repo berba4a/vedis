@@ -1,6 +1,6 @@
 <?php
-//$doc_root="D:/SERVER/htdocs/vedis/";
-$doc_root="C:/xampp/htdocs/vedis/";
+//$doc_root="D:/SERVER/htdocs/web/vedis/";
+$doc_root="C:/xampp/htdocs/web/vedis/";
 $old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_SEPARATOR .
 ini_set("include_path",ini_get('include_path'). $old_path);
 include_once("setup/setup.php");
@@ -15,13 +15,15 @@ include_once("setup/setup.php");
 		<script type='text/javascript' src='<?php echo SITE_JS;?>prettify.js'></script>
 		<script type='text/javascript' src='<?php echo SITE_JS;?>jquery.slimscroll.min.js'></script>
 		<script type='text/javascript'>
+		/*set bottom_link icons division width*/
 			$(document).ready(function()
 			{
-				var width = $('.social').parent('.lateral_column').css('width');
-				$('.social').css('width',width);
+				var width = $('.bottom_link').parent('.lateral_column').css('width');
+				$('.bottom_link').css('width',width);
 			});
 		</script>
 		<script type="text/javascript">
+		/*set scrollable area height*/
 			$(document).ready(function()
 			{
 				var column_height = parseInt($('.content_column').css('height'));
@@ -34,6 +36,7 @@ include_once("setup/setup.php");
 			});
 		</script>
 		<script type='text/javascript'>
+			/*change placeholder for search input*/
 			$(document).ready(function()
 			{
 				$('.search_form').find('input[type="radio"]').change(function()
@@ -49,6 +52,37 @@ include_once("setup/setup.php");
 						new_value = "Магазин";
 					}
 					$('.search_form').find('input[type="text"]').attr('placeholder','търси : '+new_value);
+				});
+			});
+		</script>
+		<script type='text/javascript'>
+			/*rigt side bar vertical accordion*/
+			$(document).ready(function()
+			{
+				/*initial opening of the first ithem*/
+				$('.last_models').find('.accordion_link').first().css('background','url(../images/slider_offer_lineUP.png) no-repeat bottom right')
+				$('.last_models').find('.accordion_ithem').first().slideDown('slow');
+				$('.last_models').find('.accordion_ithem').first().addClass('active');
+				
+				/*start accorion*/
+				$('.last_models').find('.accordion_link').click(function()
+				{
+					if(!$(this).next().hasClass('active'))
+					{
+						$('.last_models').find('.accordion_ithem').each(function()
+						{
+							if($(this).hasClass('active'))
+							{
+								$(this).slideUp('slow');
+								$(this).removeClass('active');
+								$(this).prev().css('background','url(../images/slider_offer_lineDOWN.png) no-repeat bottom right');
+							}
+						});
+						
+						$(this).next('.accordion_ithem').addClass('active');
+						$(this).css('background','url(../images/slider_offer_lineUP.png) no-repeat bottom right');
+						$(this).next('.accordion_ithem').slideDown('slow');
+					}
 				});
 			});
 		</script>
@@ -70,7 +104,7 @@ include_once("setup/setup.php");
 							<li><a href='#'>кариери</a></li>
 						</ul>
 					</div>
-					<div class='social'>
+					<div class='bottom_link'>
 						<img src='<?php echo SITE_IMG;?>facebook.png' />
 						<img src='<?php echo SITE_IMG;?>twitter.png' />
 						<img src='<?php echo SITE_IMG;?>google+.png' />
@@ -98,12 +132,50 @@ include_once("setup/setup.php");
 					<div class='last_models'>
 						<h1>Най-нови модели</h1>
 						<ul>
-							<li><a href='javascript:void(0)'>Модел 12345</a></li>
-							<li><a href='javascript:void(0)'>Модел 12345</a></li>
-							<li><a href='javascript:void(0)'>Модел 12345</a></li>
-							<li><a href='javascript:void(0)'>Модел 12345</a></li>
-							<li><a href='javascript:void(0)'>Модел 12345</a></li>
+							<li>
+								<div class='accordion_link'>
+									<a href='javascript:void(0)'>Модел 12345</a>
+								</div>
+								<div class='accordion_ithem'>
+									test
+								</div>
+							</li>
+							<li>
+								<div class='accordion_link'>
+									<a href='javascript:void(0)'>Модел 12345</a>
+								</div>
+								<div class='accordion_ithem'>
+									
+								</div>
+							</li>
+							<li>
+								<div class='accordion_link'>
+									<a href='javascript:void(0)'>Модел 12345</a>
+								</div>
+								<div class='accordion_ithem'>
+									
+								</div>
+							</li>
+							<li>
+								<div class='accordion_link'>
+									<a href='javascript:void(0)'>Модел 12345</a>
+								</div>
+								<div class='accordion_ithem'>
+									
+								</div>
+							</li>
+							<li>
+								<div class='accordion_link'>
+									<a href='javascript:void(0)'>Модел 12345</a>
+								</div>
+								<div class='accordion_ithem'>
+									
+								</div>
+							</li>
 						</ul>
+						<div class='bottom_link text_right'>
+							<a href='' >&raquo; Виж всички модели</a>
+						</div>
 					</div>
 				</div>
 				<div class='clear'></div>
