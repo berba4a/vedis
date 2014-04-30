@@ -1,6 +1,6 @@
 <?php
-//$doc_root="D:/SERVER/htdocs/web/vedis/";
-$doc_root="C:/xampp/htdocs/web/vedis/";
+$doc_root="D:/SERVER/htdocs/web/vedis/";
+//$doc_root="C:/xampp/htdocs/web/vedis/";
 $old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_SEPARATOR .
 ini_set("include_path",ini_get('include_path'). $old_path);
 include_once("setup/setup.php");
@@ -9,6 +9,7 @@ include_once("setup/setup.php");
 <html>
 	<head>
 		<title>Demo template</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link type='text/css' rel='stylesheet' href='<?php echo SITE_CSS;?>global.css' />
 		<link type='text/css' rel='stylesheet' href='<?php echo SITE_CSS;?>prettify.css' />
 		<script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
@@ -137,7 +138,12 @@ include_once("setup/setup.php");
 									<a href='javascript:void(0)'>Модел 12345</a>
 								</div>
 								<div class='accordion_ithem'>
-									test
+									<div class='short_text'>
+										<span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</span>
+									</div>
+									<img src='<?php echo SITE_UPOLADS;?>last_model.jpg' />
+									<div class='clear'></div>
+									<a class='last_model_link' href='#'>&raquo; Виж подробности</a>
 								</div>
 							</li>
 							<li>
@@ -145,7 +151,12 @@ include_once("setup/setup.php");
 									<a href='javascript:void(0)'>Модел 12345</a>
 								</div>
 								<div class='accordion_ithem'>
-									
+									<div class='short_text'>
+										<span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</span>
+									</div>
+									<img src='<?php echo SITE_UPOLADS;?>last_model.jpg' />
+									<div class='clear'></div>
+									<a class='last_model_link' href='#'>&raquo; Виж подробности</a>
 								</div>
 							</li>
 							<li>
@@ -153,7 +164,12 @@ include_once("setup/setup.php");
 									<a href='javascript:void(0)'>Модел 12345</a>
 								</div>
 								<div class='accordion_ithem'>
-									
+									<div class='short_text'>
+										<span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</span>
+									</div>
+									<img src='<?php echo SITE_UPOLADS;?>last_model.jpg' />
+									<div class='clear'></div>
+									<a class='last_model_link' href='#'>&raquo; Виж подробности</a>
 								</div>
 							</li>
 							<li>
@@ -161,7 +177,12 @@ include_once("setup/setup.php");
 									<a href='javascript:void(0)'>Модел 12345</a>
 								</div>
 								<div class='accordion_ithem'>
-									
+									<div class='short_text'>
+										<span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</span>
+									</div>
+									<img src='<?php echo SITE_UPOLADS;?>last_model.jpg' />
+									<div class='clear'></div>
+									<a class='last_model_link' href='#'>&raquo; Виж подробности</a>
 								</div>
 							</li>
 							<li>
@@ -169,7 +190,12 @@ include_once("setup/setup.php");
 									<a href='javascript:void(0)'>Модел 12345</a>
 								</div>
 								<div class='accordion_ithem'>
-									
+									<div class='short_text'>
+										<span>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</span>
+									</div>
+									<img src='<?php echo SITE_UPOLADS;?>last_model.jpg' />
+									<div class='clear'></div>
+									<a class='last_model_link' href='#'>&raquo; Виж подробности</a>
 								</div>
 							</li>
 						</ul>

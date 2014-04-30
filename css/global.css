@@ -39,6 +39,7 @@
 }
 ul{list-style:none;margin:0;padding:0}
 img{border:none;}
+a{text-decoration:none}
 body{
 	padding:0;
 	margin:0;
@@ -139,7 +140,7 @@ body{
 				}
 					.bottom_link.text_right{
 						text-align:right;
-						font-size:18px;
+						font-size:16px;
 					}
 					.bottom_link a{
 						color:#ffffff;
@@ -168,18 +169,18 @@ body{
 					width:100%;
 					margin: 0;
 					padding:5px;
-					background: #d6cdc6;
+					background: #979696;
 					font-size:12px;
 					border:1px solid #ffffff;
 					-moz-border-radius: 5px;
 					-webkit-border-radius: 5px;
 					-khtml-border-radius: 5px;
 					border-radius: 5px;
-					-moz-box-shadow:    inset 2px 2px 3px #78746b;
-				   -webkit-box-shadow: inset 2px 2px 3px #78746b;
-				   box-shadow:         inset 2px 2px 3px #78746b;
+					-moz-box-shadow:    inset 2px 2px 3px #333333;
+				   -webkit-box-shadow: inset 2px 2px 3px #333333;
+				   box-shadow:         inset 2px 2px 3px #333333;
 				   float:left;
-				   
+				   /*behavior: url(pie/PIE.htc);*/
 				}
 					.lateral_column .search_form input[type='radio']{
 						
@@ -211,7 +212,7 @@ body{
 					left:91.5%;
 					margin-top:1px;
 				}
-			
+/***********right column*****************************/
 			.lateral_column	.last_models{
 				text-align:center;
 			}
@@ -221,6 +222,8 @@ body{
 					font-family:"robotothin";
 					font-size:26px;
 				}
+				
+		/******************last models accordion***************/
 					.lateral_column	.last_models ul li{
 						margin:0;
 						padding:0;
@@ -236,12 +239,40 @@ body{
 						text-decoration:none;
 					}
 						.last_models ul li .accordion_ithem{
-							width:100%;
-							height:25%;
-							margin-top:-6px;	
+							width:90%;
+							/*height:auto;*/
+							/*min-height:25%;*/
+							padding:5%;
+							margin:-6px 0 10px;	
 							background:url(../images/last_ithem_backgr.png);
+							/*border:1px solid #333333;*/
 							display:none;
+							text-align:right;
 						}
+							.accordion_ithem  .short_text{
+								width:50%;
+								margin-bottom:10px;
+								float:left;
+								text-align:justify;
+								line-height:70%;
+							}
+								.accordion_ithem  .short_text span{
+									color:#ffffff;
+									font-size:11px;
+								}			
+							.accordion_ithem img{
+								width:40%;
+								height:auto;
+								float:right;
+							}
+							a.last_model_link{
+								color:#ffffff;
+								font-size:14px;
+							}
+		/************************End last models accordion**********************/
+/****************end right column************************/
+				
+/*******************content column home page************************/
 			.content_column{
 				width:50%;
 				height:90%;
@@ -261,3 +292,4 @@ body{
 					color:#ffffff;
 					text-align:justify;
 				}
+	
