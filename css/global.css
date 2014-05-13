@@ -97,6 +97,7 @@ body{
 			.lateral_column{
 				width:20%;
 				height:100%;
+				/*max-height:650px;*/
 				float:left;
 			}
 				.logo{
@@ -115,7 +116,7 @@ body{
 				}
 					.lateral_menu ul li{
 						width:94%;
-						height:30px;
+						min-height:30px;
 						text-align:right;
 						margin:1% 0;
 						padding:0 3%;
@@ -123,10 +124,10 @@ body{
 					}
 					
 						.lateral_menu ul li.selected {
-							background:url(../images/selected_menu_backgr.png) no-repeat right;
+							background:url(../images/selected_menu_backgr.png) no-repeat top right;
 						}
 						.lateral_menu ul li:hover{
-							background:url(../images/selected_menu_backgr.png) no-repeat right;
+							background:url(../images/selected_menu_backgr.png) no-repeat top right;
 						}
 						
 					.lateral_menu ul li a{
@@ -134,6 +135,25 @@ body{
 						text-decoration:none;
 						font-size:22px;
 					}
+					
+						/*secondary menu*/
+							.lateral_menu ul li ul{
+								display:none;
+								position:relative;
+								margin-bottom:10%;
+							}
+								.lateral_menu ul li ul li{
+									min-height:16px;
+								}
+									.lateral_menu ul li ul li:hover{background :none;}
+									.lateral_menu ul li ul li:hover a{
+										color:#cccccc;
+									}
+									.lateral_menu ul li ul li a{
+										font-size:12px;
+									}
+						/*end secondary menu*/
+						
 				.bottom_link{
 					bottom:5%;
 					position:absolute;
@@ -244,7 +264,7 @@ body{
 							/*min-height:25%;*/
 							padding:5%;
 							margin:-6px 0 10px;	
-							background:url(../images/last_ithem_backgr.png);
+							background:url(../images/semitransparent_backgr.png);
 							/*border:1px solid #333333;*/
 							display:none;
 							text-align:right;
