@@ -6,7 +6,7 @@
 						<ul>
 							<li class='selected'><a href='#'>начало</a></li>
 							<li>
-								<a href='javascript:void(0)' class='parent_submenu'>продукти</a>
+								<a href='javascript:void(0)' class='parent_submenu'><span class='arrow'>&#x25BE;</span> продукти</a>
 								<ul>
 									<?php 
 										$tablename = "product_gender";
@@ -20,7 +20,7 @@
 								</ul>
 							</li>
 							<li><a href='#'>магазини</a></li>
-							<li><a href='#'>контакти</a></li>
+							<li><a href='<?php echo SITE_URL.SITE_ROOT;?>pages/contacts.php'>контакти</a></li>
 							<li><a href='#'>кариери</a></li>
 						</ul>
 					</div>

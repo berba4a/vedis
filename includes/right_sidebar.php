@@ -2,7 +2,7 @@
 					<div class='search_form'>
 						<form method='GET' action='' enctype='multipart-form/data'>
 							<input class='main_search' type='text' name='search' id='search' placeholder='търси : Продукт' />
-							<a href='javascript:void(0)'>
+							<a id='form_submit' href='javascript:void(0)'>
 								<img class='search_arrow' src='<?php echo SITE_IMG;?>search_arrow.png' />
 							</a>
 							<div class='clear'></div>
