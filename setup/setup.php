@@ -11,8 +11,8 @@ if (!defined("CONSTANTS"))
     define('DB_TYPE', 'MySQLiO');
     $site_path = realpath(dirname(__FILE__)) . '/..';
 	define('HTDOCS', $site_path);
-    $docroot="C:/xampp/htdocs/web/vedis/";
-	//$docroot="D:/SERVER/htdocs/vedis/";
+    //$docroot="C:/xampp/htdocs/web/vedis/";
+	$docroot="D:/SERVER/htdocs/vedis/";
 	//dev  - will be removed after going live
  
     define("DIR_SEP","/" ); 
@@ -43,5 +43,9 @@ if (!defined("CONSTANTS"))
 	
     define ("SITE_IMG", SITE_ROOT."images/");
     //define ("DEFAULT_EMAIL_ADDRESS", "info@sete.gr");    
+	
+	/*admin*/
+	define ("ADMIN" , SITE_ROOT."adm/");
+	define ("ADMIN_CSS" , ADMIN."css/");
 }
 ?>

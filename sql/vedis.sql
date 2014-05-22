@@ -33,6 +33,8 @@ CREATE TABLE IF NOT EXISTS `products` (
   `genderID` tinyint(3) unsigned NOT NULL COMMENT 'gender foreign key',
   `usageID` tinyint(3) unsigned NOT NULL COMMENT 'usage foreign key',
   `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `release_date` date NOT NULL,
+  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `is_active` enum('0','1') COLLATE utf8_unicode_ci NOT NULL DEFAULT '1' COMMENT '0-inactive,1-active',
   PRIMARY KEY (`productID`),
   KEY `typeID` (`typeID`),
@@ -123,9 +125,9 @@ INSERT INTO `product_usage` (`usageID`, `name`) VALUES
 -- Ограничения за таблица `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `products_ibfk_3` FOREIGN KEY (`usageID`) REFERENCES `product_usage` (`usageID`),
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`typeID`) REFERENCES `product_type` (`typeID`),
-  ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`genderID`) REFERENCES `product_gender` (`genderID`);
+  ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`genderID`) REFERENCES `product_gender` (`genderID`),
+  ADD CONSTRAINT `products_ibfk_3` FOREIGN KEY (`usageID`) REFERENCES `product_usage` (`usageID`);
 
 --
 -- Ограничения за таблица `product_images`
