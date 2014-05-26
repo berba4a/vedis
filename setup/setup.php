@@ -11,8 +11,8 @@ if (!defined("CONSTANTS"))
     define('DB_TYPE', 'MySQLiO');
     $site_path = realpath(dirname(__FILE__)) . '/..';
 	define('HTDOCS', $site_path);
-    //$docroot="C:/xampp/htdocs/web/vedis/";
-	$docroot="D:/SERVER/htdocs/vedis/";
+    $docroot="C:/xampp/htdocs/web/vedis/";
+	//$docroot="D:/SERVER/htdocs/vedis/";
 	 
     define("DIR_SEP","/" ); 
     define("SEP", ( substr(PHP_OS, 0, 3) == 'WIN' ) ? "\\" : "/");
@@ -46,5 +46,6 @@ if (!defined("CONSTANTS"))
 	/*admin*/
 	define ("ADMIN" , SITE_ROOT."adm/");
 	define ("ADMIN_CSS" , ADMIN."css/");
+	define ("ADMIN_JS" , ADMIN."js/");
 }
 ?>

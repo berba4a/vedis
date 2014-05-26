@@ -17,6 +17,9 @@ body{
 ul{list-style:none;margin:0;padding:0}
 img{border:none;}
 a{text-decoration:none}
+span.green{color:green}
+span.red{color:red}
+
 
 .clear{
 	clear:both;
@@ -96,7 +99,21 @@ a{text-decoration:none}
 			top:21%;
 			position:relative;
 		}
-		
+			table.list_table{
+				width:100%;
+				/*border:1px solid #6a6a6a;*/
+				font-size:12px;
+			}
+				table.list_table tr.headers th{
+					background : #bbbbbb;
+					font-size:12px;
+					border:none;
+					font-weight:normal;
+				}
+				table.list_table tr.even{background:#e1e1e1}
+				table.list_table tr.odd{background:#ffffff}
+					table.list_table tr th,table.list_table tr td{padding:3px 5px;text-align:center;}
+					table.list_table tr th{padding:5px 8px}
 		
 		/*************************END BODY WRAPPER***************************/
 		
