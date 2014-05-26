@@ -1,6 +1,6 @@
 <?php 
-//$doc_root="D:/SERVER/htdocs/web/vedis/";
-$doc_root="C:/xampp/htdocs/web/vedis/";
+$doc_root="D:/SERVER/htdocs/web/vedis/";
+//$doc_root="C:/xampp/htdocs/web/vedis/";
 $old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_SEPARATOR .
 ini_set("include_path",ini_get('include_path'). $old_path);
 include_once("setup/setup.php");
@@ -24,6 +24,7 @@ if(isset($_GET['table'])&&""!=$_GET['table']&&in_array($_GET['table'],$tables_ar
 	$db_table_name = $_GET['table'];
 	
 $table_prKey = $db->getPrKey($db_table_name);
+$fields_arr = $db->getTableFields($db_table_name);
 
 if(isset($_GET['action'])&&in_array($_GET['action'],$allowed_actions_arr))
 	$action = $_GET['action'];
@@ -33,5 +34,15 @@ include_once("adm/includes/header.php");
 	echo "<div class='body_content'>";
 		include_once("adm/includes/".$db_table_name."/".$action.".php");
 	echo "</div>";
+	
+	/*delete confirmation dialogue*/
+	echo "<div class='dialogue'>";
+		echo "<div class='dialogue_close'></div>";
+		echo "<div class='dialogue_text'></div>";
+		echo "<div class='dialogue_buttons confirm'>Изтрий</div>";
+		echo "<div class='dialogue_buttons cancel'>Отмяна</div>";
+	echo "</div>";
+	
+	
 include_once("adm/includes/footer.php");
 ?>

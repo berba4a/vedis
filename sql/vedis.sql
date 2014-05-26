@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `products` (
   `productID` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'primary key',
-  `cattalogueID` int(11) unsigned NOT NULL COMMENT 'catalogue number',
+  `catalogueID` int(11) unsigned NOT NULL COMMENT 'catalogue number',
   `typeID` tinyint(3) unsigned NOT NULL COMMENT 'type foregn key',
   `genderID` tinyint(3) unsigned NOT NULL COMMENT 'gender foreign key',
   `usageID` tinyint(3) unsigned NOT NULL COMMENT 'usage foreign key',
@@ -37,10 +37,20 @@ CREATE TABLE IF NOT EXISTS `products` (
   `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `is_active` enum('0','1') COLLATE utf8_unicode_ci NOT NULL DEFAULT '1' COMMENT '0-inactive,1-active',
   PRIMARY KEY (`productID`),
+  UNIQUE KEY `catalogueID` (`catalogueID`),
   KEY `typeID` (`typeID`),
   KEY `genderID` (`genderID`),
   KEY `usageID` (`usageID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Ссхема на данните от таблица `products`
+--
+
+INSERT INTO `products` (`productID`, `catalogueID`, `typeID`, `genderID`, `usageID`, `description`, `release_date`, `last_update`, `is_active`) VALUES
+(1, 1010, 1, 1, 1, 'Тестово описание на продукт 1', '2014-05-23', '2014-05-23 08:23:46', '1'),
+(2, 1020, 1, 2, 2, 'Тестово описание на продукт 2', '2014-05-22', '2014-05-23 08:23:46', '1'),
+(3, 1030, 1, 2, 3, 'test', '2014-05-26', '2014-05-26 10:49:35', '1');
 
 -- --------------------------------------------------------
 
@@ -116,6 +126,22 @@ INSERT INTO `product_usage` (`usageID`, `name`) VALUES
 (1, 'Ежедневни'),
 (2, 'Официални'),
 (3, 'Спортни');
+
+-- --------------------------------------------------------
+
+--
+-- Структура на таблица `shops`
+--
+
+CREATE TABLE IF NOT EXISTS `shops` (
+  `shopID` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` tinytext COLLATE utf8_unicode_ci NOT NULL,
+  `web` tinytext COLLATE utf8_unicode_ci NOT NULL,
+  `gpsLat` double NOT NULL,
+  `gpsLon` double NOT NULL,
+  `cityID` smallint(6) NOT NULL,
+  PRIMARY KEY (`shopID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 --
 -- Ограничения за дъмпнати таблици

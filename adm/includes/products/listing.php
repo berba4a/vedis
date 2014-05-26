@@ -5,15 +5,15 @@
 	
 	$order = "ORDER BY p.release_date ";
 	$direction = " DESC";
-	if(isset($_GET['order_by'])&&in_array($_GET['order_by'],$tables_arr))
-		$order = "ORDER BY ".$_GET['order_by'];
+	if(isset($_GET['order_by'])&&in_array($_GET['order_by'],$fields_arr))
+		$order = "ORDER BY ".$_GET['order_by']." ";
 		
 	if(isset($_GET['order'])&&($_GET['order']=='ASC'||$_GET['order']=='DESC'))
 		$direction = $_GET['order'];
 		
 	$order_by = $order.$direction;
 	$query = "
-		SELECT p.".$table_prKey.",
+		SELECT p.".$table_prKey." as ".$table_prKey.",
 			p.catalogueID as catNum,
 			p.".$pr_typePrkey.",
 			p.".$pr_genderPrkey.",
@@ -31,6 +31,7 @@
 	";
 	$stmt = $db->query($query);
 	$num_rows = $db->numRows($stmt);
+
 	if($num_rows>0)
 	{
 		$curr_url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];

@@ -7,6 +7,7 @@
 		
 		<link type='text/css' rel='stylesheet' href='<?php echo ADMIN_CSS;?>admin.css' />
 		<script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
+		<script type='text/javascript' src='<?php echo ADMIN_JS;?>drags.js'></script>
 		<script type='text/javascript' src='<?php echo ADMIN_JS;?>global.js'></script>
 	</head>
 	<body>
