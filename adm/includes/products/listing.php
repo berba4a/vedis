@@ -103,7 +103,7 @@
 					echo "</td>";
 					echo "<td>";
 						echo "<a href='".SITE_URL.ADMIN."pages?table=".$db_table_name."&action=edit'><img src='".ADMIN."images/edit.png' alt='Редактирай' title='Редактирай' /></a>&nbsp;&nbsp;&nbsp;";
-						echo "<a class='deleteIthem' id='".$row[$table_prKey]."' href='javascript:void(0);'><img src='".ADMIN."images/del.png' alt='Изтрий' title='Изтрий' /></a>";
+						echo "<a class='deleteIthem' id='".$table_prKey."_".$row[$table_prKey]."' table ='".$db_table_name."' href='javascript:void(0);'><img src='".ADMIN."images/del.png' alt='Изтрий' title='Изтрий' /></a>";
 					echo "</td>";
 				echo "</tr>";
 			}

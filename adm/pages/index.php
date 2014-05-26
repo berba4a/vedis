@@ -1,6 +1,6 @@
 <?php 
-$doc_root="D:/SERVER/htdocs/web/vedis/";
-//$doc_root="C:/xampp/htdocs/web/vedis/";
+//$doc_root="D:/SERVER/htdocs/web/vedis/";
+$doc_root="C:/xampp/htdocs/web/vedis/";
 $old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_SEPARATOR .
 ini_set("include_path",ini_get('include_path'). $old_path);
 include_once("setup/setup.php");
@@ -36,12 +36,7 @@ include_once("adm/includes/header.php");
 	echo "</div>";
 	
 	/*delete confirmation dialogue*/
-	echo "<div class='dialogue'>";
-		echo "<div class='dialogue_close'></div>";
-		echo "<div class='dialogue_text'></div>";
-		echo "<div class='dialogue_buttons confirm'>Изтрий</div>";
-		echo "<div class='dialogue_buttons cancel'>Отмяна</div>";
-	echo "</div>";
+	echo "<div class='dialogue'></div>";
 	
 	
 include_once("adm/includes/footer.php");

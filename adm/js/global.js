@@ -1,9 +1,14 @@
 $(document).ready(function()
 {
+	/*on delete item button click show dialogue panel with proper parameters*/
 	$('.deleteIthem').click(function()
 	{
-		var ithemID = parseInt($(this).attr('id'));
+		var table = $(this).attr('table');
+		var full_id = $(this).attr('id');
+		var prKey = full_id.substring(0,full_id.indexOf('_'));
+		var ithemID = parseInt(full_id.substring(full_id.indexOf('_')+1));
 		
+		/*remove marker if some other field is marked*/
 		$(this).parent('td').parent('tr').siblings('tr').each(function()
 		{
 			if($(this).hasClass('marked'))
@@ -13,30 +18,25 @@ $(document).ready(function()
 		});
 		$(this).parent('td').parent('tr').addClass('marked');
 				
-		deleteDialogue(ithemID);
+		deleteDialogue(ithemID,prKey,table);
 	});
 	
-	$('.dialogue_close').click(function(){closeDialogue()});
-	
-	$('.dialogue_buttons.cancel').click(function(){closeDialogue()});
-	$('.dialogue_buttons.confirm').click(function()
-	{
-		var full_id = $(this).attr('id');
-		var ithemID = parseInt(full_id.substring(6));
-		deleteIthem(ithemID);
-	});
-	
+	/*make dialogue panel draggable*/
 	$('.dialogue').drags();
 });
 
-function deleteDialogue(ithemid)
+function deleteDialogue(ithemid,prkey_name,table)
 {
-	$('.dialogue').fadeIn('slow',function()
-	{
-		$('.dialogue_buttons.confirm').attr('id','ithem_'+ithemid);
+	$.ajax({
+		url : '../ajax/delete_record.php',
+		type : 'POST',
+		data : 'show_dialog=1&table='+table+'&pr_key='+prkey_name+'&'+prkey_name+'='+ithemid+'',
+		success : function(response)
+		{
+			$('.dialogue').html(response);
+			$('.dialogue').fadeIn('slow');
+		}
 	});
-	$('.dialogue_text').html("Найстина ли искате да изтриете маркирания в червено модел?");
-	
 }
 
 function closeDialogue()
@@ -45,7 +45,32 @@ function closeDialogue()
 	$('.dialogue').fadeOut('slow');
 }
 
-function deleteIthem(ithemid)
+/*deleting ithem*/
+function deleteIthem()
 {
-	alert('deleting '+ithemid);
+	$.ajax({
+		url : '../ajax/delete_record.php',
+		type : 'POST',
+		data : $('#delete_form').serialize(),
+		success : function(response)
+		{
+			$('.dialogue').html("<div class='dialogue_text'>"+response+"</div>");
+			window.setTimeout(function()
+			{
+				$('.dialogue').fadeOut('slow');
+				if($('.err_msg').length==0)
+				{
+					$('tr.marked').remove();
+				}
+				else
+				{
+					$('tr.marked').removeClass('marked');
+				}
+			},2000);
+		},
+		error : function(error)
+		{
+			$('.dialogue').html(error);
+		}
+	});
 }

@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
 -- Време на генериране: 
--- Версия на сървъра: 5.5.27
--- Версия на PHP: 5.4.7
+-- Версия на сървъра: 5.5.32
+-- Версия на PHP: 5.4.19
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- БД: `vedis`
 --
+CREATE DATABASE IF NOT EXISTS `vedis` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `vedis`;
 
 -- --------------------------------------------------------
 
@@ -41,16 +43,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   KEY `typeID` (`typeID`),
   KEY `genderID` (`genderID`),
   KEY `usageID` (`usageID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
-
---
--- Ссхема на данните от таблица `products`
---
-
-INSERT INTO `products` (`productID`, `catalogueID`, `typeID`, `genderID`, `usageID`, `description`, `release_date`, `last_update`, `is_active`) VALUES
-(1, 1010, 1, 1, 1, 'Тестово описание на продукт 1', '2014-05-23', '2014-05-23 08:23:46', '1'),
-(2, 1020, 1, 2, 2, 'Тестово описание на продукт 2', '2014-05-22', '2014-05-23 08:23:46', '1'),
-(3, 1030, 1, 2, 3, 'test', '2014-05-26', '2014-05-26 10:49:35', '1');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 -- --------------------------------------------------------
 
@@ -65,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `product_gender` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
--- Ссхема на данните от таблица `product_gender`
+-- Схема на данните от таблица `product_gender`
 --
 
 INSERT INTO `product_gender` (`genderID`, `name`) VALUES
@@ -85,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `product_images` (
   `name` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`imageID`),
   KEY `productID` (`productID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 -- --------------------------------------------------------
 
@@ -100,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `product_type` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
--- Ссхема на данните от таблица `product_type`
+-- Схема на данните от таблица `product_type`
 --
 
 INSERT INTO `product_type` (`typeID`, `name`) VALUES
@@ -119,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `product_usage` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
--- Ссхема на данните от таблица `product_usage`
+-- Схема на данните от таблица `product_usage`
 --
 
 INSERT INTO `product_usage` (`usageID`, `name`) VALUES
@@ -151,15 +144,15 @@ CREATE TABLE IF NOT EXISTS `shops` (
 -- Ограничения за таблица `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`typeID`) REFERENCES `product_type` (`typeID`),
-  ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`genderID`) REFERENCES `product_gender` (`genderID`),
-  ADD CONSTRAINT `products_ibfk_3` FOREIGN KEY (`usageID`) REFERENCES `product_usage` (`usageID`);
+  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`typeID`) REFERENCES `product_type` (`typeID`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`genderID`) REFERENCES `product_gender` (`genderID`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `products_ibfk_3` FOREIGN KEY (`usageID`) REFERENCES `product_usage` (`usageID`) ON UPDATE CASCADE;
 
 --
 -- Ограничения за таблица `product_images`
 --
 ALTER TABLE `product_images`
-  ADD CONSTRAINT `product_images_ibfk_1` FOREIGN KEY (`productID`) REFERENCES `products` (`productID`);
+  ADD CONSTRAINT `product_images_ibfk_1` FOREIGN KEY (`productID`) REFERENCES `products` (`productID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
