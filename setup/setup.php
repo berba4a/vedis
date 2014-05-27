@@ -11,8 +11,8 @@ if (!defined("CONSTANTS"))
     define('DB_TYPE', 'MySQLiO');
     $site_path = realpath(dirname(__FILE__)) . '/..';
 	define('HTDOCS', $site_path);
-    $docroot="C:/xampp/htdocs/web/vedis/";
-	//$docroot="D:/SERVER/htdocs/vedis/";
+    //$docroot="C:/xampp/htdocs/web/vedis/";
+	$docroot="D:/SERVER/htdocs/web/vedis/";
 	 
     define("DIR_SEP","/" ); 
     define("SEP", ( substr(PHP_OS, 0, 3) == 'WIN' ) ? "\\" : "/");
@@ -25,7 +25,7 @@ if (!defined("CONSTANTS"))
     //define ("SITE_ROOT","/");      // site folder if site is in the root leave it /
     
 	define ("DOC_ROOT",$docroot);  // feiNew
-    define ("FILES_FOLDER",DOC_ROOT.DIR_SEP."fileuploads".DIR_SEP);
+    define ("FILES_FOLDER",DOC_ROOT."fileuploads".DIR_SEP);
 	define ("PRODUCT_IMAGES",FILES_FOLDER."product_images".DIR_SEP);
 	
     // remove this below and uncomment 4 lines above if you move to live
@@ -44,12 +44,14 @@ if (!defined("CONSTANTS"))
     define ("SITE_UPOLADS", SITE_ROOT."uploads/");
 	
     define ("SITE_IMG", SITE_ROOT."images/");
-    //define ("DEFAULT_EMAIL_ADDRESS", "info@sete.gr");    
+    //define ("DEFAULT_EMAIL_ADDRESS", "info@sete.gr");   
+	define ("DEFAULT_TABLE","products");
 	
 	/*admin*/
 	define ("ADMIN" , SITE_ROOT."adm/");
 	define ("ADMIN_CSS" , ADMIN."css/");
 	define ("ADMIN_JS" , ADMIN."js/");
 	define ("ADMIN_AJAX" , ADMIN."ajax/");
+	define ("ADMIN_IMAGES" , ADMIN."images/");
 }
 ?>

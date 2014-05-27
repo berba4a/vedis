@@ -1,4 +1,6 @@
-<?php
+<?php	
+	echo "<div class='add_button'><a href='".$_SERVER['PHP_SELF']."?table=".$db_table_name."&action=add''><img src='".ADMIN_IMAGES."add.png' />&nbsp;Добави нов запис</a></div>";
+	
 	$pr_typePrkey = $db->getPrKey('product_type');
 	$pr_genderPrkey = $db->getPrKey('product_gender');
 	$pr_usagePrkey = $db->getPrKey('product_usage');
@@ -37,7 +39,6 @@
 		$curr_url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
 		$remove_arr = array('order_by','order');
 		$query_string = createUrlRequest($_GET,$remove_arr);
-		
 		echo "<table class='list_table'>";
 			echo "<tr class='headers'>";
 				echo "<th>";

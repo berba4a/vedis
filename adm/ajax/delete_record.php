@@ -1,7 +1,7 @@
 <?php
 
-	//$doc_root="D:/SERVER/htdocs/web/vedis/";
-	$doc_root="C:/xampp/htdocs/web/vedis/";
+	$doc_root="D:/SERVER/htdocs/web/vedis/";
+	//$doc_root="C:/xampp/htdocs/web/vedis/";
 	$old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_SEPARATOR .
 	ini_set("include_path",ini_get('include_path'). $old_path);
 	include_once("setup/setup.php");
@@ -46,7 +46,7 @@
 						{
 							while($row=$db->fetchObject($stmt))
 							{
-								$file_res[] = unlink(PRODUCT_IMAGES.$row->name);
+								$file_res[] = @unlink(PRODUCT_IMAGES.$row->name);
 							}
 						}
 						else
@@ -73,7 +73,7 @@
 					else
 					{
 						$db->rollback();
-						$msg = "<span class='err_msg'>Грешка при изтриването на файл от файловата система!</span>.".print_r($file_res);
+						$msg = "<span class='err_msg'>Грешка при изтриването на файл от файловата система!</span>";
 					}
 				}
 			}

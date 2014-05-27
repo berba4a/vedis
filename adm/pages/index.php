@@ -1,6 +1,6 @@
 <?php 
-//$doc_root="D:/SERVER/htdocs/web/vedis/";
-$doc_root="C:/xampp/htdocs/web/vedis/";
+$doc_root="D:/SERVER/htdocs/web/vedis/";
+//$doc_root="C:/xampp/htdocs/web/vedis/";
 $old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_SEPARATOR .
 ini_set("include_path",ini_get('include_path'). $old_path);
 include_once("setup/setup.php");
@@ -15,23 +15,32 @@ $allowed_actions_arr = array('listing','add','edit');
 
 /*variables will be used into the listing , add and edit scripts*/
 $tables_arr = $db->getTables();
-$db_table_name="products";
+$db_table_name=DEFAULT_TABLE;
 $table_prKey ="";
 $num_rows = 0;
 $action="listing";
 
+/*check if proper table is passed and redirect if not*/
 if(isset($_GET['table'])&&""!=$_GET['table']&&in_array($_GET['table'],$tables_arr))
 	$db_table_name = $_GET['table'];
+else if(isset($_GET['table'])&&""!=$_GET['table']&&!in_array($_GET['table'],$tables_arr))
+	header("location:".SITE_URL.ADMIN."pages/?table=".DEFAULT_TABLE."");
 	
+/*get passed table primary key and fields*/	
 $table_prKey = $db->getPrKey($db_table_name);
 $fields_arr = $db->getTableFields($db_table_name);
 
+/*check if allowed action is passed and redirects if not*/
 if(isset($_GET['action'])&&in_array($_GET['action'],$allowed_actions_arr))
 	$action = $_GET['action'];
+else if(isset($_GET['action'])&&!in_array($_GET['action'],$allowed_actions_arr))
+	header('location:'.SITE_URL.ADMIN.'?table='.$_GET['table'].'');
 
-
+	
+/*start output*/
 include_once("adm/includes/header.php");
 	echo "<div class='body_content'>";
+		/*includes proper script*/
 		include_once("adm/includes/".$db_table_name."/".$action.".php");
 	echo "</div>";
 	

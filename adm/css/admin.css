@@ -68,6 +68,7 @@ span.red{color:red}
 			header .menu{
 				width:30%;
 				margin:1px auto;
+				text-align:center;
 			}
 				header .menu ul{}
 					header .menu ul li{
@@ -99,6 +100,24 @@ span.red{color:red}
 			top:21%;
 			position:relative;
 		}
+			.add_button{
+				width:28%;
+				height:5%;
+				margin:1% auto;
+				position:relative;
+				text-align:center;
+			}
+				.add_button a{
+					padding:5px 10px;
+					border:1px solid #e1e1e1;
+					color:#5fa32a;
+					-moz-border-radius: 5px;
+					-webkit-border-radius: 5px;
+					-khtml-border-radius: 5px;
+					border-radius: 5px;
+				}
+					.add_button a:hover{background:#e1e1e1;border:1px solid #a1a1a1}
+					.add_button a img{width:14px;height:auto;}
 			table.list_table{
 				width:100%;
 				/*border:1px solid #6a6a6a;*/
