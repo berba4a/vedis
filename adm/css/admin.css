@@ -196,6 +196,51 @@ span.red{color:red}
 						.dialogue_buttons.cancel:hover{background:green;color:#ffffff}
 		/*end delete dialogue*/
 		
+		/******add/edit form************/
+				.body_content .title{
+					width:60%;
+					margin:2% auto;
+					text-align:center;
+				}
+					.body_content form .input_fields{
+						width:40%;
+						float:left;
+					}
+						.body_content form .input_field{
+							padding: 10px 0;
+							/*border-bottom:1px solid #6a6a6a;*/
+						}
+						input,select,textarea{
+							-moz-border-radius: 5px;
+							-webkit-border-radius: 5px;
+							-khtml-border-radius: 5px;
+							border-radius: 5px;
+						}
+						textarea{
+							width:90%;
+							height:15%;
+						}
+					.body_content form .images_fields{
+						width:60%;
+						float:left;
+					}
+						.body_content form .images_fields .image{
+							width:20%;
+							margin:2% 2.5%;
+							float:left;
+						}
+							.body_content form .images_fields .image img{
+								width:100%;
+								height:auto;
+							}
+								.body_content form .images_fields .image span.del_img{
+									color:#ff0000;
+									font-size:12px;
+									cursor:pointer
+								}
+		
+		/********end add/edit form**********/
+		
 		/*************************END BODY WRAPPER***************************/
 		
 		

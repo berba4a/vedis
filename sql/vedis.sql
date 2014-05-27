@@ -43,7 +43,14 @@ CREATE TABLE IF NOT EXISTS `products` (
   KEY `typeID` (`typeID`),
   KEY `genderID` (`genderID`),
   KEY `usageID` (`usageID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Схема на данните от таблица `products`
+--
+
+INSERT INTO `products` (`productID`, `catalogueID`, `typeID`, `genderID`, `usageID`, `description`, `release_date`, `last_update`, `is_active`) VALUES
+(1, 1010, 1, 2, 3, 'xasxsa', '2014-05-06', '2014-05-27 17:02:36', '1');
 
 -- --------------------------------------------------------
 
@@ -78,7 +85,18 @@ CREATE TABLE IF NOT EXISTS `product_images` (
   `name` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`imageID`),
   KEY `productID` (`productID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
+
+--
+-- Схема на данните от таблица `product_images`
+--
+
+INSERT INTO `product_images` (`imageID`, `productID`, `name`) VALUES
+(1, 1, 'Picture0143.jpg'),
+(3, 1, 'Picture0144.jpg'),
+(4, 1, 'Picture0146.jpg'),
+(5, 1, 'Picture0145.jpg'),
+(7, 1, 'Picture0147.jpg');
 
 -- --------------------------------------------------------
 
