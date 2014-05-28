@@ -1,6 +1,6 @@
 <?php
-	$doc_root="D:/SERVER/htdocs/web/vedis/";
-	//$doc_root="C:/xampp/htdocs/web/vedis/";
+	//$doc_root="D:/SERVER/htdocs/web/vedis/";
+	$doc_root="C:/xampp/htdocs/web/vedis/";
 	$old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_SEPARATOR .
 	ini_set("include_path",ini_get('include_path'). $old_path);
 	include_once("setup/setup.php");
@@ -38,8 +38,8 @@
 					
 					/*check if deleted item is product in order to remove the images from file system*/
 					$file_res = array();
-					/*if($_POST['pr_key']=='productID')
-					{*/
+					if(strpos('product',$_POST['pr_key'])!==false)
+					{
 						$query = " SELECT * FROM product_images WHERE ".$db->getPrKey($_POST['table'])." = ".$_POST[$_POST['pr_key']]." ";
 						$stmt = $db->query($query);
 						if($db->numRows($stmt)>0)
@@ -51,9 +51,9 @@
 						}
 						else
 							$file_res[] = true;
-					/*}
+					}
 					else
-						$file_res[] = true;*/
+						$file_res[] = true;
 						
 					if(!in_array(false,$file_res))
 					{

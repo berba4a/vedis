@@ -26,7 +26,7 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 		$query = "SELECT * FROM ".$db->escapeString($_GET['table'])." WHERE ".$table_prKey." = ".$db->escapeString($_GET[$table_prKey])." ";
 		if($row = $db->fquery($query))
 		{
-			$title = "Редактиране на <span class='red'>модел ".$row->catalogueID."</span> последно обновяван на : ".date('d-M-Y',strtotime($row->last_update));
+			$title = "Редактиране на <span class='red'>модел ".$row->catalogueID."</span><br /> последно обновен на ".date('d-M-Y',strtotime($row->last_update));
 			$catalogueID = $row->catalogueID;
 			$typeID = $row->typeID;
 			$genderID= $row->genderID;
@@ -72,30 +72,31 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 	
 	echo "<div class='title'>".$title."</div>";
 	
-	echo "<form id='' method='POST' enctype='multipart-form/data' action='".ADMIN."includes/".$_GET['table']."/submit_form.php'>";
+	echo "<form id='add_adit_form' method='POST' enctype='multipart-form/data' action='".ADMIN."includes/".$_GET['table']."/submit_form.php'>";
 		
 		if($is_active==1)
 			$is_active_checked = "checked";
 		
 		echo "<div class='input_fields'>";
+			echo "<span class='warning'>Всички полета означени със * за задължителни!</span>";
 			echo "<div class='input_field'>";
 				echo "<label for='is_active'>Активен : </label>";
-				echo "<input type='checkbox' name='is_active' id='is_active' class='' ".$is_active_checked." value='".$is_active."' />";
+				echo "<input type='checkbox' name='is_active' id='is_active' class='' ".$is_active_checked." />";
 			echo "</div>";
 			
 			echo "<div class='input_field'>";
-				echo "<label for='catalogueID'>Номер на модела : </label><br />";
+				echo "<span class='red'>*</span><label for='catalogueID'> Номер на модела : </label><br />";
 				echo "<input type='text' name='catalogueID' id='catalogueID' class='mandatory' value='".$catalogueID."' />";
 			echo "</div>";
 			
 			echo "<div class='input_field'>";
-				echo "<label for='release_date'>Дата на производство : </label><br />";
+				echo "<span class='red'>*</span><label for='release_date'> Дата на производство : </label><br />";
 				echo "<input type='text' name='release_date' id='release_date' class='datepicker mandatory' value='".$release_date."' />";
 			echo "</div>";
 			
 			echo "<div class='input_field'>";
-				echo "<label for='description'>Вид на продукта : </label><br />";
-				echo "<select name='typeID'>";
+				echo "<span class='red'>*</span><label for='description'> Вид на продукта : </label><br />";
+				echo "<select name='typeID' class='mandatory'>";
 					echo "<option value='-1'>-- Избери вид на продукта --</option>";
 					$type_selected = "";
 					$query = "SELECT * FROM product_type ";
@@ -111,8 +112,8 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 			echo "</div>";
 			
 			echo "<div class='input_field'>";
-				echo "<label for='description'>Употреба на продукта : </label><br />";
-				echo "<select name='usageID'>";
+				echo "<span class='red'>*</span><label for='description'> Употреба на продукта : </label><br />";
+				echo "<select name='usageID' class='mandatory'>";
 					echo "<option value='-1'>-- Избери употреба на продукта --</option>";
 					$usage_selected = "";
 					$query = "SELECT * FROM product_usage ";
@@ -128,8 +129,8 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 			echo "</div>";
 			
 			echo "<div class='input_field'>";
-				echo "<label for='description'>Пол : </label><br />";
-				echo "<select name='genderID'>";
+				echo "<span class='red'>*</span><label for='description'> Пол : </label><br />";
+				echo "<select name='genderID' class='mandatory'>";
 					echo "<option value='-1'>-- Избери пол --</option>";
 					$gender_selected = "";
 					$query = "SELECT * FROM product_gender ";
@@ -145,19 +146,29 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 			echo "</div>";
 			
 			echo "<div class='input_field'>";
-				echo "<label for='description'>Описание на продукта : </label><br />";
-				echo "<textarea>".$description."</textarea><br />";			
+				echo "<span class='red'>*</span><label for='description'> Описание на продукта : </label><br />";
+				echo "<textarea class='mandatory'>".$description."</textarea><br />";			
 			echo "</div>";
 		echo "</div>";
 		echo "<div class='images_fields'>";
 			echo $images_string;
 			echo "<div class='clear'></div>";
-			echo "<label for='image[]'>Прикачи снимки : </label><br />";
-			echo "<input type='file' name='image[]' id='images[]' />";
+			
+			echo "<script type='text/javascript' src='".ADMIN_JS."submit_form_scripts.js'></script>";
+			echo "<fieldset>";
+				echo "<legend>Прикачи снимки : ";
+					echo "<span class='add_files'><img src='".ADMIN_IMAGES."add.png' />&nbsp;Добави полета за файлове</span>";
+				echo "</legend>";
+				echo "<span class='warning'>Позволени формати на изображения : 'jpg','png','gif','bmp' .<br /> Полетата с непозволен формат или празните полета ще бъдат изтрити !</span>";
+				echo "<div class='input_file'>";
+					echo "<input type='file' name='images[]' id='images[]' onchange='readURL(this);' />";
+				echo "</div>";
+				echo "<div class='clear'></div>";
+			echo "</fieldset>";
 		echo "</div>";
 		echo "<div class='clear'></div>";
-		echo "<div class='input_field'>";
-			echo "<input type='submit' value='Запази промените' /><br />";
+		echo "<div class='input_field submit'>";
+			echo "<a href='javascript:void(0)' class='submit_btn'>Запази промените</a>";
 		echo "</div>";
 	echo "</form>";
 }

@@ -143,6 +143,7 @@ a{text-decoration:none}
 					text-align:center;
 					font-weight:bold;
 				}
+					span.warning{font-size:10px;color:#ff0000;}
 					.body_content form .input_fields{
 						width:40%;
 						float:left;
@@ -151,6 +152,24 @@ a{text-decoration:none}
 							padding: 10px 0;
 							/*border-bottom:1px solid #6a6a6a;*/
 						}
+						
+							
+							.body_content form .input_field.submit{margin:5% 0;text-align:center;}
+								.body_content form .input_field.submit a.submit_btn{
+									padding:10px 20px;
+									font-size:16px;
+									color:#6a6a6a;
+									border:1px solid #c1c1c1;
+									background:#d1d1d1;
+									cursor:pointer;
+									-moz-border-radius: 5px;
+									-webkit-border-radius: 5px;
+									-khtml-border-radius: 5px;
+									border-radius: 5px;
+								}
+									.body_content form .input_field.submit a.submit_btn:hover{background:#e1e1e1;}
+								
+								
 						input,select,textarea{
 							padding:3px 5px;
 							-moz-border-radius: 5px;
@@ -162,12 +181,14 @@ a{text-decoration:none}
 							width:90%;
 							height:15%;
 						}
+						
+						
 					.body_content form .images_fields{
 						width:60%;
 						float:left;
 					}
 						.body_content form .images_fields .image{
-							width:19.5%;
+							width:19%;
 							margin:2% 2.5%;
 							float:left;
 						}
@@ -181,7 +202,19 @@ a{text-decoration:none}
 									font-size:12px;
 									cursor:pointer
 								}
-		
+									
+								.body_content form .images_fields  span.add_files{width:30%;font-size:12px;color:#0000ff;cursor:pointer;}
+								.body_content form .images_fields  span.add_files img{height:14px;}
+									.body_content form .images_fields  fieldset .input_file{
+										width:45%;
+										margin:1%;
+										float:left;
+										border:1px solid #c1c1c1;
+									}
+									.body_content form .images_fields  fieldset .input_file img{height:100px;padding:10px 0}
+									
+					
+					
 		/********end add/edit form**********/
 		
 		
