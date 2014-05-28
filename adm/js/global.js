@@ -4,19 +4,21 @@ $(document).ready(function()
 	$('.deleteIthem').click(function()
 	{
 		var table = $(this).attr('table');
-		var full_id = $(this).attr('id');
-		var prKey = full_id.substring(0,full_id.indexOf('_'));
-		var ithemID = parseInt(full_id.substring(full_id.indexOf('_')+1));
+		var ithemID = $(this).attr('id');
+		var prKey = $(this).attr('pr_key');
+		//var full_id = $(this).attr('id');
+		//var prKey = full_id.substring(0,full_id.indexOf('_'));
+		//var ithemID = parseInt(full_id.substring(full_id.indexOf('_')+1));
 		
 		/*remove marker if some other field is marked*/
-		$(this).parent('td').parent('tr').siblings('tr').each(function()
+		$(this).parents('.parent_mark').siblings('.parent_mark').each(function()
 		{
 			if($(this).hasClass('marked'))
 			{
 				$(this).removeClass('marked');
 			}
 		});
-		$(this).parent('td').parent('tr').addClass('marked');
+		$(this).parents('.parent_mark').addClass('marked');
 				
 		deleteDialogue(ithemID,prKey,table);
 	});
@@ -60,7 +62,7 @@ function deleteIthem()
 				$('.dialogue').fadeOut('slow');
 				if($('.err_msg').length==0)
 				{
-					$('tr.marked').remove();
+					$('.marked').remove();
 				}
 				else
 				{

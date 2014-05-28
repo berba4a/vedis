@@ -1,7 +1,6 @@
 <?php
-
-	//$doc_root="D:/SERVER/htdocs/web/vedis/";
-	$doc_root="C:/xampp/htdocs/web/vedis/";
+	$doc_root="D:/SERVER/htdocs/web/vedis/";
+	//$doc_root="C:/xampp/htdocs/web/vedis/";
 	$old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_SEPARATOR .
 	ini_set("include_path",ini_get('include_path'). $old_path);
 	include_once("setup/setup.php");
@@ -39,9 +38,10 @@
 					
 					/*check if deleted item is product in order to remove the images from file system*/
 					$file_res = array();
-					if($_POST['pr_key']=='productID')
-					{
-						$stmt = $db->query(" SELECT * FROM product_images WHERE ".$db->getPrKey($_POST['table'])." = ".$_POST[$_POST['pr_key']]." ");
+					/*if($_POST['pr_key']=='productID')
+					{*/
+						$query = " SELECT * FROM product_images WHERE ".$db->getPrKey($_POST['table'])." = ".$_POST[$_POST['pr_key']]." ";
+						$stmt = $db->query($query);
 						if($db->numRows($stmt)>0)
 						{
 							while($row=$db->fetchObject($stmt))
@@ -51,16 +51,15 @@
 						}
 						else
 							$file_res[] = true;
-					}
+					/*}
 					else
-						$file_res[] = true;
+						$file_res[] = true;*/
 						
 					if(!in_array(false,$file_res))
 					{
 						$db_res = $db->query("DELETE FROM ".$db->escapeString($_POST['table'])." WHERE ".$db->escapeString($_POST['pr_key'])." = ".$db->escapeString($_POST[$_POST['pr_key']])." ");
 						if($db_res>0)
 						{
-							
 							$db->commit();
 							$msg = "Записът изтрит успешно!";
 						}

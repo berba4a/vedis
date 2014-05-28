@@ -17,9 +17,9 @@ body{
 ul{list-style:none;margin:0;padding:0}
 img{border:none;}
 a{text-decoration:none}
-span.green{color:green}
-span.red{color:red}
-
+.green{color:green}
+.red{color:red}
+.marked{border:2px solid #ff0000;}
 
 .clear{
 	clear:both;
@@ -131,9 +131,60 @@ span.red{color:red}
 				}
 				table.list_table tr.even{background:#e1e1e1}
 				table.list_table tr.odd{background:#ffffff}
+				table.list_table tr.marked{background:#ff0000}
 					table.list_table tr th,table.list_table tr td{padding:3px 5px;text-align:center;}
 					table.list_table tr th{padding:5px 8px}
-				table.list_table tr.marked{background:#ff0000;}
+					
+		
+		/******add/edit form************/
+				.body_content .title{
+					width:60%;
+					margin:2% auto;
+					text-align:center;
+					font-weight:bold;
+				}
+					.body_content form .input_fields{
+						width:40%;
+						float:left;
+					}
+						.body_content form .input_field{
+							padding: 10px 0;
+							/*border-bottom:1px solid #6a6a6a;*/
+						}
+						input,select,textarea{
+							padding:3px 5px;
+							-moz-border-radius: 5px;
+							-webkit-border-radius: 5px;
+							-khtml-border-radius: 5px;
+							border-radius: 5px;
+						}
+						textarea{
+							width:90%;
+							height:15%;
+						}
+					.body_content form .images_fields{
+						width:60%;
+						float:left;
+					}
+						.body_content form .images_fields .image{
+							width:19.5%;
+							margin:2% 2.5%;
+							float:left;
+						}
+							.body_content form .images_fields .image img{
+								width:100%;
+								height:auto;
+							}
+								.image span.id_num{font-size:12px;}
+								.body_content form .images_fields .image span.del_img{
+									color:#ff0000;
+									font-size:12px;
+									cursor:pointer
+								}
+		
+		/********end add/edit form**********/
+		
+		
 		
 		
 		/***dialogue***/
@@ -172,7 +223,7 @@ span.red{color:red}
 				}
 				.dialogue_buttons{
 					width:25%;
-					padding:2.5%;
+					padding:1% 2.5%;
 					position:absolute;
 					bottom:15%;
 					cursor:pointer;
@@ -195,52 +246,6 @@ span.red{color:red}
 					}
 						.dialogue_buttons.cancel:hover{background:green;color:#ffffff}
 		/*end delete dialogue*/
-		
-		/******add/edit form************/
-				.body_content .title{
-					width:60%;
-					margin:2% auto;
-					text-align:center;
-				}
-					.body_content form .input_fields{
-						width:40%;
-						float:left;
-					}
-						.body_content form .input_field{
-							padding: 10px 0;
-							/*border-bottom:1px solid #6a6a6a;*/
-						}
-						input,select,textarea{
-							-moz-border-radius: 5px;
-							-webkit-border-radius: 5px;
-							-khtml-border-radius: 5px;
-							border-radius: 5px;
-						}
-						textarea{
-							width:90%;
-							height:15%;
-						}
-					.body_content form .images_fields{
-						width:60%;
-						float:left;
-					}
-						.body_content form .images_fields .image{
-							width:20%;
-							margin:2% 2.5%;
-							float:left;
-						}
-							.body_content form .images_fields .image img{
-								width:100%;
-								height:auto;
-							}
-								.body_content form .images_fields .image span.del_img{
-									color:#ff0000;
-									font-size:12px;
-									cursor:pointer
-								}
-		
-		/********end add/edit form**********/
-		
 		/*************************END BODY WRAPPER***************************/
 		
 		

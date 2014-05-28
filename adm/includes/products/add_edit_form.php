@@ -2,6 +2,7 @@
 $pr_typePrkey = $db->getPrKey('product_type');
 $pr_genderPrkey = $db->getPrKey('product_gender');
 $pr_usagePrkey = $db->getPrKey('product_usage');
+$pr_imagesPrkey = $db->getPrKey('product_images');
 
 /*check if $_GET is properly passed if no redirects to home*/
 if(!isset($_GET['table'])||!in_array($_GET['table'],$tables_arr))
@@ -12,7 +13,7 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 {
 	$title = "Добавяне на продукт .";
 	$catalogueID = "";
-	$typeID = 0;
+	$typeID = 1;
 	$genderID = 0;
 	$usageID = 0;
 	$description = "";
@@ -39,11 +40,12 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 			$stmt = $db->query($query);
 			if($db->numRows($stmt)>0)
 			{
-				while($row = $db->fetchObject($stmt))
+				while($row = $db->fetchArray($stmt))
 				{
-					$images_string .="<div class='image'>";
-						$images_string .= "<img src='".SITE_UPOLADS."product_images/".$row->name."' />\n";
-						$images_string .= "<br /><span class='del_img' id='".$row->imageID."' >Изтрии снимката </span><br />\n";
+					$images_string .="<div class='image parent_mark'>";
+						$images_string .= "<span class='id_num'>ID #".$row[$pr_imagesPrkey]."</span><br />";
+						$images_string .= "<img src='".SITE_UPOLADS."product_images/".$row['name']."' />\n";
+						$images_string .= "<br /><span class='deleteIthem del_img' id='".$row[$pr_imagesPrkey]."' table='product_images' pr_key='".$pr_imagesPrkey."' >Изтрии снимката </span><br />\n";
 					$images_string .="</div>";
 				}
 			}
