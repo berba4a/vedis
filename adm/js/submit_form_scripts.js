@@ -50,6 +50,11 @@ $(document).ready(function()
 					{
 						$(this).parents('.input_file').remove();
 					}
+					else
+					{
+						$(this).val("");
+						$(this).parents('.input_file').children('img').remove();
+					}
 				}
 			}
 		});
@@ -110,7 +115,14 @@ function readURL(input) {
 
         reader.onload = function (e) 
 		{
-			$(input).parent('.input_file').prepend('<img src="'+e.target.result+'" />');
+			if($(input).siblings('img').length>0)
+			{
+				$(input).siblings('img').attr('src',e.target.result);
+			}
+			else
+			{
+				$(input).before('<img src="'+e.target.result+'" />');
+			}
         }
 
         reader.readAsDataURL(input.files[0]);
