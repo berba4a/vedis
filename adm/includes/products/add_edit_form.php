@@ -74,6 +74,8 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 	
 	echo "<form id='add_adit_form' method='POST' enctype='multipart-form/data' action='".ADMIN."includes/".$_GET['table']."/submit_form.php'>";
 		
+		/*ДОБАВИ СКРИТО ПОЛЕ ЗА $table_prKey AKO E EDIT СТОЙНОСТТА АКО Е АДД -1 */
+		
 		if($is_active==1)
 			$is_active_checked = "checked";
 		
