@@ -12,6 +12,7 @@ if(!isset($_GET['table'])||!in_array($_GET['table'],$tables_arr))
 if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'])=='edit'))
 {
 	$title = "Добавяне на продукт .";
+	$prKey = -1;
 	$catalogueID = "";
 	$typeID = 1;
 	$genderID = 0;
@@ -27,6 +28,7 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 		if($row = $db->fquery($query))
 		{
 			$title = "Редактиране на <span class='red'>модел ".$row->catalogueID."</span><br /> последно обновен на ".date('d-M-Y',strtotime($row->last_update));
+			$prKey = $_GET[$table_prKey];
 			$catalogueID = $row->catalogueID;
 			$typeID = $row->typeID;
 			$genderID= $row->genderID;
@@ -73,8 +75,7 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 	echo "<div class='title'>".$title."</div>";
 	
 	echo "<form id='add_adit_form' method='POST' enctype='multipart-form/data' action='".ADMIN."includes/".$_GET['table']."/submit_form.php'>";
-		
-		/*ДОБАВИ СКРИТО ПОЛЕ ЗА $table_prKey AKO E EDIT СТОЙНОСТТА АКО Е АДД -1 */
+		echo "<input type='hidden' name='".$table_prKey."' id='".$table_prKey."' value='".$prKey."' />";
 		
 		if($is_active==1)
 			$is_active_checked = "checked";
