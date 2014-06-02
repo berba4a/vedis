@@ -1,6 +1,6 @@
 ﻿				<div class='lateral_column'>
 					<div class='logo'>
-						<span>Vedis</span>
+						<a href='<?php echo SITE_URL.SITE_ROOT;?>'>Vedis</a>
 					</div>
 					<div class='lateral_menu'>
 						<ul>
