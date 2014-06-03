@@ -80,6 +80,15 @@ class DBMYSQL {
 		}
 	}
 	
+	function transaction()
+	{
+		if ($this->query('START TRANSACTION')) {
+			return true;
+		} else {
+			return false;
+		}	
+	}
+	
 	function commit() {
 		if ($this->query('commit')) {
 			return true;
@@ -95,6 +104,9 @@ class DBMYSQL {
 			return false;
 		}		
 	}
+	
+	/*do insert and edit record functions*/
+	
 	function getPrKey($tablename)
 	{
 		$stmt = $this->query("SHOW KEYS FROM ".$tablename." WHERE Key_name = 'PRIMARY'");
@@ -150,7 +162,7 @@ class DBMYSQL {
 	}
 	function getTableFields($table_name)
 	{
-		$stmt = $this->query('SHOW COLUMNS FROM '.$table_name);
+		$stmt = $this->query('select column_name from information_schema.columns where table_name="'.$table_name.'"');
 		while($row = $this->fetchArray($stmt))
 		{
 			foreach($row as $key=>$value)

@@ -76,6 +76,7 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 	
 	echo "<form id='add_adit_form' method='POST' enctype='multipart-form/data' action='".ADMIN."includes/".$_GET['table']."/submit_form.php'>";
 		echo "<input type='hidden' name='".$table_prKey."' id='".$table_prKey."' value='".$prKey."' />";
+		echo "<input type='hidden' name='table' id='table' value='".$_GET['table']."' />";
 		
 		if($is_active==1)
 			$is_active_checked = "checked";
@@ -150,7 +151,7 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 			
 			echo "<div class='input_field'>";
 				echo "<span class='red'>*</span><label for='description'> Описание на продукта : </label><br />";
-				echo "<textarea class='mandatory'>".$description."</textarea><br />";			
+				echo "<textarea class='mandatory' name='description' id='description'>".$description."</textarea><br />";			
 			echo "</div>";
 		echo "</div>";
 		echo "<div class='images_fields'>";

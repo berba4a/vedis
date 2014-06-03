@@ -34,7 +34,7 @@
 				else
 				{
 					/*Start transaction*/
-					$db->query('START TRANSACTION');
+					$db->transaction();
 					
 					/*check if deleted item is product in order to remove the images from file system*/
 					$file_res = array();
