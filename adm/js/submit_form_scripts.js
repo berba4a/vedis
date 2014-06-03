@@ -1,4 +1,3 @@
-
 /*check form for errors and submit*/
 $(document).ready(function()
 {
@@ -16,8 +15,28 @@ $(document).ready(function()
 				$(this).parents('.input_field').find('label').addClass('red');
 				errors++;
 			}
+			else if($(this).attr('id')=='catalogueID')
+			{		
+				$.ajax({
+					url : '../ajax/check_field.php',
+					type : 'GET',
+					data : 'value='+value+'&table='+$('#table').val()+'&field_name='+$(this).attr('id'),
+					success : function(response)
+					{
+						alert("Start check");
+						if(response!=='0')
+						{
+							alert(response);
+							$(this).val('');
+							errors++;
+							$(this).parents('.input_field').find('label').addClass('red');
+						}
+					}
+				});
+			}
 			else
 			{
+				alert("here");
 				if($(this).parents('.input_field').find('label').hasClass('red'))
 				{
 					$(this).parents('.input_field').find('label').removeClass('red');
@@ -58,7 +77,7 @@ $(document).ready(function()
 				}
 			}
 		});
-		
+		alert(errors);
 		if(errors==0)
 		{
 			$('#add_adit_form').submit();

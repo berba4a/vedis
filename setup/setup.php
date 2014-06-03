@@ -12,7 +12,7 @@ if (!defined("CONSTANTS"))
     $site_path = realpath(dirname(__FILE__)) . '/..';
 	define('HTDOCS', $site_path);
     //$docroot="C:/xampp/htdocs/web/vedis/";
-	$docroot="D:/SERVER/htdocs/web/vedis/";
+	//$doc_root="D:/SERVER/htdocs/web/vedis/";
 	 
     define("DIR_SEP","/" ); 
     define("SEP", ( substr(PHP_OS, 0, 3) == 'WIN' ) ? "\\" : "/");
@@ -24,7 +24,7 @@ if (!defined("CONSTANTS"))
 	define ("SITE_ROOT","/web/vedis/");
     //define ("SITE_ROOT","/");      // site folder if site is in the root leave it /
     
-	define ("DOC_ROOT",$docroot);  // feiNew
+	define ("DOC_ROOT",$doc_root);  // feiNew
     define ("FILES_FOLDER",DOC_ROOT."fileuploads".DIR_SEP);
 	define ("PRODUCT_IMAGES",FILES_FOLDER."product_images".DIR_SEP);
 	

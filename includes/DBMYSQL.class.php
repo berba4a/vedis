@@ -108,7 +108,20 @@ class DBMYSQL {
 	/*do insert and edit record functions*/
 	function insertRecord($table,$array)
 	{
-		echo "Insert record called";
+		$fields="";
+		$values="";
+		$last = end(array_keys($array));
+		
+		foreach($array as $key=>$value)
+		{	
+			$comma=",";
+			if($last==$key)
+				$comma="";				
+			$fields .= $key.$comma;
+			$values .="'".$value."'".$comma;
+		}
+		$query = "INSERT INTO ".$table." (".$fields.") VALUES (".$values.") ";
+		return $this->query($query);
 	}
 	
 	function updateRecord($table,$array,$prkey)
