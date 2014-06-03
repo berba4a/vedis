@@ -107,8 +107,10 @@ $(document).ready(function()
 });
 
 /*preview uploaded image function*/
-function readURL(input) {
-
+function readURL(input) 
+{
+	$(input).before('<img src="../images/loading.gif" />');
+	
     if (input.files && input.files[0]) 
 	{
         var reader = new FileReader();

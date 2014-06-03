@@ -39,8 +39,16 @@ if(isset($_POST['table'])&&in_array($_POST['table'],$db_tables_arr))
 		else
 			$record_arr[$value] = $_POST[$value];
 	}
-	print_r($record_arr);
+	if($record_arr[$pr_key]<0)
+	{
+		unset($record_arr[$pr_key]);
+		$result = $db->insertRecord($_POST['table'],$record_arr);
+	}
+	else
+	{
+		$result = $db->updateRecord($_POST['table'],$record_arr,$record_arr[$pr_key]);	
+	}
 }
 else
-	echo "Системна грешка свържете се с вашият програмист !";
+	echo "Грешно име на таблица свържете се с вашият програмист !";
 ?>

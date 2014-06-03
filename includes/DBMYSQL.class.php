@@ -106,6 +106,15 @@ class DBMYSQL {
 	}
 	
 	/*do insert and edit record functions*/
+	function insertRecord($table,$array)
+	{
+		echo "Insert record called";
+	}
+	
+	function updateRecord($table,$array,$prkey)
+	{
+		echo "Update record called";
+	}
 	
 	function getPrKey($tablename)
 	{
