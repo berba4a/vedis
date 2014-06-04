@@ -20,23 +20,23 @@ $(document).ready(function()
 				$.ajax({
 					url : '../ajax/check_field.php',
 					type : 'GET',
-					data : 'value='+value+'&table='+$('#table').val()+'&field_name='+$(this).attr('id'),
+					data : 'value='+value+'&table='+$('#table').val()+'&field_name='+$(this).attr('name')+'&'+$('.pr_key').attr('id')+'='+$('.pr_key').val(),
+					async : false,
 					success : function(response)
 					{
-						alert("Start check");
-						if(response!=='0')
+						if(response!='0')
 						{
 							alert(response);
-							$(this).val('');
+							$("#catalogueID").val('');
+							$("#catalogueID").parents('.input_field').find('label').addClass('red');
 							errors++;
-							$(this).parents('.input_field').find('label').addClass('red');
 						}
-					}
+					},
+					error : function(xhr, status, error){alert($.parseJSON(xhr.responseText));}
 				});
 			}
 			else
 			{
-				alert("here");
 				if($(this).parents('.input_field').find('label').hasClass('red'))
 				{
 					$(this).parents('.input_field').find('label').removeClass('red');
@@ -77,8 +77,7 @@ $(document).ready(function()
 				}
 			}
 		});
-		alert(errors);
-		if(errors==0)
+		if(errors<1)
 		{
 			$('#add_adit_form').submit();
 		}

@@ -110,12 +110,12 @@ class DBMYSQL {
 	{
 		$fields="";
 		$values="";
-		$last = end(array_keys($array));
+		$last = @end(array_keys($array));
 		
 		foreach($array as $key=>$value)
 		{	
 			$comma=",";
-			if($last==$key)
+			if($last === $key)
 				$comma="";				
 			$fields .= $key.$comma;
 			$values .="'".$value."'".$comma;
