@@ -64,7 +64,6 @@ $(document).ready(function()
 					//img_errors++;
 					//$(this).parents('.input_file').css('border','2px solid #ff0000');
 					//$(this).parents('.input_file').attr('onclick','removeMe(this)');
-					errors++;
 					if($('.input_file').length>1)
 					{
 						$(this).parents('.input_file').remove();
@@ -77,6 +76,7 @@ $(document).ready(function()
 				}
 			}
 		});
+		
 		if(errors<1)
 		{
 			$('#add_adit_form').submit();

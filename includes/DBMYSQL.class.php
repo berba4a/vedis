@@ -126,7 +126,19 @@ class DBMYSQL {
 	
 	function updateRecord($table,$array,$prkey)
 	{
-		echo "Update record called";
+		$pairs ="";
+		$last = @end(array_keys($array));
+		
+		foreach($array as $key=>$value)
+		{	
+			$comma=",";
+			if($last == $key)
+				$comma="";				
+			
+			$pairs .= "".$key."='".$this->escapeString($value)."'".$comma;
+		}
+		$query = "UPDATE ".$table." SET ".$pairs." WHERE ".$this->getPrKey($table)." = '".$prkey."' ";
+		return $this->query($query);
 	}
 	
 	function getPrKey($tablename)

@@ -1,6 +1,6 @@
 ﻿<?php 
-$doc_root="D:/SERVER/htdocs/web/vedis/";
-//$doc_root="C:/xampp/htdocs/web/vedis/";
+//$doc_root="D:/SERVER/htdocs/web/vedis/";
+$doc_root="C:/xampp/htdocs/web/vedis/";
 $old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_SEPARATOR .
 ini_set("include_path",ini_get('include_path'). $old_path);
 include_once("setup/setup.php");
@@ -37,20 +37,87 @@ if(isset($_POST['table'])&&in_array($_POST['table'],$db_tables_arr))
 		else if(strpos($value,'date')!==false)
 			$record_arr[$value] = date('Y-m-d',strtotime($_POST[$value]));
 		else
-			$record_arr[$value] = $_POST[$value];
+		{
+			if(isset($_POST[$value]))
+				$record_arr[$value] = $_POST[$value];	
+		}
 	}
-	if($record_arr[$pr_key]<0)
+	if(isset($record_arr[$pr_key])&&$record_arr[$pr_key]<0)
 	{
 		unset($record_arr[$pr_key]);
 		$result = $db->insertRecord($_POST['table'],$record_arr);
-		echo $db->getLastInsertedId();
-		$db->commit();
+		$img_productID = $db->getLastInsertedId();
+	}
+	else if(isset($record_arr[$pr_key])&&$record_arr[$pr_key]>0)
+	{
+		$result = $db->updateRecord($_POST['table'],$record_arr,$record_arr[$pr_key]);	
+		$img_productID = $record_arr[$pr_key];
 	}
 	else
 	{
-		$result = $db->updateRecord($_POST['table'],$record_arr,$record_arr[$pr_key]);	
+		$db->rollback();
+		$result = -1;
+	}
+	
+	if($result>=0)
+	{
+		if(!empty($_FILES))
+		{
+			$db_results = array();
+			$file_res = array();
+			foreach($_FILES['images']['name'] as $key=>$value)
+			{
+				if($_FILES['images']['error'][$key]==UPLOAD_ERR_OK)
+				{
+					$name = $_FILES['images']['name'][$key];
+					$ext = end((explode('.', $name)));
+					$file_name = "model_".$record_arr['catalogueID']."_".$key.".".$ext;
+					$img_record_arr[$pr_key] = $img_productID;
+					$img_record_arr['name'] = $file_name;
+					$db_res = $db->insertRecord('product_images',$img_record_arr);
+					if($db_res<0)
+						$db_results[$key] = false;
+					else
+						$db_results[$key] = true;
+						
+					if($db_results[$key]===true)
+					{
+						$file_res[$key] = move_uploaded_file($_FILES['images']['tmp_name'][$key],PRODUCT_IMAGES.$file_name);
+					}
+				}
+			}
+		}
+		if(!in_array(false,$db_results,true)&&!in_array(false,$file_res,true))
+		{
+			$db->commit();
+			$msg =  "Записът е успешен!";
+		}
+		else
+		{
+			$db->rollback();
+			$msg =  "Записът е неуспешен!";
+		}
+	}
+	else
+	{
+		$db->rollback();
+		$msg =  "Грешка при запис в базата данни!";
 	}
 }
 else
-	echo "Грешно име на таблица свържете се с вашият програмист !";
+	$msg =  "Грешно име на таблица свържете се с вашият програмист !";
 ?>
+<!DOCTYPE>
+<html>
+	<head>
+		<script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
+		<script type='text/javascript'>
+			$(document).ready(function(){$('form').submit();});
+		</script>
+	</head>
+	<body>
+		<form method='POST' action='<?php echo ADMIN;?>pages/?table=<?php echo $_POST['table'];?>'>
+			<input type='hidden' name='msg' id='msg' value='<?php echo $msg;?>'>
+		</form>
+	</body>
+</html>

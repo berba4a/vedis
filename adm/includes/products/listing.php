@@ -95,9 +95,9 @@
 					echo "</td>";
 					echo "<td>";
 						if($row['activity']==1)
-							echo "<span class='green'>Акивен</span>";
+							echo "<span class='green'>Активен</span>";
 						if($row['activity']==0)
-							echo "<span class='red'>Неакивен</span>";
+							echo "<span class='red'>Неактивен</span>";
 					echo "</td>";
 					echo "<td>";
 						echo date('d-M-Y',strtotime($row['date']));

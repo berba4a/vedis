@@ -74,7 +74,7 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 	
 	echo "<div class='title'>".$title."</div>";
 	
-	echo "<form id='add_adit_form' method='POST' enctype='multipart-form/data' action='".ADMIN."includes/".$_GET['table']."/submit_form.php'>";
+	echo "<form id='add_adit_form' method='POST' enctype='multipart/form-data' action='".ADMIN."includes/".$_GET['table']."/submit_form.php'>";
 		echo "<input type='hidden' class='pr_key' name='".$table_prKey."' id='".$table_prKey."' value='".$prKey."' />";
 		echo "<input type='hidden' name='table' id='table' value='".$_GET['table']."' />";
 		
