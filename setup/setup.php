@@ -12,7 +12,7 @@ if (!defined("CONSTANTS"))
     $site_path = realpath(dirname(__FILE__)) . '/..';
 	define('HTDOCS', $site_path);
     //$docroot="C:/xampp/htdocs/web/vedis/";
-	//$doc_root="D:/SERVER/htdocs/web/vedis/";
+	$doc_root="D:/SERVER/htdocs/web/vedis/";
 	 
     define("DIR_SEP","/" ); 
     define("SEP", ( substr(PHP_OS, 0, 3) == 'WIN' ) ? "\\" : "/");

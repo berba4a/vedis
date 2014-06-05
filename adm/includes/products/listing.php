@@ -57,7 +57,7 @@
 					echo "<a href='".$curr_url.$query_string."&order_by=".$pr_usagePrkey."&order=DESC'>&#9660;</a> Употреба <a href='".$curr_url.$query_string."&order_by=".$pr_usagePrkey."&order=ASC'>&#9650;</a>";
 				echo "</th>";
 				echo "<th>";
-					echo "<a href='".$curr_url.$query_string."&order_by=activity&order=DESC'>&#9660;</a> Активност <a href='".$curr_url.$query_string."&order_by=activity&order=ASC'>&#9650;</a>";
+					echo "<a href='".$curr_url.$query_string."&order_by=is_active&order=DESC'>&#9660;</a> Активност <a href='".$curr_url.$query_string."&order_by=is_active&order=ASC'>&#9650;</a>";
 				echo "</th>";
 				echo "<th>";
 					echo "<a href='".$curr_url.$query_string."&order_by=release_date&order=DESC'>&#9660;</a> Дата <a href='".$curr_url.$query_string."&order_by=release_date&order=ASC'>&#9650;</a>";
