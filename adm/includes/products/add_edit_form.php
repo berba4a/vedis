@@ -102,11 +102,11 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 				echo "<span class='red'>*</span><label for='description'> Вид на продукта : </label><br />";
 				echo "<select name='typeID' class='mandatory'>";
 					echo "<option value='-1'>-- Избери вид на продукта --</option>";
-					$type_selected = "";
 					$query = "SELECT * FROM product_type ";
 					$stmt = $db->query($query);
 					while($row = $db->fetchArray($stmt))
 					{
+						$type_selected = "";
 						if($typeID == $row[$pr_typePrkey])
 							$type_selected = "selected";
 							
@@ -119,14 +119,14 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 				echo "<span class='red'>*</span><label for='description'> Употреба на продукта : </label><br />";
 				echo "<select name='usageID' class='mandatory'>";
 					echo "<option value='-1'>-- Избери употреба на продукта --</option>";
-					$usage_selected = "";
 					$query = "SELECT * FROM product_usage ";
 					$stmt = $db->query($query);
 					while($row = $db->fetchArray($stmt))
 					{
+						$usage_selected = "";
 						if($usageID == $row[$pr_usagePrkey])
 							$usage_selected = "selected";
-							
+													
 						echo "<option value='".$row[$pr_usagePrkey]."' ".$usage_selected.">".$row['name']."</option>";
 					}
 				echo "</select>";
@@ -136,11 +136,11 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 				echo "<span class='red'>*</span><label for='description'> Пол : </label><br />";
 				echo "<select name='genderID' class='mandatory'>";
 					echo "<option value='-1'>-- Избери пол --</option>";
-					$gender_selected = "";
 					$query = "SELECT * FROM product_gender ";
 					$stmt = $db->query($query);
 					while($row = $db->fetchArray($stmt))
 					{
+						$gender_selected = "";
 						if($genderID == $row[$pr_genderPrkey])
 							$gender_selected = "selected";
 							

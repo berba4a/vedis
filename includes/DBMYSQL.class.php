@@ -118,7 +118,7 @@ class DBMYSQL {
 			if($last === $key)
 				$comma="";				
 			$fields .= $key.$comma;
-			$values .="'".$value."'".$comma;
+			$values .="'".$this->escapeString(trim($value))."'".$comma;
 		}
 		$query = "INSERT INTO ".$table." (".$fields.") VALUES (".$values.") ";
 		return $this->query($query);
@@ -135,7 +135,7 @@ class DBMYSQL {
 			if($last == $key)
 				$comma="";				
 			
-			$pairs .= "".$key."='".$this->escapeString($value)."'".$comma;
+			$pairs .= "".$key."='".$this->escapeString(trim($value))."'".$comma;
 		}
 		$query = "UPDATE ".$table." SET ".$pairs." WHERE ".$this->getPrKey($table)." = '".$prkey."' ";
 		return $this->query($query);

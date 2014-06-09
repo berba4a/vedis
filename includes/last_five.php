@@ -24,7 +24,12 @@ if($num_rows>0)
 			echo "</div>";
 			echo "<div class='accordion_ithem'>";
 				echo "<div class='short_text'>";
-					echo "<span>".$row['descr']."</span>";
+					$cut_descr = "";
+					if(strlen($row['descr'])>100)
+						$cut_descr = substr($row['descr'], 0, strrpos(substr($row['descr'], 0, 100), ' '))."...";
+					else
+						$cut_descr = $row['descr'];
+					echo "<span>".$cut_descr."</span>";
 				echo "</div>";
 				if(isset($row['name'])&&""!=$row['name'])
 					echo "<img src='".SITE_UPOLADS."product_images/".$row['name']."' alt='модел ".$row['catnum']."' title='модел ".$row['catnum']."' />";
