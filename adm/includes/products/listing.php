@@ -5,6 +5,10 @@
 	$pr_genderPrkey = $db->getPrKey('product_gender');
 	$pr_usagePrkey = $db->getPrKey('product_usage');
 	
+	/*pagination variables*/
+	$ipp = 10;
+	
+	
 	$order = "ORDER BY p.release_date ";
 	$direction = " DESC";
 	if(isset($_GET['order_by'])&&in_array($_GET['order_by'],$fields_arr))
