@@ -6,7 +6,7 @@
 	$pr_usagePrkey = $db->getPrKey('product_usage');
 	
 	/*pagination variables*/
-	$ipp = 10; //items por page
+	$ipp = 1; //items por page
 	$page = 1; //current page in url
 	$p_around = 5; //shown pages around selected page into the list
 	$num_rows = 0; //all returned rows
@@ -38,8 +38,8 @@
 		" .$order_by."
 	";
 	$all_stmt = $db->query($query);
-	$num_rows = $db->numRows($all_stmt);
-	$all_pages = ceil($num_rows/$ipp);
+	$num_allrows = $db->numRows($all_stmt);
+	$all_pages = ceil($num_allrows/$ipp);
 	$curr_url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
 	
 	//escape number of higher/lower then existing pages
@@ -49,7 +49,7 @@
 			$page = $_GET['page'];
 		else
 		{
-			$redirect_url = $curr_url.createUrlRequest($_GET,array('page'));
+			$redirect_url = $curr_url.Utils::createUrlRequest($_GET,array('page'));
 			if($_GET['page']<0)
 				$redirect_url .= "&page=1";
 			if($_GET['page']>$all_pages)
@@ -58,13 +58,15 @@
 		}
 	}
 	
-	$limited_query = $query.createLimitString($ipp,$page,$num_rows);
+	$limited_query = $query.Utils::createLimitString($ipp,$page,$num_allrows);
 	$stmt = $db->query($limited_query);
 	$num_rows = $db->numRows($stmt);
+	
+	
 	if($num_rows>0)
 	{
 		$remove_arr = array('order_by','order');
-		$query_string = createUrlRequest($_GET,$remove_arr);
+		$query_string = Utils::createUrlRequest($_GET,$remove_arr);
 		echo "<table class='list_table'>";
 			echo "<tr class='headers'>";
 				echo "<th>";
@@ -135,62 +137,12 @@
 				echo "</tr>";
 			}
 		echo "</table>";
+		echo "<div class='pagination'>";
+			Utils::drawPagination($ipp,$page,$num_allrows,5);
+		echo "</div>";
 	}
 	else
 		echo "Няма записи в тази таблица .";
 		
 	
-
-/*Functions which has to be global in later stage*/	
-	function createUrlRequest($get,$removeArr)
-	{
-		$q_str="?";
-		$amp = "&";
-		$element_number=0;
-		foreach($removeArr as $value)
-		{
-			unset($get[$value]);
-		}
-		
-		foreach($get as $key=>$value)
-		{
-			$element_number++;
-			if(count($get)==$element_number)
-				$amp="";
-				
-			$q_str .= $key."=".$value.$amp;
-		}
-		return $q_str;
-	}
-	
-	function createLimitString($ipp,$p,$n_rows)
-	{
-		$lim_str = "";
-		if($n_rows>$ipp)
-		{
-			$low_limit = 0;
-			$up_limit = $ipp;
-			if($p>1)
-			{
-				$up_limit = $p*$ipp;
-				$low_limit = $up_limit-$ipp;
-			}
-			$lim_str = " LIMIT ".$low_limit.",".$up_limit." ";
-			
-		}
-		return $lim_str;
-	}
-	
-	function drawPagination($ipp,$p,$n_rows,$around)
-	{
-		if($n_rows>$ipp)
-		{
-			$curr_url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-			echo "<ul>";
-				
-				
-			
-			echo "</ul>";
-		}
-	}
 ?>

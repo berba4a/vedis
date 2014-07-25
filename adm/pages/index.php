@@ -6,7 +6,7 @@ ini_set("include_path",ini_get('include_path'). $old_path);
 include_once("setup/setup.php");
 
 include_once("includes/DBMYSQL.class.php");
-
+include_once("includes/Utils.class.php");
 /*database connect object*/
 include_once("includes/DBMYSQL.class.php");
 $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME); 

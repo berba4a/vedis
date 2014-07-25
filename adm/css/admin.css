@@ -135,6 +135,29 @@ a{text-decoration:none}
 					table.list_table tr th,table.list_table tr td{padding:3px 5px;text-align:center;}
 					table.list_table tr th{padding:5px 8px}
 					
+		/*pagination*/			
+		.pagination{margin:10px auto;text-align:center;bottom:5%;position:absolute;}
+			.pagination ul li{
+				display:inline;
+			}
+				.pagination ul li{
+					margin:0 5px;
+				}
+					.pagination ul li:first-child{margin:0 5px 0 0}
+					.pagination ul li:last-child{margin:0 0 0 5px}
+					.pagination ul li.selected{background:#bbbbbb;}
+					.pagination ul li:hover{background:#bbbbbb;}
+					.pagination ul li a{
+						padding:0 5px;
+						border:1px solid #bbbbbb;
+						font-size:13px;
+						-moz-border-radius: 5px;
+						-webkit-border-radius: 5px;
+						-khtml-border-radius: 5px;
+						border-radius: 5px;
+					}
+		/*end pagination*/
+		
 		
 		/******add/edit form************/
 				.body_content .title{
