@@ -14,9 +14,9 @@
 					</div>
 					<div class='last_models'>
 						<h1>Най-нови модели</h1>
-						<?php include_once("includes/last_five.php");?>
+						<?php include_once("includes/product_filters.php");?>
 						<div class='bottom_link text_right'>
-							<a href='' >&raquo; Виж всички продукти</a>
+							<a href='' >&raquo; Виж всички модели</a>
 						</div>
 					</div>
 				</div>
