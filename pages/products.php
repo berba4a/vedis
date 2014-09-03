@@ -36,7 +36,7 @@ include_once('includes/slimscroll_scripts.php');
 			<div class='content_wrapper'>
 				<?php include_once('includes/left_sidebar.php');?>
 				<div class='content_column'>
-					<h1 class='cir' onclick='location.hash="test"'><?php echo $product_gender."&nbsp;".$product_type;?></h1>
+					<h1 class='cir' onclick='location.hash="test=5"'><?php echo $product_gender."&nbsp;".$product_type;?></h1>
 					
 				</div>
 				<?php include_once('includes/right_sidebar.php');?>
