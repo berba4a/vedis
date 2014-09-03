@@ -148,6 +148,7 @@ body{
 									.lateral_menu ul li ul li:hover a{
 										color:#cccccc;
 									}
+									.lateral_menu ul li ul li.select a{color:#cccccc;}
 									.lateral_menu ul li ul li a{
 										font-size:12px;
 									}

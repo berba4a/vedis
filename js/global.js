@@ -1,4 +1,17 @@
-﻿/*set bottom_link icons division width*/
+﻿/*add selected class to lateral menu*/
+$(document).ready(function()
+{
+	var currUrl = window.location.href;
+	$('.lateral_menu').find('a').each(function(){
+		if(currUrl.indexOf($(this).attr('href'))>-1)
+		{
+			$(this).parent('li').addClass('selected');
+		}
+	});
+});
+
+
+/*set bottom_link icons division width*/
 $(document).ready(function()
 {
 	var width = $('.bottom_link').parent('.lateral_column').css('width');
@@ -41,6 +54,11 @@ $(document).ready(function()
 /*show hide submenus*/
 $(document).ready(function()
 {
+	/*var currUrl = window.location.href;
+	if(currUrl.indexOf('products.php')>-1)
+	{
+		
+	}*/
 	$('.parent_submenu').click(function()
 	{
 		$(this).siblings('ul').slideToggle('slow',function()
