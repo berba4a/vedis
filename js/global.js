@@ -1,15 +1,44 @@
-﻿/*add selected class to lateral menu*/
+﻿/*add selected class to lateral menu TO BE REDONE*/
 $(document).ready(function()
 {
-	var currUrl = window.location.href;
+	var currUrl = window.location.href+window.location.hash;
+	colorLinks(currUrl)
+	
+});
+
+
+/*color Links*/
+function colorLinks(url)
+{
 	$('.lateral_menu').find('a').each(function(){
-		if(currUrl.indexOf($(this).attr('href'))>-1)
+		if(url.indexOf($(this).attr('href'))>-1 && $(this).attr('href').indexOf('.php')>-1)
+		{
+			if(!$(this).hasClass('product_types'))
+			{
+				$(this).parent('li').addClass('selected');
+			}
+			else
+			{
+				$(this).parents().siblings('a.parent_submenu').parent('li').addClass('selected');
+				
+				$(this).parent('li').siblings().each(function()
+				{
+					if($(this).hasClass('select'))
+					{
+						$(this).removeClass('select');
+					}
+				});
+				
+				$(this).parent('li').addClass('select');
+				$(this).parents('ul').slideDown('slow');
+			}
+		}
+		else if(url==$(this).attr('href')+'pages/')
 		{
 			$(this).parent('li').addClass('selected');
 		}
 	});
-});
-
+}
 
 /*set bottom_link icons division width*/
 $(document).ready(function()

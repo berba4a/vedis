@@ -77,5 +77,11 @@ class Utils
 			echo "</ul>";
 		}
 	}
+	
+	static function hashUrlToArray($url)
+	{
+		$cut_string = substr(strstr($url,'#'),1);
+		return strstr($url,'#');
+	}
 }
 ?>

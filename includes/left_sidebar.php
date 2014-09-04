@@ -14,7 +14,7 @@
 										$stmt = $db->query(" SELECT * FROM  ".$tablename." ");
 										while($row = $db->fetchArray($stmt))
 										{
-											echo "<li><a href='".SITE_URL.SITE_ROOT."pages/products.php?product_type=1&".$tablename."=".$row[$prKey]."'>".$row['name']."</a></li>";
+											echo "<li><a class='product_types' href='".SITE_URL.SITE_ROOT."pages/products.php#product_type=1#".$tablename."=".$row[$prKey]."'>".$row['name']."</a></li>";
 										}
 									?>
 								</ul>
