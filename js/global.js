@@ -37,6 +37,10 @@ function colorLinks(url)
 		{
 			$(this).parent('li').addClass('selected');
 		}
+		else if(url.indexOf('products.php')>-1 && $(this).attr('href') =='javascript:void(0)')
+		{
+			$(this).parent('li').addClass('selected');
+		}
 	});
 }
 

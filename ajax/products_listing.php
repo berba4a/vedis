@@ -15,6 +15,22 @@ $db_tables_array = $db->getTables();
 
 $requested_tables = array();
 
+
+/*construct header*/
+$product_type = "Продукти";
+$product_gender = "Всички"; 
+$header_arr = array('product_gender','product_type');
+foreach($header_arr as $table)
+{
+	if(isset($_GET[$table])&&$_GET[$table]!="")
+	{
+		$product_arr = $db->getById($_GET[$table],$table);
+		${$table} = $product_arr['name'];
+	}
+}
+echo "<h1>".$product_gender."&nbsp;".$product_type."</h1>";
+/*End header*/	
+	
 /*check if into the request has valid tables*/
 foreach($_GET as $key=>$value)
 {

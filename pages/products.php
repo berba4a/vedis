@@ -35,10 +35,9 @@ include_once('includes/header_meta.php');
 			<img class='bg' src='<?php echo SITE_IMG;?>content_background2.png' />
 			<div class='content_wrapper'>
 				<?php include_once('includes/left_sidebar.php');?>
-				<div class='content_column'>
-					
-				</div>
-				<?php include_once('includes/right_sidebar.php');?>
+				<div class='loading'></div>
+				<div class='content_column'></div>
+				<?php include_once('includes/right_sidebar_products.php');?>
 				<div class='clear'></div>
 			</div>
 		</div>

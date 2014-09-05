@@ -185,7 +185,7 @@ body{
 					width:90%;
 					margin: 0 5%;
 				}
-				.lateral_column .search_form input.main_search{
+				.lateral_column  input.main_search{
 					width:100%;
 					margin: 0;
 					padding:5px;
@@ -267,8 +267,9 @@ body{
 							background:url(../images/semitransparent_backgr.png);
 							/*border:1px solid #333333;*/
 							display:none;
-							text-align:right;
-						}
+							/*text-align:right;*/
+						}				
+						
 							.accordion_ithem  .short_text{
 								width:50%;
 								margin-bottom:10px;
@@ -290,9 +291,43 @@ body{
 								font-size:14px;
 							}
 		/************************End last models accordion**********************/
+			/*products accordion*/
+						.accordion_ithem.left{text-align:left;}
+							/*
+							if type of products is added to filters uncomment following lines
+							
+							.accordion_ithem label{
+								font-size:12px;
+								color:#ffffff;
+							}
+							.accordion_ithem input[type=radio]{height:10px;}
+							.accordion_ithem input[type=text]{height:16px;}
+							*/
+							.accordion_ithem label{
+								font-size:14px;
+								color:#ffffff;
+							}
+							.accordion_ithem input[type=text]{height:22px;width:75%;color:#ffffff;}
+						/*end products accordion*/
+		
+		
 /****************end right column************************/
-				
+			
+			.loading{
+					width:100%;
+					height:100%;
+					position:absolute;
+					top:0;
+					left:0;
+					z-index:9999;
+					display:none;
+					background : url(../images/loading.gif) no-repeat center center;
+					background-size: 25%;
+					filter: alpha(opacity=50);
+					opacity: 0.5;
+				}
 /*******************content column home page************************/
+			
 			.content_column{
 				width:50%;
 				height:90%;
@@ -300,11 +335,11 @@ body{
 				float:left;
 				/*overflow-y:auto;
 				overflow-x:hidden;*/
-			}
+			}			
 				.content_column h1{
 					font-size:45px;
 					color:white;
-					font-family:Eras;
+					font-family:robotothin;
 					font-weight:100;
 					text-align:right;
 				}

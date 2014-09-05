@@ -12,11 +12,5 @@
 							<label for='shop' > Магазин</label>
 						</form>
 					</div>
-					<div class='last_models'>
-						<h1>Най-нови модели</h1>
-						<?php include_once("includes/product_filters.php");?>
-						<div class='bottom_link text_right'>
-							<a href='' >&raquo; Виж всички модели</a>
-						</div>
-					</div>
+					<div class='last_models products'></div>
 				</div>
