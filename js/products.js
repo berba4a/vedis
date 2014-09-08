@@ -63,38 +63,36 @@ function listProducts(url,hash)
 				/*initialize datapickers*/
 				$('input#date_from').Zebra_DatePicker({
 						direction:false,
-						format: 'd-M-Y'
+						format: 'd-M-Y',
+						onSelect : function(value, date)
+						{
+							createHashQuery('date_from',date,hash);
+						},
+						onClear : function()
+						{
+							createHashQuery('date_from',-1,hash);
+						}
 					});
 					
 					
 				$('input#date_to').Zebra_DatePicker({
 					direction : false,
 					format: 'd-M-Y',
-					pair : $('#date_from')
+					pair : $('#date_from'),
+					onSelect : function(value, date)
+					{
+						createHashQuery("date_to",date,hash);
+					},
+					onClear : function()
+					{
+						createHashQuery("date_to",-1,hash);
+					}
 				});
 				
 				/*initalize inputs onchange*/
 				$('.last_models.products').find('input').change(function()
 				{
-					createHashQuery();
-				});
-				$('.Zebra_DatePicker').find('table.dp_daypicker,table.dp_footer tr td').click(function()
-				{	
-					if($('.Zebra_DatePicker').css('display')=='none')
-					{
-						$('input.datepicker').each(function()
-						{
-							if($(this).is(':focus'))
-							{
-								$(this).blur();
-							}
-						});
-					}
-				});
-				$('input.datepicker').on('blur',function()
-				{
-					alert($(this).val());
-					createHashQuery();
+					createHashQuery($(this).attr('name'),$(this).val(),hash);
 				});
 			}
 			else
@@ -109,7 +107,19 @@ function listProducts(url,hash)
 	});
 }
 
-function createHashQuery()
+function createHashQuery(param_name,value,hash)
 {
-	alert("creating query");
+	var hash_arr = hash.split("#");
+	if(hash.indexOf("#"+param_name)>-1)
+	{
+		
+	}
+	else
+	{
+		if(value>-1)
+		{
+			hash += "#"+param_name+"="+value;
+		}
+	}
+	 window.location.hash = hash;
 }	
