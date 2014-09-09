@@ -110,9 +110,24 @@ function listProducts(url,hash)
 function createHashQuery(param_name,value,hash)
 {
 	var hash_arr = hash.split("#");
-	alert(param_name+value);
 	if(hash.indexOf("#"+param_name)>-1)
 	{
+		hash="";
+		for(var i=1;i<hash_arr.length;i++)
+		{
+			if(hash_arr[i].indexOf(param_name)>-1)
+			{
+				if(value!=-1)
+				{
+					var new_param_val = hash_arr[i].substring(0,hash_arr[i].indexOf("="));
+					hash += "#"+new_param_val+"="+value;
+				}
+			}
+			else
+			{
+				hash+="#"+hash_arr[i];
+			}
+		}
 		
 	}
 	else

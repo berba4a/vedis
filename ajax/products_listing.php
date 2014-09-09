@@ -1,6 +1,6 @@
 <?php
-//$doc_root="D:/SERVER/htdocs/web/vedis/";
-$doc_root="C:/xampp/htdocs/web/vedis/";
+$doc_root="D:/SERVER/htdocs/web/vedis/";
+//$doc_root="C:/xampp/htdocs/web/vedis/";
 $old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_SEPARATOR .
 ini_set("include_path",ini_get('include_path'). $old_path);
 include_once("setup/setup.php");
@@ -66,6 +66,23 @@ if(!empty($requested_tables))
 }
 
 
+/*creating date filters*/
+$date_from = "";
+$date_to = "";
+
+if(isset($_GET['date_from'])&&(-1!==strtotime($_GET['date_from'])||false!==$_GET['date_from']))
+	$date_from = date(('Y-m-d'),strtotime($_GET['date_from']));
+	
+if(isset($_GET['date_to'])&&(-1!==strtotime($_GET['date_to'])||false!==$_GET['date_to']))
+	$date_to = date(('Y-m-d'),strtotime($_GET['date_to']));
+	
+if(""!=$date_from&&""!=$date_to)
+	$where_clause .= " AND release_date BETWEEN '".$date_from."' AND '".$date_to."' ";
+else if(""==$date_from&&""!=$date_to)
+	$where_clause .= " AND release_date <='".$date_to."' ";
+else if(""!=$date_from&&""==$date_to)
+	$where_clause .= " AND release_date >='".$date_from."' ";
+
 $query = " SELECT 
 		products.".$main_table_PrKey ." as id,
 		products.catalogueID as catalogue_num,
@@ -73,18 +90,31 @@ $query = " SELECT
 		product_gender.name as gender_name,
 		product_usage.name as usage_name,
 		products.description as description ,
-		products.release_date as date,
+		products.release_date as rdate,
 		products.is_active as activity
 		FROM products 
 		INNER JOIN product_type ON product_type.".$db->getPrKey('product_type')." = products.".$db->getPrKey('product_type')."
 		INNER JOIN product_gender ON product_gender.".$db->getPrKey('product_gender')." = products.".$db->getPrKey('product_gender')."
-		INNER JOIN product_usage ON product_usage.".$db->getPrKey('product_usage')." = products.".$db->getPrKey('product_usage')." ".$where_clause."
+		INNER JOIN product_usage ON product_usage.".$db->getPrKey('product_usage')." = products.".$db->getPrKey('product_usage')."
+		".$where_clause." ORDER BY release_date DESC
 	";
 
 $stmt = $db->query($query);
-while($row = $db->fetchObject($stmt))
+$num_res = $db->numRows($stmt);
+if($num_res>0)
 {
-	var_dump($row);
-	echo "<be />------------------------------------<br />";
+	//$dbc = clone $db;
+	while($row = $db->fetchObject($stmt))
+	{
+		echo "<div class='product_containter'>";
+		echo $row->catalogue_num."&nbsp;&nbsp;&nbsp;&nbsp;";
+		$image = $db->fquery("SELECT name FROM product_images WHERE ".$main_table_PrKey." = ".$row->id." LIMIT 0,1 ");
+		if(isset($image))
+			echo $image->name;
+			
+		echo "</div>";
+	}
 }
+else
+	echo "Няма намерени разултати !";
 ?>
