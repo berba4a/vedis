@@ -28,6 +28,17 @@ function listProducts(url,hash)
 			if(response!=-1)
 			{
 				$('.content_column').html(response);
+				
+				/*make scrollable result area*/
+				var column_height = parseInt($('.content_column').css('height'));
+				var header_height = parseInt($('.content_column h1').css('height'));
+				var height = column_height-header_height-55;
+				  $('.scrollable_div').slimScroll({
+						height: height,
+						color: '#000000',
+						railVisible: true,
+						alwaysVisible: true
+				  });
 			}
 			else
 			{
@@ -62,17 +73,17 @@ function listProducts(url,hash)
 				
 				/*initialize datapickers*/
 				$('input#date_from').Zebra_DatePicker({
-						direction:false,
-						format: 'd-M-Y',
-						onSelect : function(value, date)
-						{
-							createHashQuery('date_from',date,hash);
-						},
-						onClear : function()
-						{
-							createHashQuery('date_from',-1,hash);
-						}
-					});
+					direction:false,
+					format: 'd-M-Y',
+					onSelect : function(value, date)
+					{
+						createHashQuery('date_from',date,hash);
+					},
+					onClear : function()
+					{
+						createHashQuery('date_from',-1,hash);
+					}
+				});
 					
 					
 				$('input#date_to').Zebra_DatePicker({

@@ -104,17 +104,22 @@ $num_res = $db->numRows($stmt);
 if($num_res>0)
 {
 	//$dbc = clone $db;
+	echo "<div class='scrollable_div'>";
 	while($row = $db->fetchObject($stmt))
 	{
 		echo "<div class='product_containter'>";
 		echo "Модел&nbsp;".$row->catalogue_num."<br />";
 		$image = $db->fquery("SELECT name FROM product_images WHERE ".$main_table_PrKey." = ".$row->id." LIMIT 0,1 ");
-		if(isset($image))
-			echo "<img src='".UPLOADED_IMAGES.$image->name."' alt='продукт ".$row->catalogue_num."' title ='продукт ".$row->catalogue_num."' />" ;
-		else
-			echo "<img src='".SITE_UPOLADS."no_image.png' alt='Без изображение' title='Без изображение' />";
+			echo "<div class='image_containter'>";
+				if(isset($image))
+					echo "<img src='".UPLOADED_IMAGES.$image->name."' alt='продукт ".$row->catalogue_num."' title ='продукт ".$row->catalogue_num."' />" ;
+				else
+					echo "<img src='".SITE_UPOLADS."no_image.png' alt='Без изображение' title='Без изображение' />";
+			echo "</div>";
+			echo $row->usage_name;
 		echo "</div>";
 	}
+	echo "</div>";
 }
 else
 	echo "Няма намерени разултати !";

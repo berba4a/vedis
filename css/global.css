@@ -331,7 +331,7 @@ body{
 			.content_column{
 				width:50%;
 				height:90%;
-				padding:3% 5%;
+				padding:1% 5% 3%;
 				float:left;
 				/*overflow-y:auto;
 				overflow-x:hidden;*/
@@ -354,10 +354,10 @@ body{
 				}
 	
 	/************************content column products page*************************/
-		.content_column.wider{padding:3% 2%;width:56%}
+		.content_column.wider{padding:1% 2% 3%;width:56%}
 			.content_column .product_containter{
 				width:26.5%;
-				height:auto;
+				height:40%;
 				position:relative;
 				float:left;
 				/*border:1px solid #979696;*/
@@ -367,10 +367,15 @@ body{
 				font-size:14px;
 				background: url("../images/semitransparent_backgr.png") repeat;
 			}
-				.content_column .product_containter img{
-					max-width:100%;
-					height:auto;
-					max-height:90%;
+				.content_column .product_containter .image_containter{
+					width:100%;
+					max-height:70%;
 					position:relative;
-					
+					overflow:hidden;
+					text-align:center;
 				}
+					.content_column .product_containter .image_containter img{
+						max-width:100%;
+						height:auto;
+						position:relative;
+					}

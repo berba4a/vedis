@@ -11,7 +11,7 @@ $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 $page_title='Vedis products list';
 
 include_once('includes/header_meta.php');
-/*include_once('includes/slimscroll_scripts.php');*/
+include_once('includes/slimscroll_scripts.php');
 ?>
 	<script type='text/javascript' src='<?php echo SITE_JS;?>products.js'></script>
 	<script type='text/javascript'>
