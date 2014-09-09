@@ -107,11 +107,12 @@ if($num_res>0)
 	while($row = $db->fetchObject($stmt))
 	{
 		echo "<div class='product_containter'>";
-		echo $row->catalogue_num."&nbsp;&nbsp;&nbsp;&nbsp;";
+		echo "Модел&nbsp;".$row->catalogue_num."<br />";
 		$image = $db->fquery("SELECT name FROM product_images WHERE ".$main_table_PrKey." = ".$row->id." LIMIT 0,1 ");
 		if(isset($image))
-			echo $image->name;
-			
+			echo "<img src='".UPLOADED_IMAGES.$image->name."' alt='продукт ".$row->catalogue_num."' title ='продукт ".$row->catalogue_num."' />" ;
+		else
+			echo "<img src='".SITE_UPOLADS."no_image.png' alt='Без изображение' title='Без изображение' />";
 		echo "</div>";
 	}
 }

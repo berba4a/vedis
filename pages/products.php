@@ -36,7 +36,7 @@ include_once('includes/header_meta.php');
 			<div class='content_wrapper'>
 				<?php include_once('includes/left_sidebar.php');?>
 				<div class='loading'></div>
-				<div class='content_column'></div>
+				<div class='content_column wider'></div>
 				<?php include_once('includes/right_sidebar_products.php');?>
 				<div class='clear'></div>
 			</div>
