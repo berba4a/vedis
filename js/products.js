@@ -149,4 +149,12 @@ function createHashQuery(param_name,value,hash)
 		}
 	}
 	 window.location.hash = hash;
+	 if(hash.indexOf('product_gender')>-1)
+	 {
+		$('.parent_submenu').siblings('ul').slideDown('slow');
+	 }
+	 else
+	 {
+		$('.parent_submenu').siblings('ul').slideUp('slow');
+	 }
 }	

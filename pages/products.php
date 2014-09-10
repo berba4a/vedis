@@ -22,11 +22,28 @@ include_once('includes/slimscroll_scripts.php');
 			
 			$(window).on('hashchange',function() 
 			{
-				listProducts(site_url,location.hash);
-				
-				var currUrl = window.location.href+window.location.hash;
-				colorLinks(currUrl)
+				listProducts(site_url,window.location.hash);
+				var currUrl = window.location.href;
+				colorLinks(currUrl);				
+				/*Check is gender is selected or unselected and open/close submenus*/
+				if(currUrl.indexOf('product_gender')>-1)
+				{
+					$('.parent_submenu').siblings('ul').slideDown('slow');
+				}
+				else
+				{
+					$('.parent_submenu').siblings('ul').slideUp('slow');
+				}
 			});
+			/*Check is gender is selected or unselected and open/close submenus*/
+			if(window.location.href.indexOf('product_gender')>-1)
+			{
+				$('.parent_submenu').siblings('ul').slideDown('slow');
+			}
+			else
+			{
+				$('.parent_submenu').siblings('ul').slideUp('slow');
+			}
 		});
 	</script>
 	</head>

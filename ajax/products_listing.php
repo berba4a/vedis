@@ -103,24 +103,26 @@ $stmt = $db->query($query);
 $num_res = $db->numRows($stmt);
 if($num_res>0)
 {
-	//$dbc = clone $db;
+	echo "<p class='result_num'>Намерени ".$num_res." резултата </p>";
 	echo "<div class='scrollable_div'>";
 	while($row = $db->fetchObject($stmt))
 	{
 		echo "<div class='product_containter'>";
-		echo "Модел&nbsp;".$row->catalogue_num."<br />";
+		echo "<a href=''><span>Модел&nbsp;".$row->catalogue_num."</span></a><br />";
 		$image = $db->fquery("SELECT name FROM product_images WHERE ".$main_table_PrKey." = ".$row->id." LIMIT 0,1 ");
 			echo "<div class='image_containter'>";
+				echo "<a href=''>";
 				if(isset($image))
-					echo "<img src='".UPLOADED_IMAGES.$image->name."' alt='продукт ".$row->catalogue_num."' title ='продукт ".$row->catalogue_num."' />" ;
+					echo "<img src='".UPLOADED_IMAGES.$image->name."' alt='".$row->catalogue_num."' title ='".$row->catalogue_num."' /></a>" ;
 				else
 					echo "<img src='".SITE_UPOLADS."no_image.png' alt='Без изображение' title='Без изображение' />";
+				echo "</a>";
 			echo "</div>";
-			echo $row->usage_name;
+			echo "<span>".$row->usage_name."</span>";
 		echo "</div>";
 	}
 	echo "</div>";
 }
 else
-	echo "Няма намерени разултати !";
+	echo "<p>Няма намерени разултати по зададения критерии . Моля променете критериите за филтриране на разултатите!</p>";
 ?>

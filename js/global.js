@@ -1,8 +1,8 @@
 ﻿/*add selected class to lateral menu TO BE REDONE*/
 $(document).ready(function()
 {
-	var currUrl = window.location.href+window.location.hash;
-	colorLinks(currUrl)
+	var currUrl = window.location.href;
+	colorLinks(currUrl);
 	
 });
 
@@ -10,8 +10,10 @@ $(document).ready(function()
 /*color Links*/
 function colorLinks(url)
 {
-	$('.lateral_menu').find('a').each(function(){
-		if(url.indexOf($(this).attr('href'))>-1 && $(this).attr('href').indexOf('.php')>-1)
+	$('.lateral_menu').find('a').each(function()
+	{
+		var curr_href = $(this).attr('href');
+		if(url.indexOf(curr_href)>-1 && curr_href.indexOf('.php')>-1)
 		{
 			if(!$(this).hasClass('product_types'))
 			{
@@ -33,11 +35,11 @@ function colorLinks(url)
 				$(this).parents('ul').slideDown('slow');
 			}
 		}
-		else if(url==$(this).attr('href')+'pages/')
+		else if(url==curr_href+'pages/')//color main page
 		{
 			$(this).parent('li').addClass('selected');
 		}
-		else if(url.indexOf('products.php')>-1 && $(this).attr('href') =='javascript:void(0)')
+		else if(url.indexOf('products.php')>-1 && curr_href =='javascript:void(0)')//color products parent link
 		{
 			$(this).parent('li').addClass('selected');
 		}
