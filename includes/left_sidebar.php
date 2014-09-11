@@ -4,8 +4,8 @@
 					</div>
 					<div class='lateral_menu'>
 						<ul>
-							<li><a href='<?PHP ECHO SITE_URL.SITE_ROOT;?>'>начало</a></li>
-							<li>
+							<li id='home'><a href='<?PHP ECHO SITE_URL.SITE_ROOT;?>'>начало</a></li>
+							<li id='products'>
 								<a href='javascript:void(0)' class='parent_submenu'><span class='arrow'>&#x25BE;</span> продукти</a>
 								<ul>
 									<?php 
@@ -14,14 +14,14 @@
 										$stmt = $db->query(" SELECT * FROM  ".$tablename." ");
 										while($row = $db->fetchArray($stmt))
 										{
-											echo "<li><a class='product_types' href='".SITE_URL.SITE_ROOT."pages/products.php#product_type=1#".$tablename."=".$row[$prKey]."'>".$row['name']."</a></li>";
+											echo "<li id='#".$tablename."=".$row[$prKey]."'><a class='product_types' href='".SITE_URL.SITE_ROOT."pages/products.php#product_type=1#".$tablename."=".$row[$prKey]."'>".$row['name']."</a></li>";
 										}
 									?>
 								</ul>
 							</li>
-							<li><a href='<?php echo SITE_URL.SITE_ROOT;?>pages/shops.php'>магазини</a></li>
-							<li><a href='<?php echo SITE_URL.SITE_ROOT;?>pages/contacts.php'>контакти</a></li>
-							<li><a href='<?php echo SITE_URL.SITE_ROOT;?>pages/careers.php'>кариери</a></li>
+							<li id='shops'><a href='<?php echo SITE_URL.SITE_ROOT;?>pages/shops.php'>магазини</a></li>
+							<li id='contacts'><a href='<?php echo SITE_URL.SITE_ROOT;?>pages/contacts.php'>контакти</a></li>
+							<li id='careers'><a href='<?php echo SITE_URL.SITE_ROOT;?>pages/careers.php'>кариери</a></li>
 						</ul>
 					</div>
 					<div class='bottom_link'>

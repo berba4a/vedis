@@ -10,38 +10,27 @@ $(document).ready(function()
 /*color Links*/
 function colorLinks(url)
 {
-	$('.lateral_menu').find('a').each(function()
+	$('.lateral_menu').find('li').each(function()
 	{
-		var curr_href = $(this).attr('href');
-		if(url.indexOf(curr_href)>-1 && curr_href.indexOf('.php')>-1)
+		var curr_id="";
+		if($(this).attr('id'))
 		{
-			if(!$(this).hasClass('product_types'))
-			{
-				$(this).parent('li').addClass('selected');
-			}
-			else
-			{
-				$(this).parents().siblings('a.parent_submenu').parent('li').addClass('selected');
-				
-				$(this).parent('li').siblings().each(function()
-				{
-					if($(this).hasClass('select'))
-					{
-						$(this).removeClass('select');
-					}
-				});
-				
-				$(this).parent('li').addClass('select');
-				$(this).parents('ul').slideDown('slow');
-			}
+			curr_id = $(this).attr('id');
 		}
-		else if(url==curr_href+'pages/')//color main page
+		if(url.indexOf(curr_id)>-1&&curr_id!='home')
 		{
-			$(this).parent('li').addClass('selected');
+			$(this).addClass('selected');
 		}
-		else if(url.indexOf('products.php')>-1 && curr_href =='javascript:void(0)')//color products parent link
+		else if(curr_id == "home"&&url.indexOf(".php")==-1)
 		{
-			$(this).parent('li').addClass('selected');
+			$(this).addClass('selected');
+		}
+		else
+		{
+			if($(this).hasClass('selected'))
+			{
+				$(this).removeClass('selected')
+			}
 		}
 	});
 }
