@@ -9,21 +9,38 @@ include_once("setup/setup.php");
 include_once("includes/DBMYSQL.class.php");
 $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 
-$page_title = "Vedis style";
+/*tables primary keys*/
+$main_prKey = $db->getPrKey('products');
+$typeID = $db->getPrKey('product_type');
+$genderID = $db->getPrKey('product_gender');
+$usageID = $db->getPrKey('product_usage');
+
+$page_title='Vedis products preview';
+
 include_once('includes/header_meta.php');
-include_once('includes/slimscroll_scripts.php');
 ?>
-	</head>
+<script type='text/javascript'>
+	/*open all accordion items */
+$(document).ready(function()
+{
+	$('.accordion_ithem').each(function()
+	{
+		if($(this).css('display')=='none')
+		{
+			$(this).slideDown(50);
+		}
+	});
+});
+</script>
+</head>
 	<body>
 		<div class='main_wrapper'>
 			<img class='bg' src='<?php echo SITE_IMG;?>content_background2.png' />
 			<div class='content_wrapper'>
 				<?php include_once('includes/left_sidebar.php');?>
-				<div class='content_column'>
-					<h1 class='cir'>контакти</h1>
-					
-				</div>
-				<?php include_once('includes/right_sidebar.php');?>
+				<div class='loading'></div>
+				<div class='content_column wider'></div>
+				<?php include_once('includes/right_sidebar_product_preview.php');?>
 				<div class='clear'></div>
 			</div>
 		</div>

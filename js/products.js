@@ -61,7 +61,7 @@ function listProducts(url,hash)
 			if(response!=-1)
 			{
 				$('.last_models.products').html(response);
-				/*show filters*/
+				/*open all accordeon filters*/
 				$('.last_models').find('.accordion_ithem').each(function()
 				{
 					$(this).slideDown(50);

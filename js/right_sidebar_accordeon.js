@@ -1,7 +1,7 @@
 ﻿/*right side bar vertical accordion*/
 $(document).ready(function()
 {
-	
+	/*check if the accordion items has to be opened in products they are opened after ajax callback success because after callback they have to be redrawn */
 	if(!$('.last_models').hasClass('products'))
 	{
 		/*initial opening of the first ithem*/

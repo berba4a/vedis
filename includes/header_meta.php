@@ -11,4 +11,4 @@
 		<link type='text/css' rel='stylesheet' href='<?php echo SITE_CSS;?>global.css' />
 		<script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
 		<script type='text/javascript' src='<?php echo SITE_JS;?>global.js'></script>
-		<script type='text/javascript' src='<?php echo SITE_JS;?>last_5_accordeon.js'></script>
+		<script type='text/javascript' src='<?php echo SITE_JS;?>right_sidebar_accordeon.js'></script>

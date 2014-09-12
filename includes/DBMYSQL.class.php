@@ -63,6 +63,8 @@ class DBMYSQL {
 			return false;
 		}
 	}
+	
+	/*similar to fquery returns array of elements*/
 	function getById($id,$tablename)
 	{
 		$pkey_q = "SHOW KEYS FROM ".$tablename." WHERE Key_name = 'PRIMARY'";
@@ -74,10 +76,15 @@ class DBMYSQL {
 		}
 		$query = "SELECT * FROM ".$tablename." WHERE ".$prKeyName."=".$id." ";
 		$stmt = $this->query($query);
-		while($row = $this->fetchArray($stmt))
+		if($this->numRows($stmt)>0)
 		{
-			return $row;
+			while($row = $this->fetchArray($stmt))
+			{
+				return $row;
+			}
 		}
+		else
+			return false;
 	}
 	
 	function transaction()

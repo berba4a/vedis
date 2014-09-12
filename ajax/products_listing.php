@@ -1,6 +1,6 @@
 <?php
-//$doc_root="D:/SERVER/htdocs/web/vedis/";
-$doc_root="C:/xampp/htdocs/web/vedis/";
+$doc_root="D:/SERVER/htdocs/web/vedis/";
+//$doc_root="C:/xampp/htdocs/web/vedis/";
 $old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_SEPARATOR .
 ini_set("include_path",ini_get('include_path'). $old_path);
 include_once("setup/setup.php");
@@ -108,10 +108,10 @@ if($num_res>0)
 	while($row = $db->fetchObject($stmt))
 	{
 		echo "<div class='product_containter'>";
-		echo "<a href=''><span>Модел&nbsp;".$row->catalogue_num."</span></a><br />";
+		echo "<a href='".SITE_URL.SITE_ROOT."pages/product_preview.php?".$main_table_PrKey."=".$row->id."'><span>Модел&nbsp;".$row->catalogue_num."</span></a><br />";
 		$image = $db->fquery("SELECT name FROM product_images WHERE ".$main_table_PrKey." = ".$row->id." LIMIT 0,1 ");
 			echo "<div class='image_containter'>";
-				echo "<a href=''>";
+				echo "<a href='".SITE_URL.SITE_ROOT."pages/product_preview.php?".$main_table_PrKey."=".$row->id."'>";
 				if(isset($image))
 					echo "<img src='".UPLOADED_IMAGES.$image->name."' alt='".$row->catalogue_num."' title ='".$row->catalogue_num."' /></a>" ;
 				else
