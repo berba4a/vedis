@@ -30,6 +30,11 @@ $(document).ready(function()
 			$(this).slideDown(50);
 		}
 	});
+	
+	$('.accordion_link').click(function()
+	{
+		$(this).siblings('.accordion_ithem').slideToggle('slow');
+	});
 });
 </script>
 </head>

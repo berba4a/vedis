@@ -22,7 +22,20 @@
 									$product_arr = $db->getById($_GET[$main_prKey],'products');
 									if(!empty($product_arr)&&false!==$product_arr)
 									{
-										/*$property_arr = array('Вид продукт'=> $typeID , 'Каталожен номер'=>'catalogueID','Пол'=>$genderID,'Употреба'=>$usageID,'Дата на производство'=>'release_date','Описание'=>'description');*/
+										$motnhs_arr = array(
+											1=>'януари',
+											2=>'февруари',
+											3=>'март',
+											4=>'април',
+											5=>'май',
+											6=>'юни',
+											7=>'юли',
+											8=>'август',
+											9=>'септември',
+											10=>'октомври',
+											11=>'ноември',
+											12=>'декември'
+										);
 										
 										echo "<li>";
 											echo "<div class='accordion_link'>";
@@ -31,7 +44,7 @@
 												echo "</a>";
 											echo "</div>";
 											echo "<div class='accordion_ithem left'>";
-												echo $product_arr['description'];
+												echo "<span>".$product_arr['description']."</span>";
 											echo "</div>";
 										echo "</li>";
 										
@@ -42,7 +55,7 @@
 												echo "</a>";
 											echo "</div>";
 											echo "<div class='accordion_ithem left'>";
-												echo date('d - m - Y',strtotime($product_arr['release_date']));
+												echo "<span>".date('d',)." ".$motnhs_arr[date('n',)]." ".date('Y')."</span>";
 											echo "</div>";
 										echo "</li>";
 										
