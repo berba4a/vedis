@@ -55,7 +55,7 @@
 												echo "</a>";
 											echo "</div>";
 											echo "<div class='accordion_ithem left'>";
-												echo "<span>".date('d',)." ".$motnhs_arr[date('n',)]." ".date('Y')."</span>";
+												echo "<span>".date('d',strtotime($product_arr['release_date']))." ".$motnhs_arr[date('n',strtotime($product_arr['release_date']))]." ".date('Y',strtotime($product_arr['release_date']))." година</span>";
 											echo "</div>";
 										echo "</li>";
 										
