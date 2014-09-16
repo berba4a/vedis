@@ -7,7 +7,7 @@ if(isset($_GET[$main_prKey])&&""!=$_GET[$main_prKey]&&$_GET[$main_prKey]>0)
 	$query = "
 		SELECT
 		p.catalogueID as catNum,
-		pu.name as usе,
+		pu.name as usе_type,
 		pg.name as gender,
 		pt.name as type
 		FROM products p 
@@ -21,8 +21,8 @@ if(isset($_GET[$main_prKey])&&""!=$_GET[$main_prKey]&&$_GET[$main_prKey]>0)
 	{
 		while($row = $db->fetchObject($stmt))
 		{
-			$header = "Продукт &nbsp;".$row->catNum;
-			$sub_header = $row->gender;
+			$header = "Модел &nbsp;".$row->catNum;
+			$sub_header = $row->gender."&nbsp;".$row->usе_type."&nbsp;".$row->type;
 		}
 	}
 	else

@@ -357,9 +357,12 @@ body{
 					text-align:right;
 				}
 				.content_column h2{
+					margin:-2% 0 0 0;
+					padding:0;
 					color:#ffffff;
-					font-size:26px;
+					font-size:22px;
 					font-family:robotothin;
+					font-weight:100;
 					text-align:right;
 				}
 					.content_column h1.cir{
