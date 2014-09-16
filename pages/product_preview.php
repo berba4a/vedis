@@ -1,6 +1,6 @@
 <?php
-//$doc_root="D:/SERVER/htdocs/web/vedis/";
-$doc_root="C:/xampp/htdocs/web/vedis/";
+$doc_root="D:/SERVER/htdocs/web/vedis/";
+//$doc_root="C:/xampp/htdocs/web/vedis/";
 $old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_SEPARATOR .
 ini_set("include_path",ini_get('include_path'). $old_path);
 include_once("setup/setup.php");
@@ -15,7 +15,7 @@ $typeID = $db->getPrKey('product_type');
 $genderID = $db->getPrKey('product_gender');
 $usageID = $db->getPrKey('product_usage');
 
-$page_title='Vedis products preview';
+$page_title='Vedis  преглед на продукт';
 
 include_once('includes/header_meta.php');
 ?>
@@ -35,6 +35,13 @@ $(document).ready(function()
 	{
 		$(this).siblings('.accordion_ithem').slideToggle('slow');
 	});
+	
+	/*set back to list link href*/
+	$('.back_link').attr('href','<?php echo SITE_URL.SITE_ROOT;?>pages/products.php'+window.location.hash);
+	window.setTimeout(function()
+	{
+		window.location.hash = "";
+	},300);
 });
 </script>
 </head>
@@ -44,7 +51,9 @@ $(document).ready(function()
 			<div class='content_wrapper'>
 				<?php include_once('includes/left_sidebar.php');?>
 				<div class='loading'></div>
-				<div class='content_column wider'></div>
+				<div class='content_column wider'>
+					<?php include_once('includes/product_preview_content.php');?>
+				</div>
 				<?php include_once('includes/right_sidebar_product_preview.php');?>
 				<div class='clear'></div>
 			</div>

@@ -342,11 +342,24 @@ body{
 				/*overflow-y:auto;
 				overflow-x:hidden;*/
 			}			
+				.content_column a.back_link{
+					padding-left:3%;
+					color:#ffffff;
+					font-family:robotothin;
+					font-size:12px;
+				}
+					a.back_link:hover{text-decoration:underline}
 				.content_column h1{
 					font-size:45px;
 					color:white;
 					font-family:robotothin;
 					font-weight:100;
+					text-align:right;
+				}
+				.content_column h2{
+					color:#ffffff;
+					font-size:26px;
+					font-family:robotothin;
 					text-align:right;
 				}
 					.content_column h1.cir{
@@ -361,7 +374,7 @@ body{
 	
 	/************************content column products page*************************/
 		.content_column.wider{padding:3% 2%;width:56%;height:95%;}
-			.content_column.wider h1{margin:0 auto 2%;}
+			.content_column.wider h1{margin:0 auto 2%;font-size:36px}
 			.content_column.wider p.result_num{
 				padding:0 5% 0 0;
 				text-align:right;
