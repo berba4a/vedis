@@ -6,7 +6,7 @@
 	$pr_usagePrkey = $db->getPrKey('product_usage');
 	
 	/*pagination variables*/
-	$ipp = 1; //items por page
+	$ipp = 10; //items por page
 	$page = 1; //current page in url
 	$p_around = 5; //shown pages around selected page into the list
 	$num_rows = 0; //all returned rows

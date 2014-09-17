@@ -414,3 +414,21 @@ body{
 					color:#ffffff;
 					font-family: robotothin;
 				}
+				
+				
+		/*******************content column  product preview page**************/
+		.content_column .images_holder{
+			width:auto;
+			height:80%;
+			margin:2% 0 0 0;
+			padding:1.5% 1%;
+			position:relative;
+			text-align:center;			
+		}
+			.content_column .images_holder img.big_img{
+				width:auto;
+				height:75%;
+				top:0;
+				/*position:relative;*/
+			}
+			

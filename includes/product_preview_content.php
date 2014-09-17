@@ -35,4 +35,37 @@ else
 echo "<a class='back_link' href='#' >&laquo; Обратно в списъка</a>";
 echo "<h1>".$header."</h1>";
 echo "<h2>".$sub_header."</h2>";
+
+/*images*/
+echo "<div class='images_holder'>";
+	$img_stmt = $db->query("
+		SELECT name FROM product_images WHERE ".$main_prKey." = ".$_GET[$main_prKey]."
+	");
+	if($db->numRows($img_stmt)>0)
+	{
+		$img_cnt = 0;
+		while($img_row = $db->fetchObject($img_stmt))
+		{
+			$img_cnt++;
+			if($img_cnt==1)
+			{
+				echo "<span class='zoom' id='zoom'>";
+					echo "<img class='big_img' src='".UPLOADED_IMAGES.$img_row->name."' alt='' title='' />";
+				echo "</span>";
+				
+				echo "<div id='slider1'>";
+					echo "<a class='buttons prev' href='#'>&nbsp;</a>";
+					echo "<div class='viewport'>";
+						echo "<ul class='overview'>;";
+			}
+					
+					echo "<li><img src='".UPLOADED_IMAGES.$img_row->name."' alt='' title='' /></li>";
+		}
+				echo "</ul>";
+			echo "</div>";
+			echo "<a class='buttons next' href='#'>&nbsp;</a>";
+		echo "</div>";
+	}
+echo "</div>";
 ?>
+
