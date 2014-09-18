@@ -126,22 +126,36 @@ $(document).ready(function()
 
 /*preview uploaded image function*/
 function readURL(input) 
-{
-	$(input).before('<img src="../images/loading.gif" />');
-	
+{	
     if (input.files && input.files[0]) 
 	{
         var reader = new FileReader();
 
         reader.onload = function (e) 
 		{
-			if($(input).siblings('img').length>0)
+			if($(input).siblings('img.loading_img').length<1)
 			{
-				$(input).siblings('img').attr('src',e.target.result);
+				$(input).before('<img class="loading_img" src="../images/loading.gif" alt="new image" />');
 			}
 			else
 			{
-				$(input).before('<img src="'+e.target.result+'" />');
+				$(input).siblings('img.loading_img').attr('src','../images/loading.gif');
+			}
+			
+			if($(input).siblings('img').length>0)
+			{
+				if(e.target.result)
+				{
+					$(input).siblings('img.loading_img').attr('src',e.target.result);
+				}
+				else
+				{
+					$(input).siblings('img.loading_img').remove();
+				}
+			}
+			else
+			{
+				$(input).before('<img class="loading_img" src="'+e.target.result+'" alt="image" />');
 			}
         }
 
