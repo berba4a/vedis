@@ -71,7 +71,7 @@ if(isset($_POST['table'])&&in_array($_POST['table'],$db_tables_arr))
 				{
 					$name = $_FILES['images']['name'][$key];
 					$ext = end((explode('.', $name)));
-					$file_name = "model_".$record_arr['catalogueID']."_".$key.".".$ext;
+					$file_name = "model_".$record_arr['catalogueID']."_".rand(0,100000).".".$ext;
 					$img_record_arr[$pr_key] = $img_productID;
 					$img_record_arr['name'] = $file_name;
 					$db_res = $db->insertRecord('product_images',$img_record_arr);

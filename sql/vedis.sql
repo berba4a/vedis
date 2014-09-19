@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
 -- Време на генериране: 
--- Версия на сървъра: 5.5.32
--- Версия на PHP: 5.4.19
+-- Версия на сървъра: 5.5.27
+-- Версия на PHP: 5.4.7
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- БД: `vedis`
 --
-CREATE DATABASE IF NOT EXISTS `vedis` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `vedis`;
 
 -- --------------------------------------------------------
 
@@ -30,7 +28,7 @@ USE `vedis`;
 
 CREATE TABLE IF NOT EXISTS `products` (
   `productID` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'primary key',
-  `catalogueID` int(11) unsigned NOT NULL COMMENT 'catalogue number',
+  `catalogueID` int(11) unsigned NOT NULL DEFAULT '1' COMMENT 'catalogue number',
   `typeID` tinyint(3) unsigned NOT NULL COMMENT 'type foregn key',
   `genderID` tinyint(3) unsigned NOT NULL COMMENT 'gender foreign key',
   `usageID` tinyint(3) unsigned NOT NULL COMMENT 'usage foreign key',
@@ -43,14 +41,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   KEY `typeID` (`typeID`),
   KEY `genderID` (`genderID`),
   KEY `usageID` (`usageID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
-
---
--- Схема на данните от таблица `products`
---
-
-INSERT INTO `products` (`productID`, `catalogueID`, `typeID`, `genderID`, `usageID`, `description`, `release_date`, `last_update`, `is_active`) VALUES
-(1, 1010, 1, 2, 3, 'xasxsa', '2014-05-06', '2014-05-27 17:02:36', '1');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=18 ;
 
 -- --------------------------------------------------------
 
@@ -65,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `product_gender` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
--- Схема на данните от таблица `product_gender`
+-- Ссхема на данните от таблица `product_gender`
 --
 
 INSERT INTO `product_gender` (`genderID`, `name`) VALUES
@@ -85,18 +76,7 @@ CREATE TABLE IF NOT EXISTS `product_images` (
   `name` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`imageID`),
   KEY `productID` (`productID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
-
---
--- Схема на данните от таблица `product_images`
---
-
-INSERT INTO `product_images` (`imageID`, `productID`, `name`) VALUES
-(1, 1, 'Picture0143.jpg'),
-(3, 1, 'Picture0144.jpg'),
-(4, 1, 'Picture0146.jpg'),
-(5, 1, 'Picture0145.jpg'),
-(7, 1, 'Picture0147.jpg');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -111,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `product_type` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
--- Схема на данните от таблица `product_type`
+-- Ссхема на данните от таблица `product_type`
 --
 
 INSERT INTO `product_type` (`typeID`, `name`) VALUES
@@ -130,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `product_usage` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
--- Схема на данните от таблица `product_usage`
+-- Ссхема на данните от таблица `product_usage`
 --
 
 INSERT INTO `product_usage` (`usageID`, `name`) VALUES
