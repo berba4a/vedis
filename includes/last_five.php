@@ -13,7 +13,7 @@ $query = "
 	INNER JOIN product_type AS pt ON pt.".$typeID."= p.".$typeID."
 	WHERE is_active = '1'  
 	GROUP BY p.".$pr_key."
-	ORDER BY p.release_date , p.last_update DESC
+	ORDER BY p.release_date DESC, p.last_update DESC
 	LIMIT 0,5
 	";
 $stmt = $db->query($query);

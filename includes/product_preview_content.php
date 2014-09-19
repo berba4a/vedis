@@ -49,22 +49,25 @@ echo "<div class='images_holder'>";
 			$img_cnt++;
 			if($img_cnt==1)
 			{
-				echo "<span class='zoom' id='zoom'>";
+				echo "<div class='zoom' id='zoom'>";
 					echo "<img class='big_img' src='".UPLOADED_IMAGES.$img_row->name."' alt='' title='' />";
-				echo "</span>";
+					echo "<div class='zoom_icon'></div>";
+				echo "</div>";
 				
 				echo "<div id='slider1'>";
 					echo "<a class='buttons prev' href='#'>&nbsp;</a>";
 					echo "<div class='viewport'>";
-						echo "<ul class='overview'>;";
+						echo "<ul class='overview'>";
 			}
 					
-					echo "<li><img src='".UPLOADED_IMAGES.$img_row->name."' alt='' title='' /></li>";
+							echo "<li><img src='".UPLOADED_IMAGES.$img_row->name."' alt='снимка ".$img_row->name."' title='снимка ".$img_row->name."' /></li>";
 		}
-				echo "</ul>";
-			echo "</div>";
-			echo "<a class='buttons next' href='#'>&nbsp;</a>";
-		echo "</div>";
+							/*fix in order t osee the last image in tinycarousel*/
+							echo "<li>&nbsp;</li>";
+						echo "</ul>";
+					echo "</div>";
+					echo "<a class='buttons next' href='#'>&nbsp;</a>";
+				echo "</div>";
 	}
 echo "</div>";
 ?>

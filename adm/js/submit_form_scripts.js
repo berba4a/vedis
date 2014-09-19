@@ -133,24 +133,26 @@ function readURL(input)
 
         reader.onload = function (e) 
 		{
+			/*loading icon handling*/
 			if($(input).siblings('img.loading_img').length<1)
 			{
+				/*Put loading icon if nothing is loaded*/
 				$(input).before('<img class="loading_img" src="../images/loading.gif" alt="new image" />');
 			}
 			else
 			{
+				/*Checks if loaded image existing and put loading icon while changes image*/
 				$(input).siblings('img.loading_img').attr('src','../images/loading.gif');
 			}
 			
+			/*end loading icon*/
+			
+			/*loaded image preview*/
 			if($(input).siblings('img').length>0)
-			{
+			{	
 				if(e.target.result)
 				{
 					$(input).siblings('img.loading_img').attr('src',e.target.result);
-				}
-				else
-				{
-					$(input).siblings('img.loading_img').remove();
 				}
 			}
 			else
@@ -158,7 +160,7 @@ function readURL(input)
 				$(input).before('<img class="loading_img" src="'+e.target.result+'" alt="image" />');
 			}
         }
-
+		
         reader.readAsDataURL(input.files[0]);
 		/*Chrome fix for scrolling issue with marked elements*/
 		$(input).blur();

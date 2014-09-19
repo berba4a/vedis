@@ -21,35 +21,33 @@ include_once('includes/header_meta.php');
 ?>
 
 <!--tiny carousel-->
-<link type='text/css' rel='stylesheet' href='<?php echo SITE_CSS;?>tinycarousel.css' />
-<script type='text/javascript' src='<?php echo SITE_JS;?>jquery.tinycarousel.js'></script>
-<script type="text/javascript">
-	$(document).ready(function()
-	{
-		$('#slider1').tinycarousel();
-	});
-</script>
+<link type='text/css' rel='stylesheet' href='<?php echo SITE_CSS;?>tinycarousel.css' media="screen" />
 
-<!--end tiny carousel-->
+<script type='text/javascript' src='<?php echo SITE_JS;?>jquery.tinycarousel.js'></script>
+<script type='text/javascript' src='<?php echo SITE_JS;?>jquery.zoom.min.js'></script>
+<script type='text/javascript' src='<?php echo SITE_JS;?>product_preview.js'></script>
 
 <!--zoom image-->
 <style type='text/css'>
 	.zoom {
-		height:75%
+		height:100%
 		width:auto;
+		margin:0 auto;
 		display:block;
 		position: relative;
+		/*background:url(../images/transp_white_backgr.png) repeat;*/
 	}
 		/* magnifying glass icon */
-		.zoom:after {
+		.zoom .zoom_icon {
 			content:'';
-			display:block; 
+			display:none; 
 			width:33px; 
 			height:33px; 
 			position:absolute; 
 			top:0;
 			right:0;
 			background:url(../images/icon.png);
+			z-index:999;
 		}
 
 		.zoom img {
@@ -58,40 +56,11 @@ include_once('includes/header_meta.php');
 
 		.zoom img::selection { background-color: transparent; }
 </style>
-<script type='text/javascript' src='<?php echo SITE_JS;?>jquery.zoom.min.js'></script>
 <script type='text/javascript'>
-	$(document).ready(function(){
-		$('#zoom').zoom();
-	});
-</script>
-<!--End zoom image-->
-
-
-
-<script type='text/javascript'>
-	/*open all accordion items */
-$(document).ready(function()
-{
-	$('.accordion_ithem').each(function()
+	$(document).ready(function()
 	{
-		if($(this).css('display')=='none')
-		{
-			$(this).slideDown(50);
-		}
+		setBackLink('<?php echo SITE_URL.SITE_ROOT;?>pages/products.php'+window.location.hash);
 	});
-	
-	$('.accordion_link').click(function()
-	{
-		$(this).siblings('.accordion_ithem').slideToggle('slow');
-	});
-	
-	/*set back to list link href*/
-	$('.back_link').attr('href','<?php echo SITE_URL.SITE_ROOT;?>pages/products.php'+window.location.hash);
-	window.setTimeout(function()
-	{
-		window.location.hash = "";
-	},300);
-});
 </script>
 </head>
 	<body>
@@ -99,7 +68,6 @@ $(document).ready(function()
 			<img class='bg' src='<?php echo SITE_IMG;?>content_background2.png' />
 			<div class='content_wrapper'>
 				<?php include_once('includes/left_sidebar.php');?>
-				<div class='loading'></div>
 				<div class='content_column wider'>
 					<?php include_once('includes/product_preview_content.php');?>
 				</div>

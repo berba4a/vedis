@@ -420,15 +420,16 @@ body{
 		.content_column .images_holder{
 			width:auto;
 			height:80%;
-			margin:2% 0 0 0;
+			margin:2% auto 0 auto;
 			padding:1.5% 1%;
 			position:relative;
-			text-align:center;			
+			text-align:center;
 		}
 			.content_column .images_holder img.big_img{
 				width:auto;
 				height:75%;
 				top:0;
-				/*position:relative;*/
+				margin:0 auto;
+				position:relative;
 			}
 			
