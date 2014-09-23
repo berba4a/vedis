@@ -11,7 +11,7 @@ if (!defined("CONSTANTS"))
     define('DB_TYPE', 'MySQLiO');
     $site_path = realpath(dirname(__FILE__)) . '/..';
 	define('HTDOCS', $site_path);
-   //$doc_root="C:/xampp/htdocs/web/vedis/";
+	//$doc_root="C:/xampp/htdocs/web/vedis/";
 	$doc_root="D:/SERVER/htdocs/web/vedis/";
 	 
     define("DIR_SEP","/" ); 
