@@ -1,4 +1,6 @@
 <?php	
+
+	/*$db_table_name comes from adm/pages/index.php script*/
 	echo "<div class='add_button'><a href='".$_SERVER['PHP_SELF']."?table=".$db_table_name."&action=add''><img src='".ADMIN_IMAGES."add.png' />&nbsp;Добави нов запис</a></div>";
 	
 	$pr_typePrkey = $db->getPrKey('product_type');
@@ -20,6 +22,8 @@
 		$direction = $_GET['order'];
 		
 	$order_by = $order.$direction;
+	
+	/*$table_prKey comes from adm/pages/index.php script*/
 	$query = "
 		SELECT p.".$table_prKey." as ".$table_prKey.",
 			p.catalogueID as catNum,

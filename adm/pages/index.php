@@ -1,6 +1,6 @@
 <?php 
-//$doc_root="D:/SERVER/htdocs/web/vedis/";
-$doc_root="C:/xampp/htdocs/web/vedis/";
+$doc_root="D:/SERVER/htdocs/web/vedis/";
+//$doc_root="C:/xampp/htdocs/web/vedis/";
 $old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_SEPARATOR .
 ini_set("include_path",ini_get('include_path'). $old_path);
 include_once("setup/setup.php");
@@ -29,7 +29,7 @@ else if(isset($_GET['table'])&&""!=$_GET['table']&&!in_array($_GET['table'],$tab
 /*get passed table primary key and fields*/	
 $table_prKey = $db->getPrKey($db_table_name);
 $fields_arr = $db->getTableFields($db_table_name);
-
+ 
 /*check if allowed action is passed and redirects if not*/
 if(isset($_GET['action'])&&in_array($_GET['action'],$allowed_actions_arr))
 {
@@ -38,7 +38,7 @@ if(isset($_GET['action'])&&in_array($_GET['action'],$allowed_actions_arr))
 		$action = "add_edit_form";
 }
 else if(isset($_GET['action'])&&!in_array($_GET['action'],$allowed_actions_arr))
-	header('location:'.SITE_URL.ADMIN.'?table='.$_GET['table'].'');
+	header('location:'.SITE_URL.ADMIN.'pages/?table='.$db_table_name.'');
 
 	
 /*start output*/

@@ -14,8 +14,10 @@
 		<div class='main_wrapper'>
 			<div class='content_wrapper'>
 				<header>
-					<span class='name'>Vedis</span><br />
-					<span class='subname'>администрация</span>
+					<a href='<?php echo SITE_URL.ADMIN;?>'>
+						<span class='name'>Vedis</span><br />
+						<span class='subname'>администрация</span>
+					</a>
 					<div class='menu'>
 						<ul>
 							<?php 

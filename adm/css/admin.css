@@ -62,8 +62,8 @@ a{text-decoration:none}
 			*filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#BF000000,endColorStr=#BF000000);
 			*-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#BF000000,endColorstr=#BF000000)";
 		}
-			header span.name{font-family:eras;font-size:40px;}
-			header span.subname{font-size:14px;}
+			header span.name{font-family:eras;font-size:40px;color:#ffffff;}
+			header span.subname{font-size:14px;color:#ffffff;}
 			
 			header .menu{
 				width:30%;
