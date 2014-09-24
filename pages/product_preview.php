@@ -18,6 +18,7 @@ $usageID = $db->getPrKey('product_usage');
 $page_title='Vedis  преглед на продукт';
 
 include_once('includes/header_meta.php');
+include_once('includes/slimscroll_scripts.php');
 ?>
 
 <!--tiny carousel-->
@@ -26,6 +27,8 @@ include_once('includes/header_meta.php');
 <script type='text/javascript' src='<?php echo SITE_JS;?>jquery.tinycarousel.js'></script>
 <script type='text/javascript' src='<?php echo SITE_JS;?>jquery.zoom.min.js'></script>
 <script type='text/javascript' src='<?php echo SITE_JS;?>product_preview.js'></script>
+
+
 
 <!--zoom image-->
 <style type='text/css'>
@@ -62,6 +65,7 @@ include_once('includes/header_meta.php');
 		setBackLink('<?php echo SITE_URL.SITE_ROOT;?>pages/products.php'+window.location.hash);
 	});
 </script>
+
 </head>
 	<body>
 		<div class='main_wrapper'>

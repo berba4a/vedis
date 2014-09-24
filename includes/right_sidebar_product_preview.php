@@ -43,7 +43,7 @@
 													echo "Описание";
 												echo "</a>";
 											echo "</div>";
-											echo "<div class='accordion_ithem left'>";
+											echo "<div class='accordion_ithem left scrollable_descr'>";
 												echo "<span>".$product_arr['description']."</span>";
 											echo "</div>";
 										echo "</li>";

@@ -37,7 +37,7 @@ function listProducts(url,hash)
 						height: height,
 						color: '#000000',
 						railVisible: true,
-						alwaysVisible: true
+						alwaysVisible: false
 				  });
 			}
 			else

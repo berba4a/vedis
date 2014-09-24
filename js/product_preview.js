@@ -28,11 +28,26 @@ $(document).ready(function()
 /*open all accordion items */
 $(document).ready(function()
 {
+	var el_num = 0;
 	$('.accordion_ithem').each(function()
 	{
 		if($(this).css('display')=='none')
 		{
-			$(this).slideDown(50);
+			$(this).slideDown(50,function()
+			{
+				el_num++;
+				if(el_num==$('.accordion_ithem').length)
+				{
+					var last_model_height = $('.last_models').height();
+					var height = last_model_height*0.63;
+					$('.scrollable_descr').slimScroll({
+						height: height,
+						color: '#979696',
+						railVisible: true,
+						alwaysVisible: false
+					});
+				}
+			});
 		}
 	});
 	

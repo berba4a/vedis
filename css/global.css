@@ -272,7 +272,10 @@ body{
 							display:none;
 							color:#ffffff;
 							/*text-align:right;*/
-						}				
+						}		
+							/*.last_models ul li .accordion_ithem.scrollable_descr{
+								height:50%;
+							}*/
 						.accordion_ithem   span{
 							font-size:12px;
 							font-family:robotothin;
