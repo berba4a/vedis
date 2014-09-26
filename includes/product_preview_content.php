@@ -69,6 +69,8 @@ echo "<div class='images_holder'>";
 					echo "<a class='buttons next' href='#'>&nbsp;</a>";
 				echo "</div>";
 	}
+	else
+		echo "<img class='big_img' src='".SITE_UPOLADS."no_image.png' alt='Няма изображение' title='Няма изображение' />";
 echo "</div>";
 ?>
 

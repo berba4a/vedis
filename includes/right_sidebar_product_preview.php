@@ -44,7 +44,7 @@
 												echo "</a>";
 											echo "</div>";
 											echo "<div class='accordion_ithem left scrollable_descr'>";
-												echo "<span>".$product_arr['description']."</span>";
+												echo "<div class='descr'>".$product_arr['description']."<br />&nbsp;</div>";
 											echo "</div>";
 										echo "</li>";
 										

@@ -35,18 +35,22 @@ $(document).ready(function()
 		{
 			$(this).slideDown(50,function()
 			{
+				/*make description scrollable , to be removed if no needed*/
 				el_num++;
 				if(el_num==$('.accordion_ithem').length)
 				{
 					var last_model_height = $('.last_models').height();
-					var height = last_model_height*0.63;
-					$('.scrollable_descr').slimScroll({
-						height: height,
-						color: '#979696',
-						railVisible: true,
-						alwaysVisible: false
-					});
-				}
+					var height = last_model_height*0.62;
+					if($(this).height()<height)
+					{
+						$('.scrollable_descr').slimScroll({
+							height: height,
+							color: '#979696',
+							railVisible: false,
+							alwaysVisible: false
+						});
+					}	
+				} 
 			});
 		}
 	});

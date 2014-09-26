@@ -13,14 +13,17 @@ function colorLinks(url)
 	$('.lateral_menu').find('li').each(function()
 	{
 		var curr_id="";
+		
+		
 		if($(this).attr('id'))
 		{
 			curr_id = $(this).attr('id');
 		}
+		
 		if(url.indexOf(curr_id)>-1&&curr_id!='home')
 		{
 			$(this).addClass('selected');
-		}
+		}/*color index page link*/
 		else if(curr_id == "home"&&url.indexOf(".php")==-1)
 		{
 			$(this).addClass('selected');

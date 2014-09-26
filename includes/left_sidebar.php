@@ -5,7 +5,7 @@
 					<div class='lateral_menu'>
 						<ul>
 							<li id='home'><a href='<?PHP ECHO SITE_URL.SITE_ROOT;?>'>начало</a></li>
-							<li id='products'>
+							<li id='product'>
 								<a href='javascript:void(0)' class='parent_submenu'><span class='arrow'>&#x25BE;</span> продукти</a>
 								<ul>
 									<?php 

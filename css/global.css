@@ -276,10 +276,15 @@ body{
 							/*.last_models ul li .accordion_ithem.scrollable_descr{
 								height:50%;
 							}*/
-						.accordion_ithem   span{
+						.accordion_ithem  span{
 							font-size:12px;
 							font-family:robotothin;
 						}
+							.accordion_ithem   div.descr{
+								text-align:justify;
+								font-size:12px;
+								font-family:robotothin;
+							}
 							.accordion_ithem  .short_text{
 								width:50%;
 								margin-bottom:10px;
@@ -287,7 +292,7 @@ body{
 								text-align:justify;
 								line-height:70%;
 							}
-								.accordion_ithem  .short_text span,{
+								.accordion_ithem  .short_text span{
 									color:#ffffff;
 									font-size:11px;
 								}			
@@ -377,6 +382,7 @@ body{
 				.content_column p{
 					color:#ffffff;
 					text-align:justify;
+					font-family:robotothin;
 				}
 	
 	/************************content column products page*************************/
