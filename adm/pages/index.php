@@ -8,7 +8,6 @@ include_once("setup/setup.php");
 include_once("includes/DBMYSQL.class.php");
 include_once("includes/Utils.class.php");
 /*database connect object*/
-include_once("includes/DBMYSQL.class.php");
 $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME); 
 
 $allowed_actions_arr = array('listing','add','edit');
@@ -54,7 +53,6 @@ include_once("adm/includes/header.php");
 	
 	/*delete confirmation dialogue*/
 	echo "<div class='dialogue'></div>";
-	
 	
 include_once("adm/includes/footer.php");
 ?>

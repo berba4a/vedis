@@ -15,7 +15,7 @@ $(document).ready(function()
 				$(this).parents('.input_field').find('label').addClass('red');
 				errors++;
 			}
-			else if($(this).attr('id')=='catalogueID')
+			else if($(this).attr('id')=='catalogueID')//Check catalogue ID for exsist val 
 			{		
 				$.ajax({
 					url : '../ajax/check_field.php',

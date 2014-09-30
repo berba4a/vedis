@@ -66,7 +66,6 @@
 	$stmt = $db->query($limited_query);
 	$num_rows = $db->numRows($stmt);
 	
-	
 	if($num_rows>0)
 	{
 		$remove_arr = array('order_by','order');

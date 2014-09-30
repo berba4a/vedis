@@ -315,7 +315,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   KEY `typeID` (`typeID`),
   KEY `genderID` (`genderID`),
   KEY `usageID` (`usageID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=27 ;
 
 --
 -- Ссхема на данните от таблица `products`
@@ -327,8 +327,10 @@ INSERT INTO `products` (`productID`, `catalogueID`, `typeID`, `genderID`, `usage
 (20, 1030, 1, 3, 2, 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.', '2014-09-03', '2014-09-19 17:37:56', '1'),
 (21, 1040, 1, 1, 2, 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.', '2014-09-04', '2014-09-19 17:39:15', '1'),
 (22, 1050, 1, 2, 1, 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.', '2014-09-05', '2014-09-19 17:43:01', '1'),
-(23, 1060, 1, 3, 1, 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.', '2014-09-06', '2014-09-19 17:44:07', '0'),
-(24, 1070, 1, 2, 2, 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.', '2014-09-07', '2014-09-19 17:47:18', '1');
+(23, 1060, 1, 3, 1, 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.', '2014-09-06', '2014-09-24 06:33:43', '1'),
+(24, 1070, 1, 2, 2, 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.', '2014-09-07', '2014-09-19 17:47:18', '1'),
+(25, 1080, 1, 1, 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '2014-09-11', '2014-09-27 05:35:21', '1'),
+(26, 1090, 1, 2, 2, 'sfdasdfsd', '2014-09-23', '2014-09-30 11:47:36', '0');
 
 -- --------------------------------------------------------
 
@@ -453,14 +455,27 @@ CREATE TABLE IF NOT EXISTS `shops` (
   `shopID` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` tinytext COLLATE utf8_unicode_ci NOT NULL,
   `address` text COLLATE utf8_unicode_ci NOT NULL COMMENT 'shop address',
-  `e-mail` text COLLATE utf8_unicode_ci NOT NULL,
-  `web` tinytext COLLATE utf8_unicode_ci NOT NULL,
-  `gpsLat` double NOT NULL,
-  `gpsLon` double NOT NULL,
+  `phone` text COLLATE utf8_unicode_ci NOT NULL,
+  `mail` text COLLATE utf8_unicode_ci,
+  `web` text COLLATE utf8_unicode_ci,
+  `gpsLat` double DEFAULT NULL,
+  `gpsLon` double DEFAULT NULL,
   `cityID` int(11) unsigned NOT NULL,
+  `is_active` enum('0','1') COLLATE utf8_unicode_ci NOT NULL DEFAULT '1',
   PRIMARY KEY (`shopID`),
   KEY `cityID` (`cityID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+
+--
+-- Ссхема на данните от таблица `shops`
+--
+
+INSERT INTO `shops` (`shopID`, `name`, `address`, `phone`, `mail`, `web`, `gpsLat`, `gpsLon`, `cityID`, `is_active`) VALUES
+(1, 'тест', 'тест1', '0123456', 'mail@mail.bg', 'test.com', 123456, 123456, 2, '1'),
+(2, 'read', 'dsfsdf', '0123456', 'sdsdvsd@mailbg', 'sdvcsdcs.com', 452424, 42424, 1, '1'),
+(3, 'тест', 'тест1', '0123456', 'mail@mail.bg', 'test.com', 123456, 123456, 2, '1'),
+(4, 'read', 'dsfsdf', '0123456', 'sdsdvsd@mailbg', 'sdvcsdcs.com', 452424, 42424, 1, '1'),
+(5, 'тест', 'тест1', '0123456', 'mail@mail.bg', 'test.com', 123456, 123456, 2, '1');
 
 --
 -- Ограничения за дъмпнати таблици

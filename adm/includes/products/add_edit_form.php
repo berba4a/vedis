@@ -58,6 +58,7 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 	else if((trim($_GET['action'])=='edit')&&isset($_GET[$table_prKey])&&$_GET[$table_prKey]<=0)
 		header('location:'.SITE_URL.ADMIN.'pages/?&table='.$_GET['table'].'');
 	
+	/*start output*/
 	/*datepicker include scripts ,css and initialization*/
 	echo "<link type='text/css' rel='stylesheet' href='".ADMIN_CSS."default.css' />";
 	echo "<script type='text/javascript' src='".ADMIN_JS."zebra_datepicker.js'></script>";
@@ -70,7 +71,7 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 			});
 		});";
 	echo "</script>";
-	
+	echo "<script type='text/javascript' src='".ADMIN_JS."submit_form_".$_GET['table'].".js'></script>";
 	
 	echo "<div class='title'>".$title."</div>";
 	
@@ -158,7 +159,7 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 			echo $images_string;
 			echo "<div class='clear'></div>";
 			
-			echo "<script type='text/javascript' src='".ADMIN_JS."submit_form_scripts.js'></script>";
+			
 			echo "<fieldset>";
 				echo "<legend>Прикачи снимки : ";
 					echo "<span class='add_files'><img src='".ADMIN_IMAGES."add.png' />&nbsp;Добави полета за файлове</span>";
