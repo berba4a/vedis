@@ -475,7 +475,8 @@ INSERT INTO `shops` (`shopID`, `name`, `address`, `phone`, `mail`, `web`, `gpsLa
 (2, 'read', 'dsfsdf', '0123456', 'sdsdvsd@mailbg', 'sdvcsdcs.com', 452424, 42424, 1, '1'),
 (3, 'тест', 'тест1', '0123456', 'mail@mail.bg', 'test.com', 123456, 123456, 2, '1'),
 (4, 'read', 'dsfsdf', '0123456', 'sdsdvsd@mailbg', 'sdvcsdcs.com', 452424, 42424, 1, '1'),
-(5, 'тест', 'тест1', '0123456', 'mail@mail.bg', 'test.com', 123456, 123456, 2, '1');
+(5, 'asdassdv', 'тест1', '0123456', 'mail@mail.bg', 'test.com', 123456, 123456, 2, '1'),
+(6, 'асдасд', 'асдас', 'асдасд', NULL, NULL, NULL, NULL, 239, '0');
 
 --
 -- Ограничения за дъмпнати таблици

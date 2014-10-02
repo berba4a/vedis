@@ -62,7 +62,13 @@ include_once('includes/slimscroll_scripts.php');
 <script type='text/javascript'>
 	$(document).ready(function()
 	{
-		setBackLink('<?php echo SITE_URL.SITE_ROOT;?>pages/products.php'+window.location.hash);
+		var hash = window.location.hash;	
+		/*add product type=1 for bags ,to be removed if more type of products are added*/
+		if(hash.indexOf('product_type')==-1)
+		{
+			hash +='#product_type=1';
+		}
+		setBackLink('<?php echo SITE_URL.SITE_ROOT;?>pages/products.php'+hash);
 	});
 </script>
 

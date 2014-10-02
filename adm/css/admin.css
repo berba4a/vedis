@@ -250,12 +250,17 @@ a{text-decoration:none}
 			left:0;
 			position:fixed;
 			margin:0 auto;
-			background:url(../images/loading.gif) no-repeat center center;
-			-webkit-background-size: 50% auto;
-			  -moz-background-size: 50% auto;
-			  -o-background-size: 50% auto;
-			  background-size: 50% auto;
+			display:none;
+			background:#ffffff url(../images/loading.gif) no-repeat center center;
+			-webkit-background-size:auto 50%;
+			  -moz-background-size: auto 50%;
+			  -o-background-size: auto 50%;
+			  background-size: auto 50%;
 			z-index:9999;
+			filter:alpha(opacity=60);
+			-moz-opacity:0.60;
+			-khtml-opacity: 0.60;
+			opacity: 0.60;
 		}
 		
 		/***dialogue***/

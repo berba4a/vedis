@@ -10,7 +10,7 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 {
 	$title = "Добавяне на магазин .";
 	
-	$prKey = -1;
+	${$db->getPrKey($_GET['table'])} = -1;
 	$name = "";
 	$address = "";
 	$phone = "";
@@ -42,10 +42,18 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 		
 	/*start output*/
 	echo "<script type='text/javascript' src='".ADMIN_JS."submit_form_".$_GET['table'].".js'></script>";
+	echo "<script type='text/javascript'>
+	$(document).ready(function()
+	{
+		$('.submit_btn').click(function()
+		{
+			checkSubmitForm('".SITE_URL.ADMIN."');
+		});
+	});</script>";
 	echo "<div class='title'>".$title."</div>";
 	
-	echo "<form id='add_adit_form' method='POST' enctype='multipart/form-data'>";
-		echo "<input type='hidden' class='pr_key' name='".$table_prKey."' id='".$table_prKey."' value='".$prKey."' />";
+	echo "<form id='add_edit_form' method='POST' enctype='multipart/form-data'>";
+		echo "<input type='hidden' class='pr_key' name='".$table_prKey."' id='".$table_prKey."' value='".${$db->getPrKey($_GET['table'])}."' />";
 		echo "<input type='hidden' name='table' id='table' value='".$_GET['table']."' />";
 		
 		if($is_active==1)
@@ -64,12 +72,12 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 		echo "</div>";
 		
 		echo "<div class='input_field left'>";
-			echo "<span class='red'>*</span><label for='cities'> Град : </label><br />";
+			echo "<span class='red'>*</span><label for='".$cities_prKey."'> Град : </label><br />";
 			$c_stmt = $db->query(" SELECT ".$cities_prKey.",city_name FROM cities ORDER BY city_name ASC ");
 			
 			
 			
-			echo "<select name='cities' id='cities'>";
+			echo "<select name='".$cities_prKey."' id='".$cities_prKey."' class='mandatory'>";
 				echo "<option value='-1'>--Избери град--</option>";
 			while($c_row = $db->fetchObject($c_stmt))
 			{
