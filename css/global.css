@@ -36,6 +36,8 @@
 	height:0;
 	line-height:0;
 }
+.left{float:left}
+.right{float:right}
 ul{list-style:none;margin:0;padding:0}
 img{border:none;}
 a{text-decoration:none}
@@ -236,10 +238,10 @@ body{
 					margin-top:1px;
 				}
 /***********right column*****************************/
-			.lateral_column	.last_models{
+			.lateral_column	.left_content{
 				text-align:center;
 			}
-				.lateral_column	.last_models h1{
+				.lateral_column	.left_content h1{
 					color:#ffffff;
 					font-weight:100;
 					font-family:"robotothin";
@@ -247,21 +249,21 @@ body{
 				}
 				
 		/******************last models accordion***************/
-					.lateral_column	.last_models ul li{
+					.lateral_column	.left_content ul li{
 						margin:0;
 						padding:0;
 						text-align:left;
 					}
-					.lateral_column	.last_models ul li .accordion_link{
+					.lateral_column	.left_content ul li .accordion_link{
 						width:98%;
 						padding:0 0 10px 2%;
 						background: url(../images/slider_offer_lineDOWN.png) no-repeat right bottom;
 					}	
-					.lateral_column	.last_models ul li .accordion_link a{
+					.lateral_column	.left_content ul li .accordion_link a{
 						color:#ffffff;
 						text-decoration:none;
 					}
-						.last_models ul li .accordion_ithem{
+						.left_content ul li .accordion_ithem{
 							width:90%;
 							/*height:auto;*/
 							/*min-height:25%;*/
@@ -273,7 +275,7 @@ body{
 							color:#ffffff;
 							/*text-align:right;*/
 						}		
-							/*.last_models ul li .accordion_ithem.scrollable_descr{
+							/*.left_content ul li .accordion_ithem.scrollable_descr{
 								height:50%;
 							}*/
 						.accordion_ithem  span{
@@ -443,3 +445,24 @@ body{
 				position:relative;
 			}
 			
+			
+			/******************content column shops page************************/
+		a.shops_prev{color:#ffffff;}
+		a.shops_prev:visited{color:#ffffff;}
+		.shop_row{
+			width:96%;
+			position:relative;
+			padding:2%;
+			border-bottom:1px solid #979696;
+			font-family:robotothin;
+		}
+			/*.shop_row.header,.shop_row.header:hover{
+				background:url(../images/semitransparent_backgr.png);
+				font-family:robotothin;
+				color:#ffffff;
+			}*/
+			.shop_row:hover{
+				color:#cccccc;
+				background:url(../images/transp_white_backgr.png);
+				font-family:Roboto;
+			}

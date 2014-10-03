@@ -60,13 +60,13 @@ function listProducts(url,hash)
 		{
 			if(response!=-1)
 			{
-				$('.last_models.products').html(response);
+				$('.left_content.products').html(response);
 				/*open all accordeon filters*/
-				$('.last_models').find('.accordion_ithem').each(function()
+				$('.left_content').find('.accordion_ithem').each(function()
 				{
 					$(this).slideDown(50);
 				});
-				$('.last_models').find('.accordion_link').click(function()
+				$('.left_content').find('.accordion_link').click(function()
 				{
 					$(this).next().slideToggle('slow');
 				});
@@ -101,7 +101,7 @@ function listProducts(url,hash)
 				});
 				
 				/*initalize inputs onchange*/
-				$('.last_models.products').find('input').change(function()
+				$('.left_content.products').find('input').change(function()
 				{
 					createHashQuery($(this).attr('name'),$(this).val(),hash);
 				});

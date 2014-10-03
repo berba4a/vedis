@@ -10,11 +10,11 @@
 								<ul>
 									<?php 
 										$tablename = "product_gender";
-										$prKey = $db->getPrKey($tablename);
+										$gender_prKey = $db->getPrKey($tablename);
 										$stmt = $db->query(" SELECT * FROM  ".$tablename." ");
 										while($row = $db->fetchArray($stmt))
 										{
-											echo "<li id='#".$tablename."=".$row[$prKey]."'><a class='product_types' href='".SITE_URL.SITE_ROOT."pages/products.php#product_type=1#".$tablename."=".$row[$prKey]."'>".$row['name']."</a></li>";
+											echo "<li id='#".$tablename."=".$row[$gender_prKey]."'><a class='product_types' href='".SITE_URL.SITE_ROOT."pages/products.php#product_type=1#".$tablename."=".$row[$gender_prKey]."'>".$row['name']."</a></li>";
 										}
 									?>
 								</ul>

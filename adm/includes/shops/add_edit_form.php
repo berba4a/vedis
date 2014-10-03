@@ -27,18 +27,17 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 		$query = "SELECT * FROM ".$db->escapeString($_GET['table'])." WHERE ".$table_prKey." = ".$db->escapeString($_GET[$table_prKey])." ";
 		if($row = $db->fquery($query))
 		{
-			$title = "Редактиране на Магазин<span class='red'> ".$row->name."</span>";
+			$title = "Редактиране на Магазин<br /><span class='red'> ".$row->name."</span>";
 			foreach($db->getTableFields($_GET['table']) as $value)
 			{
 				${$value} = $row->{$value};
 			}
 		}
-	
 		else
-			header('location:'.SITE_URL.ADMIN.'pages/?&table='.$_GET['table'].'');
+			header('location:'.SITE_URL.ADMIN.'pages/?table='.$_GET['table'].'');
 	}
 	else if((trim($_GET['action'])=='edit')&&isset($_GET[$table_prKey])&&$_GET[$table_prKey]<=0)
-			header('location:'.SITE_URL.ADMIN.'pages/?&table='.$_GET['table'].'');
+			header('location:'.SITE_URL.ADMIN.'pages/?table='.$_GET['table'].'');
 		
 	/*start output*/
 	echo "<script type='text/javascript' src='".ADMIN_JS."submit_form_".$_GET['table'].".js'></script>";

@@ -33,17 +33,20 @@ function checkSubmitForm(url)
 			{
 				$('.dialogue').html(response);
 				$('.dialogue').fadeIn('slow');
-				
-				/*window.setTimeout(function()
+				if(response.indexOf('ГРЕШКА')==-1)
 				{
-					$('.dialogue').fadeOut('slow',function()
+					window.setTimeout(function()
 					{
-						if(response.indexOf('ГРЕШКА')==-1)
+						$('.dialogue').fadeOut('slow',function()
 						{
 							window.location = url+'pages/?table=shops';
-						}
-					});
-				},2000);*/
+						});
+					},2000);
+				}
+				else
+				{
+					$('.dialogue').prepend('<div class="dialogue_close" onclick="dialogueClose()"></div>');
+				}
 			},
 			complete : function()
 			{
@@ -55,4 +58,10 @@ function checkSubmitForm(url)
 			}
 		});
 	}
+}
+
+function dialogueClose()
+{
+	$('.dialogue').html("");
+	$('.dialogue').fadeOut('slow');
 }

@@ -35,15 +35,24 @@ if(isset($_GET['table'])&&""!=trim($_GET['table'])&&in_array($_GET['table'],$db_
 	{
 		if(!empty($record_arr))
 		{
-			echo $db->updateRecord($table,$record_arr,$_GET[$table_prKey]);
+			$res = $db->updateRecord($table,$record_arr,$_GET[$table_prKey]);
+			if($res==1)
+				$suc_msg = "Редакцията е успешна!";
 		}
 		else
 			echo "ГРЕШКА!!!<br />Празен масив за запис!";  
 	}
 	else
 	{
-		echo $db->insertRecord($table,$record_arr);
+		$res = $db->insertRecord($table,$record_arr);
+		$suc_msg = "Записът е успешен!";
 	}
+	
+	if(isset($res)&&$res==1)
+		echo $suc_msg;
+	else
+		echo "ГРЕШКА!!!<br />".$res; 
+	
 }
 else
 	echo "ГРЕШКА!!!<br />Несъществуваща таблица!";

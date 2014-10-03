@@ -8,12 +8,13 @@ include_once("setup/setup.php");
 /*database connect object*/
 include_once("includes/DBMYSQL.class.php");
 $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
+$shops_prKey = $db->getPrKey('shops');
 
-$page_title = "Vedis style магазини";
+$page_title = "Vedis style преглед на магазин";
 include_once('includes/header_meta.php');
-include_once('includes/slimscroll_scripts.php');
+//include_once('includes/slimscroll_scripts.php');
 ?>
-	<script type="text/javascript">
+	<!--script type="text/javascript">
 		/*set scrollable area height*/
 			$(document).ready(function()
 			{
@@ -25,7 +26,7 @@ include_once('includes/slimscroll_scripts.php');
 					color: '#000000'
 			  });
 			});
-		</script>
+		</script-->
 	</head>
 	<body>
 		<div class='main_wrapper'>
@@ -33,8 +34,7 @@ include_once('includes/slimscroll_scripts.php');
 			<div class='content_wrapper'>
 				<?php include_once('includes/left_sidebar.php');?>
 				<div class='content_column'>
-					<h1 class='cir'>магазини</h1>
-					<?php include_once('includes/shops_content.php');?>
+					<?php include_once('includes/shops_preview_content.php');?>
 				</div>
 				<?php include_once('includes/right_sidebar.php');?>
 				<div class='clear'></div>

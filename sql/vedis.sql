@@ -464,7 +464,7 @@ CREATE TABLE IF NOT EXISTS `shops` (
   `is_active` enum('0','1') COLLATE utf8_unicode_ci NOT NULL DEFAULT '1',
   PRIMARY KEY (`shopID`),
   KEY `cityID` (`cityID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=16 ;
 
 --
 -- Ссхема на данните от таблица `shops`
@@ -476,7 +476,8 @@ INSERT INTO `shops` (`shopID`, `name`, `address`, `phone`, `mail`, `web`, `gpsLa
 (3, 'тест', 'тест1', '0123456', 'mail@mail.bg', 'test.com', 123456, 123456, 2, '1'),
 (4, 'read', 'dsfsdf', '0123456', 'sdsdvsd@mailbg', 'sdvcsdcs.com', 452424, 42424, 1, '1'),
 (5, 'asdassdv', 'тест1', '0123456', 'mail@mail.bg', 'test.com', 123456, 123456, 2, '1'),
-(6, 'асдасд', 'асдас', 'асдасд', NULL, NULL, NULL, NULL, 239, '0');
+(8, 'asdassdv', 'тест1', '0123456', 'mail@mail.bg', 'test.com', 123456, 123456, 2, '1'),
+(9, 'read', 'dsfsdf', '0123456', 'sdsdvsd@mailbg', 'sdvcsdcs.com', 452424, 42424, 1, '1');
 
 --
 -- Ограничения за дъмпнати таблици

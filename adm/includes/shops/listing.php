@@ -125,7 +125,7 @@
 						$http = "http://";
 						if(strpos($row->web,'http://')!==false)
 							$http = "";
-						echo "<a href='".$http.$row->web."'>".$row->web."</a>";
+						echo "<a target='_blank' href='".$http.$row->web."'>".$row->web."</a>";
 					echo "</td>";
 					echo "<td>";
 						if($row->activity == 1)
