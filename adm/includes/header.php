@@ -23,6 +23,7 @@
 							<?php 
 								$sel_products = "";
 								$sel_shops = "";
+								$sel_careers="";
 								if(isset($_GET['table']))
 								{
 									if($_GET['table']=='products')
@@ -31,10 +32,14 @@
 									if($_GET['table']=='shops')
 										$sel_shops = "class='selected'";
 										
+									if($_GET['table']=='careers')
+										$sel_careers = "class='selected'";
+										
 								}
 							?>
 							<li><a <?php echo $sel_products;?> href='<?php echo SITE_URL.ADMIN;?>pages?table=products'>Продукти</a></li>
 							<li><a <?php echo $sel_shops;?> href='<?php echo SITE_URL.ADMIN;?>pages?table=shops'>Магазини</a></li>
+							<li><a <?php echo $sel_careers;?> href='<?php echo SITE_URL.ADMIN;?>pages?table=careers'>Кариери</a></li>
 						</ul>
 						<div class='clear'></div>
 					</div>

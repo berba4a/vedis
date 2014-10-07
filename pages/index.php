@@ -20,10 +20,10 @@ include_once('includes/slimscroll_scripts.php');
 				var column_height = parseInt($('.content_column').css('height'));
 				var header_height = parseInt($('.content_column h1').css('height'));
 				var height = column_height-header_height-55;
-			  $('.content_column p').slimScroll({
-					height: height,
-					color: '#000000'
-			  });
+				  $('.content_column p').slimScroll({
+						height: height,
+						color: '#000000'
+				  });
 			});
 		</script>
 	</head>

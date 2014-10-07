@@ -40,13 +40,13 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 			header('location:'.SITE_URL.ADMIN.'pages/?table='.$_GET['table'].'');
 		
 	/*start output*/
-	echo "<script type='text/javascript' src='".ADMIN_JS."submit_form_".$_GET['table'].".js'></script>";
+	echo "<script type='text/javascript' src='".ADMIN_JS."submit_form.js'></script>";
 	echo "<script type='text/javascript'>
 	$(document).ready(function()
 	{
 		$('.submit_btn').click(function()
 		{
-			checkSubmitForm('".SITE_URL.ADMIN."');
+			checkSubmitForm('".SITE_URL.ADMIN."','".$_GET['table']."');
 		});
 	});</script>";
 	echo "<div class='title'>".$title."</div>";

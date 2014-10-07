@@ -2,14 +2,17 @@
 class Utils
 {
 	/*Functions which has to be global in later stage*/	
-	static function createUrlRequest($get,$removeArr)
+	static function createUrlRequest($get,$removeArr=array())
 	{
 		$q_str="?";
 		$amp = "&";
 		$element_number=0;
-		foreach($removeArr as $value)
+		if(!empty($removeArr))
 		{
-			unset($get[$value]);
+			foreach($removeArr as $value)
+			{
+				unset($get[$value]);
+			}
 		}
 		
 		foreach($get as $key=>$value)

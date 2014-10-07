@@ -447,6 +447,9 @@ body{
 			
 			
 			/******************content column shops page************************/
+		h3{font-size:14px;font-family:robotothin;font-weight:100;text-align:justify}
+		h3 a{color:#ffffff;text-decoration:underline;font-family:roboto}
+		h3 a:hover{color:#cccccc}
 		a.shops_prev{color:#ffffff;}
 		a.shops_prev:visited{color:#ffffff;}
 		.shop_row{
@@ -466,3 +469,11 @@ body{
 				background:url(../images/transp_white_backgr.png);
 				font-family:Roboto;
 			}
+			
+			/******************content column careers page************************/
+			.scrollable.carr{margin:30px auto 0;}
+			.career_row{
+				margin:3%;
+			}
+				span.carr_name:hover{cursor:pointer;text-decoration:underline}			
+				p.career_description{display:none}

@@ -24,7 +24,9 @@ if(isset($_GET['table'])&&""!=$_GET['table']&&in_array($_GET['table'],$tables_ar
 	$db_table_name = $_GET['table'];
 else if(isset($_GET['table'])&&""!=$_GET['table']&&!in_array($_GET['table'],$tables_arr))
 	header("location:".SITE_URL.ADMIN."pages/?table=".DEFAULT_TABLE."");
-	
+else
+	header("location:".SITE_URL.ADMIN."pages/?table=".DEFAULT_TABLE."");
+
 /*get passed table primary key and fields*/	
 $table_prKey = $db->getPrKey($db_table_name);
 $fields_arr = $db->getTableFields($db_table_name);

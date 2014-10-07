@@ -19,7 +19,7 @@ include_once('includes/slimscroll_scripts.php');
 			{
 				var column_height = parseInt($('.content_column').css('height'));
 				var header_height = parseInt($('.content_column h1').css('height'));
-				var height = column_height-header_height-55;
+				var height = column_height-header_height-105;
 			  $('.scrollable').slimScroll({
 					height: height,
 					color: '#000000'
@@ -34,6 +34,7 @@ include_once('includes/slimscroll_scripts.php');
 				<?php include_once('includes/left_sidebar.php');?>
 				<div class='content_column'>
 					<h1 class='cir'>магазини</h1>
+					<h3>* ако желаете Вашият магазин да бъде включен в списъка с магазини предлагащи нашите продукти моля свържете се с нас чрез секция <a href='<?php echo SITE_URL.SITE_ROOT;?>pages/contacts.php'>контакти</a></h3>
 					<?php include_once('includes/shops_content.php');?>
 				</div>
 				<?php include_once('includes/right_sidebar.php');?>

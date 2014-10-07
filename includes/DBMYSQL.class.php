@@ -185,7 +185,7 @@ class DBMYSQL {
 	
 	function escapeString($string)
 	{
-		return mysqli_real_escape_string($this->conn, $string);
+		return mysqli_real_escape_string($this->conn, stripslashes($string));
 	}
 	
 	/*return index array with database tables*/

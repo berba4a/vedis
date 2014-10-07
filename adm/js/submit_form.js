@@ -1,5 +1,5 @@
 
-function checkSubmitForm(url)
+function checkSubmitForm(url,table)
 {
 	var err_num = 0;
 	$('.mandatory').each(function()
@@ -22,7 +22,7 @@ function checkSubmitForm(url)
 	if(err_num==0)
 	{
 		$.ajax({
-			url:url+'ajax/submit_form_shops.php',
+			url:url+'ajax/submit_form.php',
 			type : 'GET',
 			data : $('#add_edit_form').serialize(),
 			beforeSend : function()
@@ -39,7 +39,7 @@ function checkSubmitForm(url)
 					{
 						$('.dialogue').fadeOut('slow',function()
 						{
-							window.location = url+'pages/?table=shops';
+							window.location = url+'pages/?table='+table;
 						});
 					},2000);
 				}

@@ -23,6 +23,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Структура на таблица `careers`
+--
+
+CREATE TABLE IF NOT EXISTS `careers` (
+  `careersID` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+  `name` tinytext COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `is_active` enum('0','1') COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`careersID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Ссхема на данните от таблица `careers`
+--
+
+INSERT INTO `careers` (`careersID`, `name`, `description`, `is_active`) VALUES
+(1, 'Шивачки', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?', '1'),
+(2, 'Крояч', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?', '1'),
+(4, 'Шофьор', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?', '0');
+
+-- --------------------------------------------------------
+
+--
 -- Структура на таблица `cities`
 --
 
@@ -330,7 +353,7 @@ INSERT INTO `products` (`productID`, `catalogueID`, `typeID`, `genderID`, `usage
 (23, 1060, 1, 3, 1, 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.', '2014-09-06', '2014-09-24 06:33:43', '1'),
 (24, 1070, 1, 2, 2, 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.', '2014-09-07', '2014-09-19 17:47:18', '1'),
 (25, 1080, 1, 1, 3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '2014-09-11', '2014-09-27 05:35:21', '1'),
-(26, 1090, 1, 2, 2, 'sfdasdfsd', '2014-09-23', '2014-09-30 11:47:36', '0');
+(26, 1090, 1, 2, 2, 'sfdasdfsd', '2014-09-23', '2014-10-06 10:39:55', '1');
 
 -- --------------------------------------------------------
 
@@ -464,7 +487,7 @@ CREATE TABLE IF NOT EXISTS `shops` (
   `is_active` enum('0','1') COLLATE utf8_unicode_ci NOT NULL DEFAULT '1',
   PRIMARY KEY (`shopID`),
   KEY `cityID` (`cityID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
 
 --
 -- Ссхема на данните от таблица `shops`
@@ -477,7 +500,8 @@ INSERT INTO `shops` (`shopID`, `name`, `address`, `phone`, `mail`, `web`, `gpsLa
 (4, 'read', 'dsfsdf', '0123456', 'sdsdvsd@mailbg', 'sdvcsdcs.com', 452424, 42424, 1, '1'),
 (5, 'asdassdv', 'тест1', '0123456', 'mail@mail.bg', 'test.com', 123456, 123456, 2, '1'),
 (8, 'asdassdv', 'тест1', '0123456', 'mail@mail.bg', 'test.com', 123456, 123456, 2, '1'),
-(9, 'read', 'dsfsdf', '0123456', 'sdsdvsd@mailbg', 'sdvcsdcs.com', 452424, 42424, 1, '1');
+(9, 'read', 'dsfsdf', '0123456', 'sdsdvsd@mailbg', 'sdvcsdcs.com', 452424, 42424, 1, '1'),
+(10, 'test magazin', 'test address123', '0123456', NULL, NULL, NULL, NULL, 92, '1');
 
 --
 -- Ограничения за дъмпнати таблици
