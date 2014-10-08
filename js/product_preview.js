@@ -51,10 +51,10 @@ $(document).ready(function()
 		}
 	});
 	
-	$('.accordion_link').click(function()
+	/*$('.accordion_link').click(function()
 	{
 		$(this).siblings('.accordion_ithem').slideToggle('slow');
-	});
+	});*/
 });
 
 

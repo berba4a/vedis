@@ -26,6 +26,7 @@ include_once('includes/slimscroll_scripts.php');
 			  });
 			});
 		</script>
+		<script type='text/javascript' src='<?php echo SITE_JS;?>right_sidebar_accordeon.js'></script>
 	</head>
 	<body>
 		<div class='main_wrapper'>

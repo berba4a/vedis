@@ -40,7 +40,7 @@
 .right{float:right}
 ul{list-style:none;margin:0;padding:0}
 img{border:none;}
-a{text-decoration:none}
+a{text-decoration:none;color:#ffffff;}
 body{
 	padding:0;
 	margin:0;
@@ -92,7 +92,7 @@ body{
 			top:0;
 			left:0;
 			position:absolute;
-			z-index:2;
+			z-index:3;
 			text-align:left;
 			/*border:1px solid red;*/
 		}
@@ -469,6 +469,18 @@ body{
 				background:url(../images/transp_white_backgr.png);
 				font-family:Roboto;
 			}
+			
+			
+			
+			/******************content column shop preview page****************/
+				#map_canvas{
+					width:auto;
+					height:75%;
+					top:5%;
+					margin:0 auto;
+					position:relative;
+				}
+			
 			
 			/******************content column careers page************************/
 			.scrollable.carr{margin:30px auto 0;}

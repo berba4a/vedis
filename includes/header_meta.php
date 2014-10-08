@@ -12,4 +12,3 @@
 		<!--script src='//code.jquery.com/jquery-1.11.0.min.js'></script-->
 		<script type='text/javascript' src='<?php echo SITE_JS;?>jquery-1.11.0.min.js'></script>
 		<script type='text/javascript' src='<?php echo SITE_JS;?>global.js'></script>
-		<script type='text/javascript' src='<?php echo SITE_JS;?>right_sidebar_accordeon.js'></script>
