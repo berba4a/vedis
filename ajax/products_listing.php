@@ -1,5 +1,5 @@
 <?php
-$doc_root="D:/SERVER/htdocs/web/vedis/";;
+$doc_root="D:/SERVER/htdocs/web/vedis/";
 //$doc_root="C:/xampp/htdocs/web/vedis/";
 $old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_SEPARATOR .
 ini_set("include_path",ini_get('include_path'). $old_path);
@@ -41,7 +41,7 @@ foreach($_GET as $key=>$value)
 		$hash .="#".$key."=".$value;
 	
 	/*skip no tables parameters*/
-	if($key=='ajax'||strpos($key,'date')!==false)
+	if($key=='ajax'||strpos($key,'date')!==false||$key=='search')
 		continue;
 	
 	/*check for valid tables and create requested tables array*/
@@ -89,6 +89,10 @@ else if(""==$date_from&&""!=$date_to)
 else if(""!=$date_from&&""==$date_to)
 	$where_clause .= " AND release_date >='".$date_from."' ";
 
+/*create search main search TO BE FINISGHED*/
+if(isset($_GET['search'])&&""!=$_GET['search'])
+	$where_clause .= " AND products.catalogueID =".$_GET['search']." ";
+	
 $query = " SELECT 
 		products.".$main_table_PrKey ." as id,
 		products.catalogueID as catalogue_num,

@@ -489,3 +489,24 @@ body{
 			}
 				span.carr_name:hover{cursor:pointer;text-decoration:underline}			
 				p.career_description{display:none}
+				
+				
+			/*************** content contacts page***************************/
+			textarea.contact,input.contact{
+				width:100%;
+				height:30%;
+				margin: 5% auto;
+				padding:5px;
+				position:relative;
+				background: #979696;
+				font-size:12px;
+				border:1px solid #ffffff;
+				-moz-border-radius: 5px;
+				-webkit-border-radius: 5px;
+				-khtml-border-radius: 5px;
+				border-radius: 5px;
+				-moz-box-shadow:inset 2px 2px 3px #333333;
+			   -webkit-box-shadow:inset 2px 2px 3px #333333;
+			   box-shadow:inset 2px 2px 3px #333333;
+			}
+			input.contact{width:50%;height:auto;margin: 0 auto 5%;}
