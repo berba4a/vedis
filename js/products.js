@@ -25,7 +25,7 @@ function listProducts(url,hash)
 		},
 		success : function(response)
 		{
-			if(response!=-1)
+			if(response.indexOf('ГРЕШКА')==-1)
 			{
 				$('.content_column').html(response);
 				
@@ -42,7 +42,7 @@ function listProducts(url,hash)
 			}
 			else
 			{
-				alert('invalid hash parameter');
+				$('.content_column').html('<h1>'+response+'</h1>');
 			}
 		},
 		error : function(error)
@@ -61,15 +61,15 @@ function listProducts(url,hash)
 			if(response!=-1)
 			{
 				$('.left_content.products').html(response);
-				/*open all accordeon filters*/
+				/*open all accordion filters*/
 				$('.left_content').find('.accordion_ithem').each(function()
 				{
 					$(this).slideDown(50);
 				});
-				$('.left_content').find('.accordion_link').click(function()
+				/*REMOVED BECAUSE OPEN CLOSE IS NO NEEDED $('.left_content').find('.accordion_link').click(function()
 				{
 					$(this).next().slideToggle('slow');
-				});
+				});*/
 				
 				/*initialize datapickers*/
 				$('input#date_from').Zebra_DatePicker({
@@ -121,6 +121,7 @@ function listProducts(url,hash)
 function createHashQuery(param_name,value,hash)
 {
 	var hash_arr = hash.split("#");
+	
 	if(hash.indexOf("#"+param_name)>-1)
 	{
 		hash="";
@@ -128,6 +129,7 @@ function createHashQuery(param_name,value,hash)
 		{
 			if(hash_arr[i].indexOf(param_name)>-1)
 			{
+				/*change value of existing parameter*/
 				if(value!=-1)
 				{
 					var new_param_val = hash_arr[i].substring(0,hash_arr[i].indexOf("="));
@@ -136,18 +138,25 @@ function createHashQuery(param_name,value,hash)
 			}
 			else
 			{
-				hash+="#"+hash_arr[i];
+				/*add existing parameters excluding search parameter*/
+				if(hash_arr[i].indexOf('search')==-1)
+				{
+					hash+="#"+hash_arr[i]
+				}
 			}
 		}
 		
 	}
 	else
 	{
+		/*Add new parameter*/
 		if(value!==-1)
 		{
 			hash += "#"+param_name+"="+value;
 		}
 	}
+	
+	/*right sidebar menu open and close if specific value is selected*/
 	 window.location.hash = hash;
 	 if(hash.indexOf('product_gender')>-1)
 	 {

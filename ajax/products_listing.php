@@ -50,14 +50,14 @@ foreach($_GET as $key=>$value)
 		/*check for negative or empty values into the parameters*/
 		if($value<0||$value=="")
 		{
-			echo -1;
+			echo "ГРЕШКА!Невалидна стойност на параметъра!";
 			exit;
 		}	
 		$requested_tables[$key] = $value;
 	}
 	else
 	{
-		echo -1;
+		echo "ГРЕШКА!Невалидно име на параметър!";
 		exit;
 	}
 }
