@@ -70,13 +70,47 @@ $(document).ready(function()
 
 /*submit simple search form*/
 $(document).ready(function()
-{
+{	
+	$('input#search').focus(function()
+	{
+		var form = $(this).parent('form');
+		$('html').bind('keypress', function(e)
+		{
+			 if(e.keyCode == 13)
+			 {
+				e.preventDefault();
+				 submitSearchForm(form);
+			 }
+		});
+	});
+	
 	$('#form_submit').click(function()
 	{
-		$(this).parent('form').submit();
+		var form = $(this).parent('form');
+		submitSearchForm(form);
 	});
 });
 
+
+/*submit main search form function*/
+function submitSearchForm(form)
+{	
+	var search = $(form).find('#search');
+	var url = $(form).find('#url');
+	var search_val = $(search).val();
+	if($.trim(search_val)!=''&&$.trim($(url).val())!='')
+	{
+		if($.isNumeric(search_val)&&search_val>0&&search_val%1===0)
+		{
+			window.location=$(url).val()+'#search='+search_val;
+		}
+		else
+		{
+			alert("Въведете цяло число за номера на модела !\n /Например 1010/");
+			$(search).val('');
+		}
+	}
+}
 
 /*show hide submenus*/
 $(document).ready(function()

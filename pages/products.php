@@ -25,8 +25,8 @@ include_once('includes/slimscroll_scripts.php');
 				listProducts(site_url,window.location.hash);
 				var currUrl = window.location.href;
 				colorLinks(currUrl);				
-				/*REMOVED BECAUSE OPEN CLOSE IS NO NEEDED  Check is gender is selected or unselected and open/close submenus
-				if(currUrl.indexOf('product_gender')>-1)
+				
+				/*if(currUrl.indexOf('product_gender')>-1)
 				{
 					$('.parent_submenu').siblings('ul').slideDown('slow');
 				}
@@ -35,8 +35,6 @@ include_once('includes/slimscroll_scripts.php');
 					$('.parent_submenu').siblings('ul').slideUp('slow');
 				}*/
 			});
-			
-			/*REMOVED BECAUSE OPEN CLOSE IS NO NEEDED Check if gender is selected or unselected and open/close submenus
 			if(window.location.href.indexOf('product_gender')>-1)
 			{
 				$('.parent_submenu').siblings('ul').slideDown('slow');
@@ -44,7 +42,7 @@ include_once('includes/slimscroll_scripts.php');
 			else
 			{
 				$('.parent_submenu').siblings('ul').slideUp('slow');
-			}*/
+			}
 		});
 	</script>
 	</head>

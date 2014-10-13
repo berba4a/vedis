@@ -2,6 +2,7 @@
 /*all tables primary keys names are defined into the product preview.php script*/
 $header = "";
 $sub_header = "";
+$correct_query=false;
 if(isset($_GET[$main_prKey])&&""!=$_GET[$main_prKey]&&$_GET[$main_prKey]>0)	
 {
 	$query = "
@@ -23,6 +24,7 @@ if(isset($_GET[$main_prKey])&&""!=$_GET[$main_prKey]&&$_GET[$main_prKey]>0)
 		{
 			$header = "Модел &nbsp;".$row->catNum;
 			$sub_header = $row->gender."&nbsp;".$row->usе_type."&nbsp;".$row->type;
+			$correct_query=true;
 		}
 	}
 	else
@@ -35,6 +37,9 @@ else
 echo "<a class='back_link' href='#' >&laquo; Обратно в списъка</a>";
 echo "<h1>".$header."</h1>";
 echo "<h2>".$sub_header."</h2>";
+
+if($correct_query===false)
+	exit;
 
 /*images*/
 echo "<div class='images_holder'>";

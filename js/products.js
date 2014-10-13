@@ -153,6 +153,14 @@ function createHashQuery(param_name,value,hash)
 		if(value!==-1)
 		{
 			hash += "#"+param_name+"="+value;
+			if(hash.indexOf('#search')>-1)
+			{
+				hash_first = hash.substring(0,hash.indexOf('#search'));
+				
+				hash_last = hash.substring(hash.indexOf('#search')+7);
+				hash_last = hash_last.substring(0+hash_last.indexOf('#'));
+				hash = hash_first+hash_last;
+			}
 		}
 	}
 	

@@ -16,7 +16,7 @@ include_once('includes/slimscroll_scripts.php');
 	</head>
 	<body>
 		<div class='main_wrapper'>
-			<img class='bg' src='<?php echo SITE_IMG;?>background_images/contacts_back.png' />
+			<img class='bg' src='<?php echo SITE_IMG;?>background_images/contacts_back_new.png' />
 			<img class='bg' src='<?php echo SITE_IMG;?>background_images/overlay.png' />
 			<div class='content_wrapper'>
 				<?php include_once('includes/left_sidebar.php');?>

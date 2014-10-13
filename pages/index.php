@@ -32,7 +32,6 @@ include_once('includes/slimscroll_scripts.php');
 		<div class='main_wrapper'>
 		<?php
 			$season = 's';
-			echo intval(date('m'));
 			if(9<intval(date('m'))||intval(date('m'))<5)
 				$season = 'w';
 			echo "<img class='bg' src='".SITE_IMG."background_images/index_".$season.".png' />";
