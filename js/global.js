@@ -1,4 +1,6 @@
-﻿/*add selected class to lateral menu TO BE REDONE*/
+﻿
+
+/*add selected class to lateral menu TO BE REDONE*/
 $(document).ready(function()
 {
 	var currUrl = window.location.href;
