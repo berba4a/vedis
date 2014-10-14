@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $doc_root="D:/SERVER/htdocs/web/vedis/";
 //$doc_root="C:/xampp/htdocs/web/vedis/";
 $old_path =  ini_set("include_path",$doc_root);//ini_get('include_path'). PATH_SEPARATOR .
@@ -17,7 +17,6 @@ include_once('includes/header_meta.php');
 		var SITE_ROOT = '<?php echo SITE_ROOT;?>';
 	</script>
 	<script type='text/javascript' src='<?php echo SITE_JS;?>contact_form.js'></script>
-	
 	</head>
 	<body>
 		<div class='main_wrapper'>
@@ -43,10 +42,10 @@ include_once('includes/header_meta.php');
 							<textarea class='contact mandatory' id='question' name='question'></textarea>
 							<a class='form_btn right' id='submit_btn' href='javascript:void(0)'>Изпрати</a>
 							<a class='form_btn left' id='clear_btn' href='javascript:void(0)'>Изчисти полетата</a>
+
 						</form>
 					</div>
 					<div class='loading'></div>
-					<div class='clear'></div>
 				</div>
 				
 				<div class='lateral_column'>
