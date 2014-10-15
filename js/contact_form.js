@@ -16,6 +16,19 @@ $(document).ready(function()
 	});
 });
 
+/*check phone number*/
+$(document).ready(function()
+{
+	$('#phone').keypress(function( event ) 
+	{
+	  if ( event.which == 13 ) 
+	  {
+		 event.preventDefault();
+	  };
+	  alert('pressed');
+	 } 
+});
+
 /*submit form*/
 $(document).ready(function()
 {

@@ -47,7 +47,7 @@ $(document).ready(function()
 	$('.bottom_link').css('width',width);
 });
 
-/*change placeholder for search input*/
+/*change placeholder for search input
 $(document).ready(function()
 {
 	$('.search_form').find('input[type="radio"]').change(function()
@@ -68,7 +68,7 @@ $(document).ready(function()
 		$('.search_form').find('input[type="text"]').attr('placeholder','търси : '+new_value);
 		//$('.search_form').find('form').attr('action',action);
 	});
-});
+});*/
 
 /*submit simple search form*/
 $(document).ready(function()

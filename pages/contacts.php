@@ -40,6 +40,9 @@ include_once('includes/header_meta.php');
 							<input type='text' class='contact' name='mail' id='mail' value='' /><br />
 							<span class='red'>*</span><label for='question' id='question_label'> Вашето запитване :</label><br />
 							<textarea class='contact mandatory' id='question' name='question'></textarea>
+							<div class='pot'>
+								<input type='text' name='pot' id='pot' value='' />
+							</div>
 							<a class='form_btn right' id='submit_btn' href='javascript:void(0)'>Изпрати</a>
 							<a class='form_btn left' id='clear_btn' href='javascript:void(0)'>Изчисти полетата</a>
 

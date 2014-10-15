@@ -535,6 +535,6 @@ body{
 				background:#979696;
 				font-family:robotothin;
 			}
-				a.form_btn#submit_btn:hover{background:#cccccc;color:#00ff00;border:1px solid #00ff00}
-				a.form_btn#clear_btn:hover{background:#cccccc;color:#ff0000;border:1px solid #ff0000}
-				
+				a.form_btn#submit_btn:hover{background:#cccccc;color:#006400;border:1px solid #006400}
+				a.form_btn#clear_btn:hover{background:#cccccc;color:#640000;border:1px solid #640000}
+			.pot{display:none}/*honey pot*/
