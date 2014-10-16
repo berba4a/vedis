@@ -62,7 +62,7 @@ include_once('includes/header_meta.php');
 									<a href='javascript:void(0)'>Телефон</a>
 								</div>
 								<div class='accordion_ithem '>
-									<span>0123456</span>
+									<span>+359 898 422 690 <br />+359 898 832 983</span>
 								</div>
 							</li>
 							<li>
@@ -70,7 +70,7 @@ include_once('includes/header_meta.php');
 									<a href='javascript:void(0)'>Viber</a>
 								</div>
 								<div class='accordion_ithem '>
-									<span>0123456</span>
+									<span>+359 898 422 690 <br />+359 898 832 983</span>
 								</div>
 							</li>
 							<li>
@@ -81,14 +81,14 @@ include_once('includes/header_meta.php');
 									<span><a href='mailto:mail@mail.com'><?php echo DEFAULT_EMAIL_ADDRESS;?></a></span>
 								</div>
 							</li>
-							<li>
+							<!--li>
 								<div class='accordion_link'>
 									<a href='javascript:void(0)'>Skype</a>
 								</div>
 								<div class='accordion_ithem '>
 									<span>skype</span>
 								</div>
-							</li>
+							</li-->
 						</ul>
 						<div class='bottom_link text_right'>
 							<!--#product_type=1 because for now we have only bags-->

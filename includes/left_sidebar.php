@@ -25,9 +25,17 @@
 						</ul>
 					</div>
 					<div class='bottom_link'>
-						<img src='<?php echo SITE_IMG;?>facebook.png' />
-						<img src='<?php echo SITE_IMG;?>twitter.png' />
-						<img src='<?php echo SITE_IMG;?>google+.png' />
-						<img src='<?php echo SITE_IMG;?>linkedin.png' />
+						<a target='_blank' href='https://www.facebook.com/VedisStyle?fref=ts'>
+							<img src='<?php echo SITE_IMG;?>facebook.png' />
+						</a>
+						<a target='_blank' href='#'>
+							<img src='<?php echo SITE_IMG;?>twitter.png' />
+						</a>
+						<a target='_blank' href='#'>
+							<img src='<?php echo SITE_IMG;?>googlepl.png' />
+						</a>
+						<a target='_blank' href='#'>
+							<img src='<?php echo SITE_IMG;?>linkedin.png' />
+						</a>
 					</div>
 				</div>

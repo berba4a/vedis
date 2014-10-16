@@ -25,7 +25,7 @@ include_once('includes/slimscroll_scripts.php');
 			var height = column_height-header_height-75;
 			  $('.scrollable').slimScroll({
 					height: height,
-					color: '#000000'
+					color: '#ffffff'
 			  });
 		});
 	</script>

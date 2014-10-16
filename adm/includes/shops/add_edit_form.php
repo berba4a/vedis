@@ -49,6 +49,7 @@ if(isset($_GET['action'])&&(trim($_GET['action']) == 'add'|| trim($_GET['action'
 			checkSubmitForm('".SITE_URL.ADMIN."','".$_GET['table']."');
 		});
 	});</script>";
+	echo "<span class='left'><a href='".SITE_URL.ADMIN."pages/?table=".$_GET['table']."'>&laquo;&nbsp;Обратно в списъка</a></span>";
 	echo "<div class='title'>".$title."</div>";
 	
 	echo "<form id='add_edit_form' method='POST' enctype='multipart/form-data'>";
