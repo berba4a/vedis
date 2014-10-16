@@ -19,14 +19,19 @@ $(document).ready(function()
 /*check phone number*/
 $(document).ready(function()
 {
-	$('#phone').keypress(function( event ) 
+	$('#phone').keypress(function(event) 
 	{
-	  if ( event.which == 13 ) 
-	  {
-		 event.preventDefault();
-	  };
-	  alert('pressed');
-	 } 
+		  if ( event.which == 13 ) 
+		  {
+			 event.preventDefault();
+		  };
+		  var unicode=event.keyCode? event.keyCode : event.charCode;
+		  if(unicode<48||unicode>57)
+		  {
+			alert("Въведения символ не е число!\nМоля въведете число!");
+			event.preventDefault();
+		  }
+	 }); 
 });
 
 /*submit form*/

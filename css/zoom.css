@@ -1,0 +1,26 @@
+.zoom {
+		height:100%
+		width:auto;
+		margin:0 auto;
+		display:block;
+		position: relative;
+		/*background:url(../images/transp_white_backgr.png) repeat;*/
+	}
+		/* magnifying glass icon */
+		.zoom .zoom_icon {
+			content:'';
+			display:none; 
+			width:33px; 
+			height:33px; 
+			position:absolute; 
+			top:0;
+			right:0;
+			background:url(../images/icon.png);
+			z-index:999;
+		}
+
+		.zoom img {
+			display: block;
+		}
+
+		.zoom img::selection { background-color: transparent; }

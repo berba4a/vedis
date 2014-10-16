@@ -4,7 +4,6 @@ $(document).ready(function()
 	$('.submit_btn').click(function()
 	{
 		var errors = 0;
-		//var img_errors = 0;
 		var allowed_ext = ['jpg','png','gif','bmp'];
 		/*check inputs for errors*/
 		$('.mandatory').each(function()
@@ -61,9 +60,6 @@ $(document).ready(function()
 				ext = file_val.substring(file_val.lastIndexOf('.')+1).toLowerCase();
 				if(allowed_ext.indexOf(ext)<0)
 				{
-					//img_errors++;
-					//$(this).parents('.input_file').css('border','2px solid #ff0000');
-					//$(this).parents('.input_file').attr('onclick','removeMe(this)');
 					if($('.input_file').length>1)
 					{
 						$(this).parents('.input_file').remove();
@@ -87,18 +83,9 @@ $(document).ready(function()
 			{
 				$('.input_fields').append('<span class="red wrong_fields">Полетата със * са задължителни</span>');
 			}
-			/*if($('.wrong_images').length<1&&img_errors>0)
-			{
-				$('fieldset').append('<span class="red wrong_images">Некоректен формат на изображенията кликни върху маркирания с червено файл за изтриване!</span>');
-			}*/
 		}
 	});
 });
-
-/*function removeMe(element)
-{
-	$(element).remove();
-}*/
 
 /*Chrome fix for scrolling issue with marked elements*/
 $(document).ready(function()

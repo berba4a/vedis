@@ -89,7 +89,7 @@ else if(""==$date_from&&""!=$date_to)
 else if(""!=$date_from&&""==$date_to)
 	$where_clause .= " AND release_date >='".$date_from."' ";
 
-/*create search main search TO BE FINISGHED*/
+/*create search main search*/
 if(isset($_GET['search'])&&""!=$_GET['search'])
 	$where_clause .= " AND products.catalogueID =".$_GET['search']." ";
 	

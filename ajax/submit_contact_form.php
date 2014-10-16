@@ -36,7 +36,17 @@ if(isset($_GET['pot'])&&$_GET['pot']=="")
 		$mail = $_GET['mail'];
 	else
 		$mail = "";
-	
+		
+	$subject = "Запитване от автоматична форма на vedis.bg";	
+	$headers = ""; 	
+	$headers .= "From: ".$_GET['name']."<".$mail.">\n";
+	$headers .= "Reply-To: ".$mail."<".$mail.">\n";
+	$headers .= "Subject: =?UTF-8?B?".base64_encode($subject)."?=";
+	$mail_res = mail(DEFAULT_EMAIL_ADDRESS,"Subject: =?UTF-8?B?".base64_encode($subject)."?=",$_GET['question'],$headers);
+	if($mail_res===true)
+		echo "<span class='succ_msg'>Вашето запитване беше изпратено успешно.<br /> Благодарим ,че се свързахте с екипа на Vedis.bg !</span><br /><a href='".SITE_URL.SITE_ROOT."pages/contacts.php' style='text-decoration:underline'>&raquo;Изпратете ново запитване</a>";
+	else
+		echo "<span class='red'>Вашето запитване не е изпратето порати технически проблем!<br /> Mоля свържете се с нас на e-mail :<br /> <a href='mailto:".DEFAULT_EMAIL_ADDRESS."' >".DEFAULT_EMAIL_ADDRESS."</a></span>";
 }
 else
 	echo "Not human attempt for submission! ";

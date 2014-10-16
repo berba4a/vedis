@@ -34,10 +34,11 @@ include_once('includes/header_meta.php');
 							<span class='red'>*</span><label for='name' id='name_label'> Вашето име :</label><br />
 							<input type='text' class='contact mandatory' id='name' name='name' value='' /><br />
 							<span class='red'>*</span><label for='phone' id='phone_label'> Вашият телефон :</label><br />
-							<input type='text' class='contact mandatory' name='phone' id='phone' value='' /><br />
+							<input type='text' class='contact mandatory' name='phone' id='phone' value='' />
+							<span class='tip'>&nbsp;&nbsp;&nbsp;/въведете само числа/</span><br />
 							<span>&nbsp;</span><label for='mail' id='mail_label'> Вашият e-mail :</label><br />
 							<span class='warning' id='invalid_email'>&nbsp;/Невалиден e-mail/</span>
-							<input type='text' class='contact' name='mail' id='mail' value='' /><br />
+							<input type='text' class='contact' name='mail' id='mail' value='' /><span class='tip'>&nbsp;&nbsp;&nbsp;/формат: name@domain.TLD/</span><br />
 							<span class='red'>*</span><label for='question' id='question_label'> Вашето запитване :</label><br />
 							<textarea class='contact mandatory' id='question' name='question'></textarea>
 							<div class='pot'>
@@ -77,7 +78,7 @@ include_once('includes/header_meta.php');
 									<a href='javascript:void(0)'>E-mail</a>
 								</div>
 								<div class='accordion_ithem '>
-									<span><a href='mailto:mail@mail.com'>mail@mail.com</a></span>
+									<span><a href='mailto:mail@mail.com'><?php echo DEFAULT_EMAIL_ADDRESS;?></a></span>
 								</div>
 							</li>
 							<li>

@@ -6,9 +6,6 @@ $(document).ready(function()
 		var table = $(this).attr('table');
 		var ithemID = $(this).attr('id');
 		var prKey = $(this).attr('pr_key');
-		//var full_id = $(this).attr('id');
-		//var prKey = full_id.substring(0,full_id.indexOf('_'));
-		//var ithemID = parseInt(full_id.substring(full_id.indexOf('_')+1));
 		
 		/*remove marker if some other field is marked*/
 		$(this).parents('.parent_mark').siblings('.parent_mark').each(function()

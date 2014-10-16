@@ -45,7 +45,7 @@ if (!defined("CONSTANTS"))
 	define ("UPLOADED_IMAGES" , SITE_UPOLADS."product_images/");
 	
     define ("SITE_IMG", SITE_ROOT."images/");
-    //define ("DEFAULT_EMAIL_ADDRESS", "info@sete.gr");   
+    define ("DEFAULT_EMAIL_ADDRESS", "mail@mail.com");   
 	define ("DEFAULT_TABLE","products");
 	
 	/*admin*/

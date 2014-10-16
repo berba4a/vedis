@@ -23,42 +23,12 @@ include_once('includes/slimscroll_scripts.php');
 
 <!--tiny carousel-->
 <link type='text/css' rel='stylesheet' href='<?php echo SITE_CSS;?>tinycarousel.css' media="screen" />
+<link type='text/css' rel='stylesheet' href='<?php echo SITE_CSS;?>zoom.css' media="screen" />
 
 <script type='text/javascript' src='<?php echo SITE_JS;?>jquery.tinycarousel.js'></script>
 <script type='text/javascript' src='<?php echo SITE_JS;?>jquery.zoom.min.js'></script>
 <script type='text/javascript' src='<?php echo SITE_JS;?>product_preview.js'></script>
 
-
-
-<!--zoom image-->
-<style type='text/css'>
-	.zoom {
-		height:100%
-		width:auto;
-		margin:0 auto;
-		display:block;
-		position: relative;
-		/*background:url(../images/transp_white_backgr.png) repeat;*/
-	}
-		/* magnifying glass icon */
-		.zoom .zoom_icon {
-			content:'';
-			display:none; 
-			width:33px; 
-			height:33px; 
-			position:absolute; 
-			top:0;
-			right:0;
-			background:url(../images/icon.png);
-			z-index:999;
-		}
-
-		.zoom img {
-			display: block;
-		}
-
-		.zoom img::selection { background-color: transparent; }
-</style>
 <script type='text/javascript'>
 	$(document).ready(function()
 	{

@@ -16,12 +16,6 @@
 	$stmt = $db->query($query);
 	if($db->numRows($stmt)>0)
 	{
-		
-		/*echo "<div class='shop_row header'>";
-			echo "<span class='left'>Магазин</span>";
-			echo "<span class='right'>Град</span>";
-			echo "<div class='clear'></div>";
-		echo "</div>";*/
 		echo "<div class='scrollable'>";
 		while($row=$db->fetchObject($stmt))
 		{
