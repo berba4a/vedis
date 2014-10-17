@@ -8,7 +8,7 @@ include_once("setup/setup.php");
 /*database connect object*/
 include_once("includes/DBMYSQL.class.php");
 $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
-$page_title='Vedis products list';
+$page_title='Vedis style Продукти';
 
 include_once('includes/header_meta.php');
 include_once('includes/slimscroll_scripts.php');

@@ -15,7 +15,7 @@ $typeID = $db->getPrKey('product_type');
 $genderID = $db->getPrKey('product_gender');
 $usageID = $db->getPrKey('product_usage');
 
-$page_title='Vedis  преглед на продукт';
+$page_title='Vedis style Преглед на продукт';
 
 include_once('includes/header_meta.php');
 include_once('includes/slimscroll_scripts.php');

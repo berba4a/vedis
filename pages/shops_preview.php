@@ -11,7 +11,7 @@ $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 $shops_prKey = $db->getPrKey('shops');
 $cities_prKey = $db->getPrKey('cities');
 
-$page_title = "Vedis style преглед на магазин";
+$page_title = "Vedis style Преглед на магазин";
 include_once('includes/header_meta.php');
 ?>
 	<script type='text/javascript'>
@@ -33,7 +33,8 @@ include_once('includes/header_meta.php');
 	</head>
 	<body>
 		<div class='main_wrapper'>
-			<img class='bg' src='<?php echo SITE_IMG;?>content_background2.png' />
+			<img class='bg' src='<?php echo SITE_IMG;?>background_images/shops_back.png' />
+			<img class='bg' src='<?php echo SITE_IMG;?>background_images/overlay.png' />
 			<div class='content_wrapper'>
 				<?php include_once('includes/left_sidebar.php');?>
 				<div class='content_column wider'>

@@ -4,9 +4,12 @@
 		<title><?php echo $page_title;?></title>
 		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
 		<meta name="Robots" content="all">
+		<meta name="robots" content="index,follow">
+		<meta name="distribution" content="global">
+		<meta name="audience" content="all">
 		<meta name="revisit-after" content="7 days">
 		<meta name="keywords" content="">
-		<meta name="description" content="">
+		<meta name="description" content="Уебсайт на производителя на чанти Vedis Style">
 		
 		<link type='text/css' rel='stylesheet' href='<?php echo SITE_CSS;?>global.css' />
 		<!--script src='//code.jquery.com/jquery-1.11.0.min.js'></script-->

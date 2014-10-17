@@ -9,7 +9,7 @@ include_once("setup/setup.php");
 include_once("includes/DBMYSQL.class.php");
 $db = new DBMYSQL(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 
-$page_title = "Vedis style";
+$page_title = "Vedis style Контакти";
 include_once('includes/header_meta.php');
 ?>
 	<script type='text/javascript'>

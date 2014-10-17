@@ -26,16 +26,16 @@
 					</div>
 					<div class='bottom_link'>
 						<a target='_blank' href='https://www.facebook.com/VedisStyle?fref=ts'>
-							<img src='<?php echo SITE_IMG;?>facebook.png' />
+							<img src='<?php echo SITE_IMG;?>social/facebook.png' />
 						</a>
 						<a target='_blank' href='#'>
-							<img src='<?php echo SITE_IMG;?>twitter.png' />
+							<img src='<?php echo SITE_IMG;?>social/twitter.png' />
 						</a>
 						<a target='_blank' href='#'>
-							<img src='<?php echo SITE_IMG;?>googlepl.png' />
+							<img src='<?php echo SITE_IMG;?>social/googlepl.png' />
 						</a>
 						<a target='_blank' href='#'>
-							<img src='<?php echo SITE_IMG;?>linkedin.png' />
+							<img src='<?php echo SITE_IMG;?>social/linkedin.png' />
 						</a>
 					</div>
 				</div>

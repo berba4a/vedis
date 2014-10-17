@@ -24,7 +24,7 @@
 					echo "<div class='dialogue_close' onclick='closeDialogue()'></div>";
 					echo "<div class='dialogue_text'>Найстина ли искате да изтриете маркирания с червено запис с ID# ".$_POST[$_POST['pr_key']]."</div>";
 					echo "<div class='dialogue_buttons confirm' onclick='deleteIthem();'>Изтрий</div>";
-					echo "<div class='dialogue_buttons cancel' onclick='closeDialogue()'>Отмяна</div>";
+					echo "<div class='dialogue_buttons cancel' onclick='closeDialogue()'>Отмени</div>";
 					echo "<form id='delete_form'>";
 						echo "<input type='hidden' name='table' value='".$_POST['table']."'>";
 						echo "<input type='hidden' name='pr_key' value='".$_POST['pr_key']."'>";
@@ -38,7 +38,7 @@
 					
 					/*check if deleted item is product in order to remove the images from file system*/
 					$file_res = array();
-					if(strpos('product',$_POST['pr_key'])!==false)
+					if(strpos($_POST['pr_key'],'product')!==false)
 					{
 						$query = " SELECT * FROM product_images WHERE ".$db->getPrKey($_POST['table'])." = ".$_POST[$_POST['pr_key']]." ";
 						$stmt = $db->query($query);
